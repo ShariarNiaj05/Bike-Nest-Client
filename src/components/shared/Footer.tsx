@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="mt-3 max-w-7xl min-h-[200px] mx-auto flex justify-between items-center py-5 font-bold">
       <div>
         {" "}
-        <Link to={"/"}>Sports Sphere</Link>
+        <Link to={"/"}>Bike Nest</Link>
       </div>
 
       <div className="flex gap-2 text-2xl">

@@ -13,8 +13,8 @@ const Navbar = () => {
       <div>
         {" "}
         <Link to={"/"}>
-          {/* Sports Sphere */}
-          <img className="h-10 rounded" src={logo} alt="Sports Sphere Logo" />
+          {/* Bike Nest */}
+          <img className="h-10 rounded" src={logo} alt="Bike Nest Logo" />
         </Link>
       </div>
 

@@ -12,7 +12,7 @@ const About = () => {
             Discover a wide range of high-quality sporting goods for every
             athlete and sports enthusiast. Enjoy a seamless shopping experience
             with our intuitive platform and comprehensive selection. Elevate
-            your game with Sports Sphere!
+            your game with Bike Nest!
           </p>
 
           {/* who we are and what we do div  */}
@@ -26,7 +26,7 @@ const About = () => {
                 Elevate Your Game
               </h3>
               <p className=" mt-5 bg-slate-100  h-64 p-8 rounded-md text-justify">
-                At Sports Sphere, we're passionate about sports and committed to
+                At Bike Nest, we're passionate about sports and committed to
                 helping athletes and enthusiasts reach their full potential. Our
                 platform offers a diverse selection of high-quality equipment,
                 apparel, and accessories for all types of sports. We aim to
@@ -46,13 +46,13 @@ const About = () => {
                   Your Ultimate Sporting Goods Destination
                 </h3>
                 <p className="  mt-5 bg-slate-100 md:h-64 p-8 rounded-md text-justify">
-                  At Sports Sphere, we specialize in providing a comprehensive
-                  range of sporting goods for athletes, sports enthusiasts, and
-                  casual players alike. Our extensive catalog features
-                  high-quality equipment, apparel, and accessories for various
-                  sports. We are dedicated to offering a seamless and enjoyable
-                  shopping experience, ensuring you have everything you need to
-                  excel in your sport and stay active.
+                  At Bike Nest, we specialize in providing a comprehensive range
+                  of sporting goods for athletes, sports enthusiasts, and casual
+                  players alike. Our extensive catalog features high-quality
+                  equipment, apparel, and accessories for various sports. We are
+                  dedicated to offering a seamless and enjoyable shopping
+                  experience, ensuring you have everything you need to excel in
+                  your sport and stay active.
                 </p>
               </div>
             </div>
@@ -67,7 +67,7 @@ const About = () => {
                   Our Mission
                 </h2>
                 <p className="  text-justify">
-                  Our mission at Sports Sphere is to empower athletes and sports
+                  Our mission at Bike Nest is to empower athletes and sports
                   enthusiasts by providing them with top-quality sporting goods
                   and an exceptional shopping experience. We strive to be the
                   go-to destination for all your sporting needs, supporting your
@@ -82,11 +82,11 @@ const About = () => {
                   Our Vision
                 </h2>
                 <p className=" text-justify">
-                  Our vision at Sports Sphere is to become the leading
-                  e-commerce platform for sporting goods, recognized for our
-                  diverse selection, exceptional quality, and outstanding
-                  customer experience. We aspire to inspire and support athletes
-                  and sports enthusiasts worldwide by continually enhancing our
+                  Our vision at Bike Nest is to become the leading e-commerce
+                  platform for sporting goods, recognized for our diverse
+                  selection, exceptional quality, and outstanding customer
+                  experience. We aspire to inspire and support athletes and
+                  sports enthusiasts worldwide by continually enhancing our
                   offerings and services. Our goal is to foster a community
                   where everyone can access the best equipment and resources to
                   pursue their passion for sports and an active lifestyle.
@@ -108,8 +108,8 @@ const About = () => {
               </h2>
 
               <p className=" mt-5 bg-slate-100  h-64 p-8 rounded-md text-justify">
-                At Sports Sphere, we are passionate about sports and committed
-                to supporting athletes and enthusiasts in reaching their full
+                At Bike Nest, we are passionate about sports and committed to
+                supporting athletes and enthusiasts in reaching their full
                 potential. Our dedicated team works tirelessly to curate a
                 diverse selection of high-quality equipment, apparel, and
                 accessories for all types of sports. We aim to provide a
@@ -129,13 +129,13 @@ const About = () => {
                 </h2>
 
                 <p className="  mt-5 bg-slate-100 md:h-64 p-8 rounded-md text-justify">
-                  Welcome to Sports Sphere, your premier destination for
-                  sporting goods in the heart of Metro City. Located at the
-                  bustling Sports Plaza, our store offers a wide array of
-                  high-quality equipment, apparel, and accessories for athletes,
-                  sports enthusiasts, and casual players alike. Whether you're
-                  gearing up for competitive matches or enjoying recreational
-                  activities, Sports Sphere is your go-to spot for everything
+                  Welcome to Bike Nest, your premier destination for sporting
+                  goods in the heart of Metro City. Located at the bustling
+                  Sports Plaza, our store offers a wide array of high-quality
+                  equipment, apparel, and accessories for athletes, sports
+                  enthusiasts, and casual players alike. Whether you're gearing
+                  up for competitive matches or enjoying recreational
+                  activities, Bike Nest is your go-to spot for everything
                   sports-related. Explore our store today and experience a
                   seamless shopping journey that caters to your passion for
                   sports and active lifestyle.
