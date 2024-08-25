@@ -17,12 +17,10 @@ const Title = ({ children }: { children: string }) => {
       data-aos-mirror="true"
       data-aos-once="false"
       data-aos-anchor-placement="top-center"
-      className="relative border-s-8 border-primary ps-3"
+      className="relative border-b-8 border-primary ps-3 opacity-5"
     >
-      <h2 className="text-6xl font-bold text-center text-primary">
-        {children}
-      </h2>
-      <p className="absolute bottom-0 text-6xl md:text-9xl -z-10 opacity-5">
+      <h2 className="text-6xl font-bold text-start text-primary">{children}</h2>
+      <p className="absolute top-16 left-64 text-6xl md:text-4xl -z-10 font-semibold opacity-20">
         {" "}
         {children}
       </p>
