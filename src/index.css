@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+primary color: #F25625
+secondary color: #EB5E28
+*/
 
 @layer base {
   :root {
@@ -13,10 +17,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 203, 64%, 25%;
+    /* Updated Primary Color */
+    --primary: 15.5 86.4% 55.3%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 204, 86%, 30%;
+    /* Updated Secondary Color */
+    --secondary: 19.3 81.4% 53.5%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -45,10 +51,12 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Updated Primary Color */
+    --primary: 15.5 86.4% 55.3%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    /* Updated Secondary Color */
+    --secondary: 19.3 81.4% 53.5%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
