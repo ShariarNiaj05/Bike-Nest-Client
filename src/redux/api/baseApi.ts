@@ -16,48 +16,7 @@ export const baseApi = createApi({
       providesTags: ["Product"],
       // pollingInterval: 30000,
     }),
-    addProduct: builder.mutation({
-      query: (body) => ({
-        url: `/product/add-product`,
-        method: "POST",
-        body,
-      }),
-    }),
-    singleProduct: builder.query({
-      query: (id) => ({
-        url: `/product/${id}`,
-        method: "GET",
-      }),
-    }),
-    updateProduct: builder.mutation({
-      query: ({ id, payload }) => ({
-        url: `/product/update-product/${id}`,
-        method: "PUT",
-        body: payload,
-      }),
-    }),
-    checkout: builder.mutation({
-      query: (body) => ({
-        url: `/checkout`,
-        method: "PUT",
-        body,
-      }),
-    }),
-    deleteProduct: builder.mutation({
-      query: (id) => ({
-        url: `/product/delete-product/${id}`,
-        method: "DELETE",
-      }),
-      invalidatesTags: ["Product"],
-    }),
   }),
 });
 
-export const {
-  useProductQuery,
-  useAddProductMutation,
-  useSingleProductQuery,
-  useCheckoutMutation,
-  useDeleteProductMutation,
-  useUpdateProductMutation,
-} = baseApi;
+export const { useProductQuery } = baseApi;
