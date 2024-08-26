@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { baseApi } from "./api/baseApi";
-import cartReducer from "./features/cartSlice";
 import progressReducer from "./features/progressSlice";
 
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
-    cart: cartReducer,
     progress: progressReducer,
   },
   middleware: (getDefaultMiddleware) =>
