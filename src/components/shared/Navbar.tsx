@@ -18,12 +18,6 @@ const Navbar = () => {
         <Menubar>
           <MenubarMenu>
             <div className=" flex gap-5">
-              <Link to={"/products"}>
-                <MenubarTrigger>All Product</MenubarTrigger>
-              </Link>
-              <Link to={"/manage"}>
-                <MenubarTrigger>Manage</MenubarTrigger>
-              </Link>
               <Link to={"/about"}>
                 <MenubarTrigger>About</MenubarTrigger>
               </Link>
