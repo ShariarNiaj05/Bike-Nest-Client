@@ -1,4 +1,5 @@
 import MainLayout from "@/layout/MainLayout";
+import ProtectedRoute from "@/layout/ProtectedRoute";
 import About from "@/pages/About";
 
 import Home from "@/pages/Home";
@@ -27,6 +28,15 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/admin",
+        element: (
+          <ProtectedRoute role="admin">
+            <MainLayout />
+          </ProtectedRoute>
+        ),
+        children: 
       },
     ],
   },
