@@ -5,8 +5,10 @@ import About from "@/pages/About";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
+import { routeGenerator } from "@/utils/routeGenerator";
 
 import { createBrowserRouter } from "react-router-dom";
+import { adminPaths } from "./admin.routes";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +38,7 @@ const router = createBrowserRouter([
             <MainLayout />
           </ProtectedRoute>
         ),
-        children: 
+        children: routeGenerator(adminPaths),
       },
     ],
   },
