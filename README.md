@@ -29,8 +29,8 @@
 ### Frontend
 
 - React ⚛️
-- Redux 🌀
-- Shadcn
+- Redux + RTK Query🌀
+- Shadcn UI
 
 ### Backend
 
