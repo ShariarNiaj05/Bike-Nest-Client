@@ -1,4 +1,5 @@
 import Contact from "@/components/custom/Contact";
+import OurTeam from "@/components/custom/OurTeam";
 import Title from "@/components/custom/Title";
 
 const About = () => {
@@ -102,8 +103,8 @@ const About = () => {
           </div>
         </div>
 
-        {/* Our team section */}
-
+        {/* Our team an contact section */}
+        <OurTeam />
         <Contact />
 
         <div>
