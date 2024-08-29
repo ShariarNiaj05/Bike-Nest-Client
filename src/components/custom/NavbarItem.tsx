@@ -55,7 +55,7 @@ const NavbarItem = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Home</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -104,9 +104,9 @@ const NavbarItem = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link to="/docs">
+          <Link to="/about">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+              About
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
