@@ -27,9 +27,7 @@ const About = () => {
               <h2 className=" pl-8 text-start mt-16 text-2xl font-bold">
                 Our Mission
               </h2>
-              <h3 className=" pl-8  text-start text-base font-medium">
-                Elevate Your Game
-              </h3>
+
               <p className=" mt-5 bg-slate-100  h-64 p-8 rounded-md text-justify">
                 At BikeNest, our mission is to make transportation accessible,
                 affordable, and sustainable by providing a reliable bike rental
@@ -48,9 +46,7 @@ const About = () => {
                 <h2 className=" pl-8  text-start mt-16 text-2xl font-bold">
                   Our Journey
                 </h2>
-                <h3 className=" pl-8  text-start text-base font-medium">
-                  Your Ultimate Destination
-                </h3>
+
                 <p className="  mt-5 bg-slate-100 md:h-64 p-8 rounded-md text-justify">
                   At Bike Nest, we specialize in providing a comprehensive range
                   of sporting goods for athletes, sports enthusiasts, and casual
@@ -73,13 +69,17 @@ const About = () => {
                   Our Mission
                 </h2>
                 <p className="  text-justify">
-                  Our mission at Bike Nest is to empower athletes and sports
-                  enthusiasts by providing them with top-quality sporting goods
-                  and an exceptional shopping experience. We strive to be the
-                  go-to destination for all your sporting needs, supporting your
-                  journey towards fitness, performance, and an active lifestyle.
-                  With a commitment to excellence and customer satisfaction, we
-                  aim to help you elevate your game and achieve your goals.
+                  At BikeNest, our mission is to make transportation accessible,
+                  affordable, and environmentally friendly for everyone. We are
+                  dedicated to providing a seamless and enjoyable biking
+                  experience through our extensive fleet of well-maintained
+                  bicycles and user-friendly booking system. By promoting
+                  cycling as a primary mode of transportation, we aim to reduce
+                  carbon emissions, alleviate urban congestion, and contribute
+                  to healthier lifestyles. We are committed to continuous
+                  innovation and community collaboration to ensure that our
+                  services not only meet but exceed the evolving needs of our
+                  customers.
                 </p>
               </div>
               {/* our Vision div  */}
@@ -88,14 +88,14 @@ const About = () => {
                   Our Vision
                 </h2>
                 <p className=" text-justify">
-                  Our vision at Bike Nest is to become the leading e-commerce
-                  platform for sporting goods, recognized for our diverse
-                  selection, exceptional quality, and outstanding customer
-                  experience. We aspire to inspire and support athletes and
-                  sports enthusiasts worldwide by continually enhancing our
-                  offerings and services. Our goal is to foster a community
-                  where everyone can access the best equipment and resources to
-                  pursue their passion for sports and an active lifestyle.
+                  At BikeNest, our vision is to lead the way in transforming
+                  urban transportation by making cycling the preferred mode of
+                  travel for everyone. We envision a future where cities are
+                  greener, healthier, and more connected, with cycling at the
+                  heart of this transformation. By providing innovative and
+                  accessible bike rental solutions, we aim to reduce the
+                  reliance on fossil fuels, decrease traffic congestion, and
+                  promote a culture of sustainability.
                 </p>
               </div>
             </div>
@@ -110,20 +110,15 @@ const About = () => {
             {/* who we are div  */}
             <div className=" flex-1 h-52">
               <h2 className=" pl-8 text-start mt-16 text-2xl font-bold">
-                Teams and Contribution
+                Contribution
               </h2>
 
               <p className=" mt-5 bg-slate-100  h-64 p-8 rounded-md text-justify">
-                At Bike Nest, we are passionate about sports and committed to
-                supporting athletes and enthusiasts in reaching their full
-                potential. Our dedicated team works tirelessly to curate a
-                diverse selection of high-quality equipment, apparel, and
-                accessories for all types of sports. We aim to provide a
-                seamless and enjoyable shopping experience, ensuring you have
-                the best gear to elevate your performance. By joining us, you
-                become part of a community that values excellence, innovation,
-                and the spirit of sportsmanship. Together, let's elevate your
-                game with the best in sporting goods.
+                At BikeNest, we are dedicated to making a meaningful
+                contribution to the environment, our communities, and the
+                broader goal of sustainable living. Our commitment extends
+                beyond just providing a bike rental service; it's about creating
+                a lasting positive impact on the world around us.
               </p>
             </div>
 
@@ -135,16 +130,10 @@ const About = () => {
                 </h2>
 
                 <p className="  mt-5 bg-slate-100 md:h-64 p-8 rounded-md text-justify">
-                  Welcome to Bike Nest, your premier destination for sporting
-                  goods in the heart of Metro City. Located at the bustling
-                  Sports Plaza, our store offers a wide array of high-quality
-                  equipment, apparel, and accessories for athletes, sports
-                  enthusiasts, and casual players alike. Whether you're gearing
-                  up for competitive matches or enjoying recreational
-                  activities, Bike Nest is your go-to spot for everything
-                  sports-related. Explore our store today and experience a
-                  seamless shopping journey that caters to your passion for
-                  sports and active lifestyle.
+                  <p>Office Address: BikeNest Headquarters, </p>
+                  <p> 123 Greenway Avenue Eco City, ST 56789</p>
+                  <p> Phone: (123) 456-7890</p>
+                  <p> Email: support@bikenest.com</p>
                 </p>
               </div>
             </div>
