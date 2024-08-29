@@ -1,6 +1,7 @@
 import { Menubar, MenubarMenu, MenubarTrigger } from "@radix-ui/react-menubar";
 import { Link } from "react-router-dom";
 import logo from "/logo.png";
+import NavbarItem from "../custom/NavbarItem";
 const Navbar = () => {
   return (
     <div className=" max-w-7xl mx-auto flex justify-between py-5 font-bold">
@@ -17,11 +18,13 @@ const Navbar = () => {
       <div>
         <Menubar>
           <MenubarMenu>
+            <NavbarItem />
+            {/* 
             <div className=" flex gap-5">
               <Link to={"/about"}>
                 <MenubarTrigger>About</MenubarTrigger>
               </Link>
-            </div>
+            </div> */}
           </MenubarMenu>
         </Menubar>
       </div>
