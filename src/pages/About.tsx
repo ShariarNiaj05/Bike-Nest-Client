@@ -102,6 +102,8 @@ const About = () => {
           </div>
         </div>
 
+        {/* Our team section */}
+
         <Contact />
 
         <div>
