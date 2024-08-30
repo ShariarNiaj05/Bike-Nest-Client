@@ -1,6 +1,6 @@
-import ceo from "../../../public/shariar.png";
-import cto from "../../../public/cto.jpg";
-import ho from "../../../public/ho.jpg";
+import ceo from "/shariar.png";
+import cto from "/cto.jpg";
+import ho from "/ho.jpg";
 const OurTeam = () => {
   return (
     <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 text-center">

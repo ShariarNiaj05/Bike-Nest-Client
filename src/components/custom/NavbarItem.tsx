@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-// import { Icons } from "@/components/icons";
+import navBike from "/nav-bike.jpg";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -64,25 +64,43 @@ const NavbarItem = () => {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    {/* <Icons.logo className="h-6 w-6" /> */}
+                    <img src={navBike} alt="nav bike" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      Bike Nest
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components built with Radix UI and
-                      Tailwind CSS.
+                      Ride Freely, Explore Boundlessly – Your Journey Starts
+                      with BikeNest
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/about" title="Our Mission">
+                At BikeNest, our mission is to make transportation accessible,
+                affordable, and sustainable by providing a reliable bike rental
+                service. We are committed to promoting eco-friendly mobility
+                solutions that cater to diverse needs, whether for daily
+                commuting, leisure rides, or exploring new destinations. Our
+                goal is to empower individuals and communities by offering a
+                convenient and environmentally responsible alternative to
+                traditional transportation methods.
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
+              <ListItem href="/about" title="Our Vision">
+                At BikeNest, our vision is to lead the way in transforming urban
+                transportation by making cycling the preferred mode of travel
+                for everyone. We envision a future where cities are greener,
+                healthier, and more connected, with cycling at the heart of this
+                transformation. By providing innovative and accessible bike
+                rental solutions, we aim to reduce the reliance on fossil fuels,
+                decrease traffic congestion, and promote a culture of
+                sustainability.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/about" title="Contribution">
+                At BikeNest, we are dedicated to making a meaningful
+                contribution to the environment, our communities, and the
+                broader goal of sustainable living. Our commitment extends
+                beyond just providing a bike rental service; it's about creating
+                a lasting positive impact on the world around us.
               </ListItem>
             </ul>
           </NavigationMenuContent>
