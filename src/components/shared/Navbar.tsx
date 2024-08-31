@@ -5,13 +5,20 @@ import logoVid from "/logo-vid.webm";
 import NavbarItem from "../custom/NavbarItem";
 const Navbar = () => {
   return (
-    <div className=" max-w-7xl mx-auto flex justify-between py-5 font-bold">
+    <div className="max-w-7xl mx-auto flex justify-between py-5 font-bold">
       {/* logo div  */}
       <div>
         {" "}
         <Link to={"/"}>
           {/* Bike Nest */}
-          <video src={logoVid}></video>
+          <video
+            src={logoVid}
+            autoPlay
+            loop
+            muted
+            className="h-20 rounded"
+          ></video>
+
           {/* <img className="h-10 rounded" src={logo} alt="Bike Nest Logo" /> */}
         </Link>
       </div>
