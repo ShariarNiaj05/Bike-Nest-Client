@@ -1,4 +1,4 @@
-import { Menubar, MenubarMenu, MenubarTrigger } from "@radix-ui/react-menubar";
+import { Menubar, MenubarMenu } from "@radix-ui/react-menubar";
 import { Link } from "react-router-dom";
 import logo from "/logo.png";
 import NavbarItem from "../custom/NavbarItem";
