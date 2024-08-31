@@ -1,6 +1,7 @@
 import { Menubar, MenubarMenu } from "@radix-ui/react-menubar";
 import { Link } from "react-router-dom";
 import logo from "/logo.png";
+import logoVid from "/logo-vid.webm";
 import NavbarItem from "../custom/NavbarItem";
 const Navbar = () => {
   return (
@@ -10,7 +11,8 @@ const Navbar = () => {
         {" "}
         <Link to={"/"}>
           {/* Bike Nest */}
-          <img className="h-10 rounded" src={logo} alt="Bike Nest Logo" />
+          <video src={logoVid}></video>
+          {/* <img className="h-10 rounded" src={logo} alt="Bike Nest Logo" /> */}
         </Link>
       </div>
 
