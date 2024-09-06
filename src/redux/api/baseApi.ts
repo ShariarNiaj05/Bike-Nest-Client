@@ -6,17 +6,17 @@ const baseUrl = "http://localhost:5000/api";
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
-  tagTypes: ["Product"],
+  tagTypes: ["bike"],
   endpoints: (builder) => ({
-    product: builder.query({
+    getBikes: builder.query({
       query: () => ({
-        url: "/product",
+        url: "/bikes",
         method: "GET",
       }),
-      providesTags: ["Product"],
+      providesTags: ["bike"],
       // pollingInterval: 30000,
     }),
   }),
 });
 
-export const { useProductQuery } = baseApi;
+export const { useGetBikesQuery } = baseApi;
