@@ -11,6 +11,17 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 // Sample Data
 const bikes = [
@@ -40,20 +51,17 @@ const bikes = [
 
 const AdminBikeManagement = () => {
   const [selectedBike, setSelectedBike] = useState(null);
+  const [bikeToDelete, setBikeToDelete] = useState(null);
 
-  // Handle Delete with Confirmation
-  const handleDelete = (id) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this bike?"
-    );
-    if (confirmDelete) {
-      // Perform delete operation
-      console.log("Deleted bike with ID:", id);
-    }
+  // Handle Delete Confirmation
+  const handleDelete = () => {
+    console.log("Deleted bike with ID:", bikeToDelete.id);
+    setBikeToDelete(null); // Clear the selected bike after deletion
   };
 
   // Handle Update (prefill the modal with bike data)
   const handleUpdate = (bike) => {
+    console.log("update bike id:", bike.id);
     setSelectedBike(bike); // Set the selected bike to be updated
   };
 
@@ -168,14 +176,35 @@ const AdminBikeManagement = () => {
                         </DialogFooter>
                       </DialogContent>
                     </Dialog>
-                    <Button
-                      variant="destructive"
-                      size="sm"
-                      onClick={() => handleDelete(bike.id)}
-                      className="ml-2"
-                    >
-                      Delete
-                    </Button>
+
+                    {/* Delete Button with Confirmation Dialog */}
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button
+                          variant="destructive"
+                          size="sm"
+                          className="ml-2"
+                          onClick={() => setBikeToDelete(bike)}
+                        >
+                          Delete
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently
+                            delete the bike from your inventory.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction onClick={handleDelete}>
+                            Delete
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </td>
                 </tr>
               ))}
