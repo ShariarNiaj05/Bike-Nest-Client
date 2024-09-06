@@ -32,11 +32,69 @@ const CouponsAndDiscounts = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-gray-700">
-          <h4 className="text-2xl font-semibold mb-4">How to Use a Coupon:</h4>
-          <p>1. Select your bike and proceed to the checkout.</p>
-          <p>2. Enter the coupon code in the designated coupon field.</p>
-          <p>3. Enjoy your discount and complete your payment.</p>
+        <div className="mt-12 bg-white rounded-lg shadow-lg p-8 border border-primary">
+          <h4 className="text-3xl font-semibold text-primary mb-6">
+            How to Use a Coupon
+          </h4>
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <svg
+                className="w-8 h-8 text-primary mr-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <p className="text-lg text-gray-800">
+                1. Select your bike and proceed to the checkout.
+              </p>
+            </div>
+            <div className="flex items-center">
+              <svg
+                className="w-8 h-8 text-primary mr-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <p className="text-lg text-gray-800">
+                2. Enter the coupon code in the designated coupon field.
+              </p>
+            </div>
+            <div className="flex items-center">
+              <svg
+                className="w-8 h-8 text-primary mr-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <p className="text-lg text-gray-800">
+                3. Enjoy your discount and complete your payment.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
