@@ -15,8 +15,8 @@ const Home = () => {
       <Testimonials />
       <WhyChooseUs />
       <CouponsAndDiscounts />
-
       <Contact />
+
       <ComingSoon />
       <button>Delete</button>
       <button>Add</button>
