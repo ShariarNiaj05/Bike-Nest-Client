@@ -69,8 +69,8 @@ const DashboardLanding = () => {
               <div className="p-4">
                 {/* Center the form contents */}
                 <div className="flex flex-col space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <Label htmlFor="name" className="w-1/3 text-right">
+                  <div className="items-center space-x-4">
+                    <Label htmlFor="name" className="w-1/3 text-center">
                       Name
                     </Label>
                     <Input
