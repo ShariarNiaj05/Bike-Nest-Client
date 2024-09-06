@@ -5,7 +5,7 @@ const DashboardLayout = () => {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-primary text-white flex-shrink-0">
+      <aside className=" text-white flex-shrink-0">
         <SideBar />
       </aside>
 
