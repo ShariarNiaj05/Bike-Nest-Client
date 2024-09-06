@@ -1,4 +1,5 @@
 import Contact from "@/components/custom/Contact";
+import CouponsAndDiscounts from "@/components/custom/CouponsAndDiscounts";
 import FeaturedSections from "@/components/custom/FeaturedSections";
 import HeroSection from "@/components/custom/HeroSection";
 import Testimonials from "@/components/custom/Testimonials";
@@ -13,6 +14,7 @@ const Home = () => {
       <FeaturedSections />
       <Testimonials />
       <WhyChooseUs />
+      <CouponsAndDiscounts />
 
       <Contact />
       <ComingSoon />
