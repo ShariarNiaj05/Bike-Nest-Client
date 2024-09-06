@@ -1,5 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 
 const HeroSection = () => {
   return (
@@ -10,9 +11,9 @@ const HeroSection = () => {
           "url('https://github.com/ShariarNiaj05/Bike-Nest-Client/blob/main/src/assets/nav-bike.jpg?raw=true')",
       }}
     >
-      {/* Optional video background */}
+      {/* video background */}
       {/* <video className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop>
-        <source src="/path-to-your-bike-video.mp4" type="video/mp4" />
+        <source src="https://www.youtube.com/watch?v=U9AnEaC1J8k" type="video/mp4" />
       </video> */}
       <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
       {/* Overlay for better text readability */}
@@ -22,16 +23,17 @@ const HeroSection = () => {
           Choose from a variety of bikes suited to your needs
         </p>
 
-        <div className="flex items-center w-full max-w-md bg-white rounded-md overflow-hidden">
+        <div className="flex items-center w-full max-w-md bg-white rounded-md overflow-hidden p-3 gap-2 my-5">
           <Input
             type="text"
             placeholder="Search for bikes..."
-            className="flex-grow p-4 text-gray-900"
+            className="flex-grow p-4 text-gray-900 px-2"
           />
-          <button className="bg-primary text-white p-4">
+          <button className="bg-primary text-white px-2 py-2 rounded-full">
             <FaSearch />
           </button>
         </div>
+        <Button>Browse All Bikes</Button>
       </div>
     </div>
   );
