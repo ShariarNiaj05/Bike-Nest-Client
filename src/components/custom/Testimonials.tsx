@@ -11,21 +11,24 @@ const testimonials: Testimonial[] = [
     name: "John Doe",
     review:
       "Great bike rental service! The bikes were in top condition and the booking process was seamless.",
-    image: "/images/john.jpg", // Optional profile image
+    image:
+      "https://img.freepik.com/free-photo/young-male-posing-isolated-against-blank-studio-wall_273609-12356.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1725408000&semt=ais_hybrid",
   },
   {
     id: 2,
     name: "Jane Smith",
     review:
       "Had an amazing experience riding through the city. Will definitely rent again!",
-    image: "/images/jane.jpg",
+    image:
+      "https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg",
   },
   {
     id: 3,
     name: "Sam Wilson",
     review:
       "Affordable prices and excellent customer service. Highly recommend!",
-    image: "/images/sam.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR48kgQNS7jHuRO0_X6Qv5PCh-chkE0_E8uRA&s",
   },
 ];
 
