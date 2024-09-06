@@ -8,7 +8,7 @@ const BikeCard = ({ bike }) => {
     navigate(`/bikes/${id}`); // Redirect to bike detail page
   };
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center">
+    <div className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center border border-primary transform transition-transform duration-300 hover:scale-105">
       <img
         src={bike.image}
         alt={bike.brand}
