@@ -19,6 +19,14 @@ const Contact = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Implement form submission logic here
+    setFormStatus("Thank you for reaching out! We will get back to you soon.");
+    // Reset form
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <Container>
       <div className="my-32">
