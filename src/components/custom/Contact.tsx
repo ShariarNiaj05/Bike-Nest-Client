@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Container from "../shared/Container";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
@@ -11,6 +11,14 @@ const Contact = () => {
     message: "",
   });
   const [formStatus, setFormStatus] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
   return (
     <Container>
       <div className="my-32">
