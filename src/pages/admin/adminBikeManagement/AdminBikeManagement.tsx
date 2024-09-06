@@ -61,15 +61,96 @@ const AdminBikeManagement = () => {
 
   // Handle Update (prefill the modal with bike data)
   const handleUpdate = (bike) => {
-    console.log("update bike id:", bike.id);
     setSelectedBike(bike); // Set the selected bike to be updated
+  };
+
+  // Handle Add New Bike
+  const handleAddNewBike = () => {
+    setSelectedBike(null); // Reset the selected bike to null for creating a new bike
   };
 
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <h1 className="text-4xl font-bold text-center mb-8 text-primary">
-        Manage Bike (Admin)
+        Bike Management
       </h1>
+
+      {/* Add New Bike Button */}
+      <div className="mb-6 text-right">
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline" onClick={handleAddNewBike}>
+              Add New Bike
+            </Button>
+          </DialogTrigger>
+
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>
+                {selectedBike ? `Update ${selectedBike.name}` : "Add New Bike"}
+              </DialogTitle>
+            </DialogHeader>
+            <form className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  id="name"
+                  defaultValue={selectedBike?.name || ""}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="description">Description</Label>
+                <Input
+                  id="description"
+                  defaultValue={selectedBike?.description || ""}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="price">Price</Label>
+                <Input
+                  id="price"
+                  type="number"
+                  defaultValue={selectedBike?.price || ""}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="cc">CC</Label>
+                <Input
+                  id="cc"
+                  type="number"
+                  defaultValue={selectedBike?.cc || ""}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="year">Year</Label>
+                <Input
+                  id="year"
+                  type="number"
+                  defaultValue={selectedBike?.year || ""}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="brand">Brand</Label>
+                <Input
+                  id="brand"
+                  defaultValue={selectedBike?.brand || ""}
+                  required
+                />
+              </div>
+            </form>
+            <DialogFooter>
+              <Button type="submit">
+                {selectedBike ? "Update Bike" : "Add Bike"}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      </div>
 
       <Card className="max-w-6xl mx-auto">
         <CardHeader>
