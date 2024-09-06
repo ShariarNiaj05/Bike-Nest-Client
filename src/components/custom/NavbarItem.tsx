@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import navBike from "/nav-bike.jpg";
+import navBike from "../../assets/nav-bike.jpg";
 import {
   NavigationMenu,
   NavigationMenuContent,

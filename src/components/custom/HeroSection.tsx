@@ -5,7 +5,10 @@ const HeroSection = () => {
   return (
     <div
       className="relative h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('../path-to-your-bike-image.jpg')" }}
+      style={{
+        backgroundImage:
+          "url('https://github.com/ShariarNiaj05/Bike-Nest-Client/blob/main/src/assets/nav-bike.jpg?raw=true')",
+      }}
     >
       {/* Optional video background */}
       {/* <video className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop>
