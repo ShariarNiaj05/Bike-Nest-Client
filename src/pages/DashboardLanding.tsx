@@ -52,12 +52,13 @@ const DashboardLanding = () => {
           {/* Drawer Trigger for Update Profile */}
           <Drawer>
             <DrawerTrigger asChild>
-              <Button variant="outline" className="mt-6">
+              <Button variant="outline" className="mt-6 ">
                 Update Profile
               </Button>
             </DrawerTrigger>
 
-            <DrawerContent>
+            {/* Set the width to 50% */}
+            <DrawerContent className="w-full max-w-lg mx-auto">
               <DrawerHeader>
                 <DrawerTitle>Update Profile</DrawerTitle>
                 <DrawerDescription>
@@ -65,46 +66,49 @@ const DashboardLanding = () => {
                 </DrawerDescription>
               </DrawerHeader>
 
-              <div className="grid gap-4 py-4">
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="name" className="text-right">
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    defaultValue={user.name}
-                    className="col-span-3"
-                  />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="email" className="text-right">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    defaultValue={user.email}
-                    className="col-span-3"
-                  />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="phone" className="text-right">
-                    Phone
-                  </Label>
-                  <Input
-                    id="phone"
-                    defaultValue={user.phone}
-                    className="col-span-3"
-                  />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="address" className="text-right">
-                    Address
-                  </Label>
-                  <Input
-                    id="address"
-                    defaultValue={user.address}
-                    className="col-span-3"
-                  />
+              <div className="p-4">
+                {/* Center the form contents */}
+                <div className="flex flex-col space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <Label htmlFor="name" className="w-1/3 text-right">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      defaultValue={user.name}
+                      className="flex-1"
+                    />
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <Label htmlFor="email" className="w-1/3 text-right">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      defaultValue={user.email}
+                      className="flex-1"
+                    />
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <Label htmlFor="phone" className="w-1/3 text-right">
+                      Phone
+                    </Label>
+                    <Input
+                      id="phone"
+                      defaultValue={user.phone}
+                      className="flex-1"
+                    />
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <Label htmlFor="address" className="w-1/3 text-right">
+                      Address
+                    </Label>
+                    <Input
+                      id="address"
+                      defaultValue={user.address}
+                      className="flex-1"
+                    />
+                  </div>
                 </div>
               </div>
 
