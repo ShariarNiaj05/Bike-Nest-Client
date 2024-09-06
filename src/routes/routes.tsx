@@ -9,6 +9,7 @@ import { routeGenerator } from "@/utils/routeGenerator";
 
 import { createBrowserRouter } from "react-router-dom";
 import { adminPaths } from "./admin.routes";
+import DashboardLayout from "@/layout/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -25,10 +26,10 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/admin",
+        path: "/dashboard",
         element: (
           <ProtectedRoute role="admin">
-            <MainLayout />
+            <DashboardLayout />
           </ProtectedRoute>
         ),
         children: routeGenerator(adminPaths),

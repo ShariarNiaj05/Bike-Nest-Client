@@ -1,12 +1,14 @@
+import DashboardLayout from "@/layout/DashboardLayout";
 import AddBulkBike from "@/pages/admin/adminBikeManagement/AddBulkBike";
 import AddSingleBike from "@/pages/admin/adminBikeManagement/AddSingleBike";
-import AdminDashboard from "@/pages/admin/AdminDashboard";
+// import AdminDashboard from "@/pages/admin/AdminDashboard";
 
 export const adminPaths = [
   {
-    name: "Dashboard",
-    path: "dashboard",
-    element: <AdminDashboard />,
+    name: "Admin",
+    path: "admin",
+    // element: <AdminDashboard />,
+    element: <DashboardLayout />,
   },
   {
     name: "Bike Management",
