@@ -23,32 +23,6 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-// Sample Data
-const bikes = [
-  {
-    id: 1,
-    name: "Yamaha R15",
-    description: "Sport Bike",
-    price: 1500,
-    cc: 150,
-    year: 2021,
-    model: "R15",
-    brand: "Yamaha",
-    availability: "Available",
-  },
-  {
-    id: 2,
-    name: "Honda CBR600",
-    description: "Racing Bike",
-    price: 3000,
-    cc: 600,
-    year: 2019,
-    model: "CBR600",
-    brand: "Honda",
-    availability: "Not Available",
-  },
-];
-
 const AdminBikeManagement = () => {
   const [selectedBike, setSelectedBike] = useState(null);
   const [bikeToDelete, setBikeToDelete] = useState(null);
@@ -296,5 +270,31 @@ const AdminBikeManagement = () => {
     </div>
   );
 };
+
+// Sample Data
+const bikes = [
+  {
+    id: 1,
+    name: "Yamaha R15",
+    description: "Sport Bike",
+    price: 1500,
+    cc: 150,
+    year: 2021,
+    model: "R15",
+    brand: "Yamaha",
+    availability: "Available",
+  },
+  {
+    id: 2,
+    name: "Honda CBR600",
+    description: "Racing Bike",
+    price: 3000,
+    cc: 600,
+    year: 2019,
+    model: "CBR600",
+    brand: "Honda",
+    availability: "Not Available",
+  },
+];
 
 export default AdminBikeManagement;
