@@ -1,6 +1,6 @@
 import { Menubar, MenubarMenu } from "@radix-ui/react-menubar";
 import { Link } from "react-router-dom";
-import logo from "/logo.png";
+import logo from "../../assets/logo.png";
 import NavbarItem from "../custom/NavbarItem";
 const Navbar = () => {
   return (
