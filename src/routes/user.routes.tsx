@@ -1,3 +1,5 @@
+import MyRentals from "@/pages/user/MyRentals";
+
 export const userPaths = [
   /*  {
       name: "",
@@ -8,9 +10,9 @@ export const userPaths = [
     name: "Bike Management",
     children: [
       {
-        name: "Add Single Bike",
-        path: "add-single-bike",
-        element: <AddSingleBike />,
+        name: "My Rentals",
+        path: "my-rentals",
+        element: <MyRentals />,
       },
       {
         name: "Add Bulk Bike",
