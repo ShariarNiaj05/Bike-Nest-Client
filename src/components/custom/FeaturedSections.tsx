@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-import { Button } from "../ui/button";
 import BikeCard from "./BikeCard";
 
 const FeaturedSections = () => {
