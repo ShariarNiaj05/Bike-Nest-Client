@@ -14,11 +14,6 @@ export const userPaths = [
         path: "my-rentals",
         element: <MyRentals />,
       },
-      {
-        name: "Add Bulk Bike",
-        path: "add-bulk-bike",
-        element: <AddBulkBike />,
-      },
     ],
   },
 ];

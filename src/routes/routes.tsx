@@ -12,6 +12,7 @@ import { adminPaths } from "./admin.routes";
 import DashboardLayout from "@/layout/DashboardLayout";
 import DashboardLanding from "@/pages/DashboardLanding";
 import UpdateProfile from "@/pages/UpdateProfile";
+import { userPaths } from "./user.routes";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,25 @@ const router = createBrowserRouter([
     ],
   },
 
+  {
+    path: "/dashboard",
+    element: (
+      <ProtectedRoute role="user">
+        <DashboardLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      {
+        path: "",
+        element: <DashboardLanding />,
+      },
+      {
+        path: "update-profile",
+        element: <UpdateProfile />,
+      },
+      ...routeGenerator(userPaths),
+    ],
+  },
   {
     path: "/login",
     element: <Login />,
