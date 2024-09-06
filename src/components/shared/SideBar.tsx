@@ -51,7 +51,7 @@ const SideBar = () => {
             <SheetClose asChild>
               <Link
                 to="/dashboard"
-                className="text-lg font-semibold hover:underline"
+                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
               >
                 Home
               </Link>
@@ -61,7 +61,7 @@ const SideBar = () => {
             <SheetClose asChild>
               <Link
                 to="/dashboard/admin-bike-management"
-                className="text-lg font-semibold hover:underline"
+                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
               >
                 Manage Bike
               </Link>
@@ -69,7 +69,7 @@ const SideBar = () => {
             <SheetClose asChild>
               <Link
                 to="/dashboard/add-single-bike"
-                className="text-lg font-semibold hover:underline"
+                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
               >
                 Add Single Bike
               </Link>
@@ -77,7 +77,7 @@ const SideBar = () => {
             <SheetClose asChild>
               <Link
                 to="/dashboard/add-bulk-bike"
-                className="text-lg font-semibold hover:underline"
+                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
               >
                 Add Bulk Bike
               </Link>
@@ -88,7 +88,7 @@ const SideBar = () => {
             <SheetClose asChild>
               <Link
                 to="/dashboard/my-rentals"
-                className="text-lg font-semibold hover:underline"
+                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
               >
                 My Rentals
               </Link>
