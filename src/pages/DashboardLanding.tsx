@@ -70,39 +70,27 @@ const DashboardLanding = () => {
                 {/* Center the form contents */}
                 <div className="flex flex-col space-y-4">
                   <div className="items-center space-x-4">
-                    <Label htmlFor="name" className="w-1/3 text-center">
-                      Name
-                    </Label>
                     <Input
                       id="name"
                       defaultValue={user.name}
                       className="flex-1"
                     />
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <Label htmlFor="email" className="w-1/3 text-right">
-                      Email
-                    </Label>
+                  <div className="items-center space-x-4">
                     <Input
                       id="email"
                       defaultValue={user.email}
                       className="flex-1"
                     />
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <Label htmlFor="phone" className="w-1/3 text-right">
-                      Phone
-                    </Label>
+                  <div className="items-center space-x-4">
                     <Input
                       id="phone"
                       defaultValue={user.phone}
                       className="flex-1"
                     />
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <Label htmlFor="address" className="w-1/3 text-right">
-                      Address
-                    </Label>
+                  <div className="items-center space-x-4">
                     <Input
                       id="address"
                       defaultValue={user.address}
