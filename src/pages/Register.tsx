@@ -1,17 +1,20 @@
 const Register = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-lg bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg overflow-hidden flex">
+        {/* Image Section */}
         <div className="w-full md:w-1/2">
           <img
-            src="https://img.freepik.com/premium-vector/create-new-account-concept-illustration_269560-19.jpg?w=360"
+            src="https://cdni.iconscout.com/illustration/premium/thumb/sign-up-illustration-download-in-svg-png-gif-file-formats--log-register-form-user-interface-pack-design-development-illustrations-6430773.png?f=webp"
             alt="Sign Up"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="w-full md:w-1/2 p-8">
-          <h2 className="text-3xl font-bold text-center mb-6 text-primary">
-            Create an Account
+
+        {/* Form Section */}
+        <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
+          <h2 className="text-4xl font-bold text-center mb-8 text-primary">
+            Create An Account
           </h2>
           <form className="space-y-6">
             <div>
@@ -24,8 +27,6 @@ const Register = () => {
               <input
                 type="text"
                 name="name"
-                // value={formData.name}
-                // onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
@@ -40,8 +41,6 @@ const Register = () => {
               <input
                 type="email"
                 name="email"
-                // value={formData.email}
-                // onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
@@ -56,8 +55,6 @@ const Register = () => {
               <input
                 type="password"
                 name="password"
-                // value={formData.password}
-                // onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
@@ -72,8 +69,6 @@ const Register = () => {
               <input
                 type="text"
                 name="phone"
-                // value={formData.phone}
-                // onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
@@ -88,8 +83,6 @@ const Register = () => {
               <input
                 type="text"
                 name="address"
-                // value={formData.address}
-                // onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
