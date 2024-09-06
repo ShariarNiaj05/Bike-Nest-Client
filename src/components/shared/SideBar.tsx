@@ -60,6 +60,14 @@ const SideBar = () => {
             {/* ========================================admin routes from dashboard ========================== */}
             <SheetClose asChild>
               <Link
+                to="/dashboard/admin-bike-management"
+                className="text-lg font-semibold hover:underline"
+              >
+                Manage Bike
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
+              <Link
                 to="/dashboard/add-single-bike"
                 className="text-lg font-semibold hover:underline"
               >
