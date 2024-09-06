@@ -16,7 +16,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-gray-100 rounded-lg shadow-lg p-6 flex flex-col items-center  border border-primary transform transition-transform duration-300 hover:scale-105"
+              className="bg-accent rounded-lg shadow-lg p-6 flex flex-col items-center  border border-primary transform transition-transform duration-300 hover:scale-105"
             >
               {testimonial.image && (
                 <img

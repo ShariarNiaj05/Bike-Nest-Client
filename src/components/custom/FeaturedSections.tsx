@@ -3,7 +3,7 @@ import BikeCard from "./BikeCard";
 
 const FeaturedSections = () => {
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-accent">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary mb-8">
           Available Bikes

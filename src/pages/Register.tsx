@@ -1,6 +1,6 @@
 const Register = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <div className="flex items-center justify-center h-screen bg-accent">
       <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg overflow-hidden flex">
         {/* Image Section */}
         <div className="w-full md:w-1/2">

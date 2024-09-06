@@ -1,6 +1,6 @@
 const Login = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <div className="flex items-center justify-center h-screen bg-accent">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
         <img
           src="https://img.freepik.com/premium-vector/sign-up-concept-illustration-free-vector_269560-9.jpg"

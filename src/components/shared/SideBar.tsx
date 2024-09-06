@@ -37,7 +37,7 @@ const SideBar = () => {
         {/* Sheet Content */}
         <SheetContent
           side="left"
-          className="w-64 bg-gray-100"
+          className="w-64 bg-accent"
           onCloseAutoFocus={(e) => e.preventDefault()} // Prevents autofocus on close
         >
           <SheetHeader>

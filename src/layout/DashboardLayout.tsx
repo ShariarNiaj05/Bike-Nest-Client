@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-accent">
       {/* Sidebar */}
       <aside className=" text-white flex-shrink-0">
         <SideBar />
