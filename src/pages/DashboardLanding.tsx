@@ -1,13 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const DashboardLanding = () => {
-  const navigate = useNavigate();
-  // Function to navigate to the profile update page
-  const handleUpdateProfile = () => {
-    navigate("/dashboard/update-profile");
-  };
-
   const user = {
     name: "John Doe",
     email: "johndoe@example.com",
@@ -43,13 +48,74 @@ const DashboardLanding = () => {
               <p className="text-gray-600">{user.address}</p>
             </div>
           </div>
-          <Button
-            onClick={handleUpdateProfile}
-            variant="outline"
-            className="mt-6"
-          >
-            Update Profile
-          </Button>
+
+          {/* Drawer Trigger for Update Profile */}
+          <Drawer>
+            <DrawerTrigger asChild>
+              <Button variant="outline" className="mt-6">
+                Update Profile
+              </Button>
+            </DrawerTrigger>
+
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle>Update Profile</DrawerTitle>
+                <DrawerDescription>
+                  Update your profile information below.
+                </DrawerDescription>
+              </DrawerHeader>
+
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="name" className="text-right">
+                    Name
+                  </Label>
+                  <Input
+                    id="name"
+                    defaultValue={user.name}
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="email" className="text-right">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    defaultValue={user.email}
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="phone" className="text-right">
+                    Phone
+                  </Label>
+                  <Input
+                    id="phone"
+                    defaultValue={user.phone}
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="address" className="text-right">
+                    Address
+                  </Label>
+                  <Input
+                    id="address"
+                    defaultValue={user.address}
+                    className="col-span-3"
+                  />
+                </div>
+              </div>
+
+              <DrawerFooter>
+                <Button type="submit">Save changes</Button>
+                <DrawerClose asChild>
+                  <Button variant="outline">Cancel</Button>
+                </DrawerClose>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
         </div>
       </div>
     </div>
