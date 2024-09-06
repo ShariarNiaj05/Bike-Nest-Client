@@ -11,6 +11,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { adminPaths } from "./admin.routes";
 import DashboardLayout from "@/layout/DashboardLayout";
 import DashboardLanding from "@/pages/DashboardLanding";
+import UpdateProfile from "@/pages/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <DashboardLanding />,
+      },
+      {
+        path: "update-profile",
+        element: <UpdateProfile />,
       },
       ...routeGenerator(adminPaths),
     ],
