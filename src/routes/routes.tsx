@@ -10,6 +10,7 @@ import { routeGenerator } from "@/utils/routeGenerator";
 import { createBrowserRouter } from "react-router-dom";
 import { adminPaths } from "./admin.routes";
 import DashboardLayout from "@/layout/DashboardLayout";
+import DashboardLanding from "@/pages/DashboardLanding";
 
 const router = createBrowserRouter([
   {
@@ -28,13 +29,19 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "dashboard",
+    path: "/dashboard",
     element: (
       <ProtectedRoute role="admin">
         <DashboardLayout />
       </ProtectedRoute>
     ),
-    children: routeGenerator(adminPaths),
+    children: [
+      {
+        path: "",
+        element: <DashboardLanding />,
+      },
+      ...routeGenerator(adminPaths),
+    ],
   },
 
   {

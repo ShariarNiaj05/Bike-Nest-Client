@@ -1,13 +1,13 @@
 import AddBulkBike from "@/pages/admin/adminBikeManagement/AddBulkBike";
 import AddSingleBike from "@/pages/admin/adminBikeManagement/AddSingleBike";
-import DashboardLanding from "@/pages/DashboardLanding";
+// import DashboardLanding from "@/pages/DashboardLanding";
 
 export const adminPaths = [
-  {
+  /*  {
     name: "",
     path: "",
     element: <DashboardLanding />,
-  },
+  }, */
   {
     name: "Bike Management",
     children: [
