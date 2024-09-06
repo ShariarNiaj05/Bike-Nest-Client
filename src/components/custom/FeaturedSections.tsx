@@ -16,36 +16,40 @@ const FeaturedSections = () => {
     </section>
   );
 };
-
-interface Bike {
-  _id: number;
+export type TBike = {
+  _id: string;
   brand: string;
   model: string;
-  image: string;
-  price: number;
-}
+  imageUrl: string;
+  pricePerHour: number;
+  isAvailable?: boolean; // Defaults to true if not provided
+  cc: number;
+  year: number;
+  name: string;
+  description: string;
+};
 
-const bikes: Bike[] = [
+const bikes: TBike[] = [
   {
-    _id: 1,
+    _id: "1",
     brand: "Trek",
     model: "FX 3 Disc",
-    image: "/images/trek-bike.jpg",
-    price: 1200,
+    imageUrl: "/images/trek-bike.jpg",
+    pricePerHour: 1200,
   },
   {
-    _id: 2,
+    _id: "2",
     brand: "Giant",
     model: "Escape 3",
-    image: "/images/giant-bike.jpg",
-    price: 800,
+    imageUrl: "/images/giant-bike.jpg",
+    pricePerHour: 800,
   },
   {
-    _id: 3,
+    _id: "3",
     brand: "Specialized",
     model: "Sirrus X 4.0",
-    image: "/images/specialized-bike.jpg",
-    price: 1500,
+    imageUrl: "/images/specialized-bike.jpg",
+    pricePerHour: 1500,
   },
 ];
 
