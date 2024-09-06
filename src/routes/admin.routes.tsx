@@ -1,6 +1,7 @@
 import AddBulkBike from "@/pages/admin/adminBikeManagement/AddBulkBike";
 import AddSingleBike from "@/pages/admin/adminBikeManagement/AddSingleBike";
 import AdminBikeManagement from "@/pages/admin/adminBikeManagement/AdminBikeManagement";
+import ReturnBike from "@/pages/admin/ReturnBike";
 // import DashboardLanding from "@/pages/DashboardLanding";
 
 export const adminPaths = [
@@ -28,5 +29,10 @@ export const adminPaths = [
         element: <AddBulkBike />,
       },
     ],
+  },
+  {
+    name: "Return Bike",
+    path: "return-bike",
+    element: <ReturnBike />,
   },
 ];
