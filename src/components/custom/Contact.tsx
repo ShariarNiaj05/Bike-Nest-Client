@@ -1,9 +1,16 @@
+import { useState } from "react";
 import Container from "../shared/Container";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import Title from "./Title";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [formStatus, setFormStatus] = useState("");
   return (
     <Container>
       <div className="my-32">
