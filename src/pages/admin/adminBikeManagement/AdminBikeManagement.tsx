@@ -68,7 +68,7 @@ const AdminBikeManagement = () => {
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <h1 className="text-4xl font-bold text-center mb-8 text-primary">
-        Bike Management
+        Manage Bike (Admin)
       </h1>
 
       <Card className="max-w-6xl mx-auto">

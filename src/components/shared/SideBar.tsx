@@ -63,7 +63,7 @@ const SideBar = () => {
                 to="/dashboard/admin-bike-management"
                 className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
               >
-                Manage Bike
+                Manage Bike (Admin)
               </Link>
             </SheetClose>
             <SheetClose asChild>
