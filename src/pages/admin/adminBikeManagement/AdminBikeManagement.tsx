@@ -35,6 +35,7 @@ const AdminBikeManagement = () => {
 
   // Handle Update (prefill the modal with bike data)
   const handleUpdate = (bike) => {
+    console.log("update bike id:", bike.id);
     setSelectedBike(bike); // Set the selected bike to be updated
   };
 
@@ -50,7 +51,7 @@ const AdminBikeManagement = () => {
       </h1>
 
       {/* Add New Bike Button */}
-      <div className="mb-6 text-right">
+      <div className="mb-6 flex justify-center">
         <Dialog>
           <DialogTrigger asChild>
             <Button variant="outline" onClick={handleAddNewBike}>
