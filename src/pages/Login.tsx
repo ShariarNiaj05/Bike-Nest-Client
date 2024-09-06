@@ -3,9 +3,9 @@ const Login = () => {
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
         <img
-          src="https://nordvpn.com/wp-content/uploads/blog-social-nordvpn-login-and-sign-up-process-explained-1200x628-2.png"
+          src="https://img.freepik.com/premium-vector/sign-up-concept-illustration-free-vector_269560-9.jpg"
           alt="Sign In"
-          className="w-full h-48 object-cover"
+          className="w-full h-68 object-cover"
         />
         <div className="p-6">
           <h2 className="text-4xl font-bold text-center mb-8 text-primary">
@@ -46,7 +46,7 @@ const Login = () => {
               type="submit"
               className="bg-primary text-white py-2 px-4 rounded-md w-full hover:bg-opacity-90 transition-colors"
             >
-              Sign In
+              Login
             </button>
           </form>
         </div>
