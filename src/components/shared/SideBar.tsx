@@ -82,6 +82,14 @@ const SideBar = () => {
                 Add Bulk Bike
               </Link>
             </SheetClose>
+            <SheetClose asChild>
+              <Link
+                to="/dashboard/return-bike"
+                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
+              >
+                Return Bike
+              </Link>
+            </SheetClose>
             {/* ========================================admin routes from dashboard ========================== */}
 
             {/* ========================================user routes from dashboard ========================== */}
