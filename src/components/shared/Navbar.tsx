@@ -15,7 +15,7 @@ const Navbar = () => {
       </div>
 
       {/* pages div  */}
-      <div>
+      <div className="z-50">
         <Menubar>
           <MenubarMenu>
             <NavbarItem />
