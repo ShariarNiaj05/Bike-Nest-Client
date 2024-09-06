@@ -1,10 +1,12 @@
 import Contact from "@/components/custom/Contact";
+import HeroSection from "@/components/custom/HeroSection";
 import ComingSoon from "@/components/shared/ComingSoon";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
   return (
     <div>
+      <HeroSection />
       <Contact />
       <ComingSoon />
       <button>Delete</button>
