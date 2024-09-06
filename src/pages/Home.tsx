@@ -2,6 +2,7 @@ import Contact from "@/components/custom/Contact";
 import FeaturedSections from "@/components/custom/FeaturedSections";
 import HeroSection from "@/components/custom/HeroSection";
 import Testimonials from "@/components/custom/Testimonials";
+import WhyChooseUs from "@/components/custom/WhyChooseUs";
 import ComingSoon from "@/components/shared/ComingSoon";
 import { Button } from "@/components/ui/button";
 
@@ -11,6 +12,8 @@ const Home = () => {
       <HeroSection />
       <FeaturedSections />
       <Testimonials />
+      <WhyChooseUs />
+
       <Contact />
       <ComingSoon />
       <button>Delete</button>
