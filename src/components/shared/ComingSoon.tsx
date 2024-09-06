@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import comingSoonAnimation from "../../../public/comming-soon.json";
+import comingSoonAnimation from "../../assets/comming-soon.json";
 
 const defaultOptions = {
   loop: true,
