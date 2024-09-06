@@ -56,6 +56,8 @@ const SideBar = () => {
                 Home
               </Link>
             </SheetClose>
+
+            {/* ========================================admin routes from dashboard ========================== */}
             <SheetClose asChild>
               <Link
                 to="/dashboard/add-single-bike"
@@ -72,6 +74,18 @@ const SideBar = () => {
                 Add Bulk Bike
               </Link>
             </SheetClose>
+            {/* ========================================admin routes from dashboard ========================== */}
+
+            {/* ========================================user routes from dashboard ========================== */}
+            <SheetClose asChild>
+              <Link
+                to="/dashboard/my-rentals"
+                className="text-lg font-semibold hover:underline"
+              >
+                My Rentals
+              </Link>
+            </SheetClose>
+            {/* ========================================user routes from dashboard ========================== */}
           </div>
           {/* Close Button */}
           <SheetFooter>
