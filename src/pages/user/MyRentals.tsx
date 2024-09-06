@@ -42,6 +42,11 @@ const paidRentals = [
 const MyRentals = () => {
   return (
     <div className="bg-gray-100 min-h-screen p-6">
+      {/* Title */}
+      <h1 className="text-4xl font-bold text-center mb-8 text-primary">
+        My Rentals
+      </h1>
+
       <Tabs defaultValue="unpaid" className="w-full max-w-4xl mx-auto">
         <TabsList className="grid w-full grid-cols-2 mb-4">
           <TabsTrigger value="unpaid">Unpaid</TabsTrigger>
@@ -61,7 +66,7 @@ const MyRentals = () => {
             <CardContent className="overflow-x-auto">
               <table className="min-w-full table-auto border-collapse">
                 <thead>
-                  <tr className="bg-accent">
+                  <tr className="bg-gray-200">
                     <th className="px-4 py-2 text-left">Bike Name</th>
                     <th className="px-4 py-2 text-left">Start Time</th>
                     <th className="px-4 py-2 text-left">Return Time</th>
