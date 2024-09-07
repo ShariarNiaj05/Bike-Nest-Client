@@ -105,6 +105,7 @@ const NavbarItem = () => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           {/* User Routes */}
           <NavigationMenuItem>
@@ -120,21 +121,6 @@ const NavbarItem = () => {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-
-          {/* <NavigationMenuTrigger>User Pages</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent> */}
         </NavigationMenuItem>
 
         {/* Admin Routes */}
