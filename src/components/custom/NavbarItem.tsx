@@ -135,6 +135,15 @@ const NavbarItem = () => {
               <ListItem href="/admin/user-management" title="User Management">
                 Manage users and their roles within the system.
               </ListItem>
+              <ListItem
+                href="/admin/user-rentals-management"
+                title="Rentals Management"
+              >
+                Manage user's rentals within the system.
+              </ListItem>
+              <ListItem href="/admin/coupons" title="Rentals Management">
+                Creating and Managing coupon codes{" "}
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
