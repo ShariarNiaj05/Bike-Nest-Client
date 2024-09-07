@@ -136,6 +136,49 @@ const NavbarItem = () => {
             </ul>
           </NavigationMenuContent> */}
         </NavigationMenuItem>
+
+        {/* Admin Routes */}
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Admin Pages</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <ListItem href="/admin/bike-management" title="Bike Management">
+                Administer all the bikes in the system, including adding,
+                editing, or deleting bikes.
+              </ListItem>
+              <ListItem href="/admin/user-management" title="User Management">
+                Manage users and their roles within the system.
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        {/* Nested Example (Components) */}
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              <ListItem
+                href="/docs/primitives/alert-dialog"
+                title="Alert Dialog"
+              >
+                A modal dialog that interrupts the user with important content
+                and expects a response.
+              </ListItem>
+              <ListItem href="/docs/primitives/hover-card" title="Hover Card">
+                For sighted users to preview content available behind a link.
+              </ListItem>
+              <ListItem href="/docs/primitives/progress" title="Progress">
+                Displays an indicator showing the completion progress of a task,
+                typically displayed as a progress bar.
+              </ListItem>
+              <ListItem href="/docs/primitives/scroll-area" title="Scroll-area">
+                Visually or semantically separates content.
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
         <NavigationMenuItem>
           <Link to="/about">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
