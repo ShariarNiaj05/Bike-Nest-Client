@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button"; // Assuming you're using a Button component
+import { Button } from "@/components/ui/button";
 import { TBike } from "@/types";
 import { bikesData } from "./Bikes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -11,21 +11,33 @@ const BikeDetail = () => {
   // Find the bike based on the ID from the URL
   const bike = bikesData.find((bike: TBike) => bike._id === id);
 
-  const [selectedBikes, setSelectedBikes] = useState<TBike[]>([bike!]);
+  // Initialize state for selected bikes
+  const [selectedBikes, setSelectedBikes] = useState<TBike[]>([]);
+
+  useEffect(() => {
+    if (bike) {
+      // Initialize selected bikes based on the bike's brand
+      const brandBikes = bikesData.filter(
+        (b: TBike) => b.brand === bike.brand && b._id !== bike._id
+      );
+      setSelectedBikes([bike, ...brandBikes.slice(0, 2)]); // Include current bike and up to 2 more from the same brand
+    }
+  }, [bike]);
 
   const handleBookNow = () => {
     navigate(`/booking/${bike?._id}`);
   };
 
+  const handleAddToCompare = async () => {
+    // Perform server action here
+    // For example:
+    // await fetch('/api/add-to-compare', { method: 'POST', body: JSON.stringify({ bikeId: bike?._id }) });
+    // Update the dashboard or show a message
+  };
+
   if (!bike) {
     return <div>Bike not found</div>;
   }
-
-  const handleAddToCompare = (selectedBike: TBike) => {
-    if (selectedBikes.length < 3 && !selectedBikes.includes(selectedBike)) {
-      setSelectedBikes([...selectedBikes, selectedBike]);
-    }
-  };
 
   return (
     <div className="max-w-7xl mx-auto py-10">
@@ -81,7 +93,7 @@ const BikeDetail = () => {
             </Button>
             <Button
               className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg shadow-md hover:bg-gray-300 transition-all"
-              onClick={() => handleAddToCompare(bike)}
+              onClick={handleAddToCompare}
             >
               Add to Compare
             </Button>
