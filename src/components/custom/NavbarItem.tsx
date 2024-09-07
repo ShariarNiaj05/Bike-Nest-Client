@@ -186,6 +186,13 @@ const NavbarItem = () => {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link to="/contact">
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Contact Us
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
