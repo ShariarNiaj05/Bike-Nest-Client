@@ -75,7 +75,7 @@ const NavbarItem = () => {
                   </a>
                 </NavigationMenuLink>
               </li>
-              {/*  <ListItem href="/about" title="Our Mission">
+              <ListItem href="/about" title="Our Mission">
                 At BikeNest, our mission is to make transportation accessible,
                 affordable, and sustainable by providing a reliable bike rental
                 service. We are committed to promoting eco-friendly mobility
@@ -84,7 +84,7 @@ const NavbarItem = () => {
                 goal is to empower individuals and communities by offering a
                 convenient and environmentally responsible alternative to
                 traditional transportation methods.
-              </ListItem> */}
+              </ListItem>
               {/* <ListItem href="/about" title="Our Vision">
                 At BikeNest, our vision is to lead the way in transforming urban
                 transportation by making cycling the preferred mode of travel
