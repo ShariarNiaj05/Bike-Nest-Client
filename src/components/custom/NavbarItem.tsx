@@ -95,13 +95,13 @@ const NavbarItem = () => {
                 decrease traffic congestion, and promote a culture of
                 sustainability.
               </ListItem>
-              {/* <ListItem href="/about" title="Contribution">
+              <ListItem href="/about" title="Contribution">
                 At BikeNest, we are dedicated to making a meaningful
                 contribution to the environment, our communities, and the
                 broader goal of sustainable living. Our commitment extends
                 beyond just providing a bike rental service; it's about creating
                 a lasting positive impact on the world around us.
-              </ListItem> */}
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
