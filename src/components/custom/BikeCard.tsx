@@ -13,40 +13,42 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
       {/* Image section with gradient background */}
       <div className="w-full h-48 bg-gradient-to-r from-blue-500 to-primary rounded-md mb-4 overflow-hidden">
         <img
-          src={bike.imageUrl}
-          alt={bike.brand}
+          src={bike?.imageUrl}
+          alt={bike?.brand}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
         />
       </div>
 
       {/* Bike Name */}
-      <h3 className="text-2xl font-bold text-primary mb-2">{bike.name}</h3>
+      <h3 className="text-2xl font-bold text-primary mb-2">{bike?.name}</h3>
 
       {/* Bike Brand and Model */}
       <p className="text-gray-700 font-medium mb-2">
-        <span className="font-semibold text-gray-800">Brand:</span> {bike.brand}
+        <span className="font-semibold text-gray-800">Brand:</span>{" "}
+        {bike?.brand}
       </p>
       <p className="text-gray-700 font-medium mb-2">
-        <span className="font-semibold text-gray-800">Model:</span> {bike.model}
+        <span className="font-semibold text-gray-800">Model:</span>{" "}
+        {bike?.model}
       </p>
 
       {/* Bike CC and Year */}
       <p className="text-gray-700 font-medium mb-2">
-        <span className="font-semibold text-gray-800">CC:</span> {bike.cc}
+        <span className="font-semibold text-gray-800">CC:</span> {bike?.cc}
       </p>
       <p className="text-gray-700 font-medium mb-2">
-        <span className="font-semibold text-gray-800">Year:</span> {bike.year}
+        <span className="font-semibold text-gray-800">Year:</span> {bike?.year}
       </p>
 
       {/* Bike Price */}
       <p className="text-lg font-bold text-gray-900 mb-4">
-        Price: ${bike.pricePerHour}/hour
+        Price: ${bike?.pricePerHour}/hour
       </p>
 
       {/* View Details Button */}
       <Button
         className="px-6 py-2 bg-primary text-white rounded-lg shadow-md hover:bg-secondary hover:shadow-lg transition-all duration-300"
-        onClick={() => handleViewDetail(bike._id)}
+        onClick={() => handleViewDetail(bike?._id)}
       >
         View Details
       </Button>
