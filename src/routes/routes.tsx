@@ -33,10 +33,6 @@ const router = createBrowserRouter([
         path: "/bikes",
         element: <Bikes />,
       },
-      {
-        path: "/bikes/:id",
-        element: <BikeDetails />,
-      },
     ],
   },
 
@@ -55,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "update-profile",
         element: <UpdateProfile />,
+      },
+      {
+        path: "bikes/:id",
+        element: <BikeDetails />,
       },
       ...routeGenerator(adminPaths),
     ],
@@ -75,6 +75,10 @@ const router = createBrowserRouter([
       {
         path: "update-profile",
         element: <UpdateProfile />,
+      },
+      {
+        path: "bikes/:id",
+        element: <BikeDetails />,
       },
       ...routeGenerator(userPaths),
     ],
