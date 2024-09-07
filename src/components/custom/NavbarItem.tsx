@@ -85,7 +85,7 @@ const NavbarItem = () => {
                 convenient and environmentally responsible alternative to
                 traditional transportation methods.
               </ListItem>
-              {/* <ListItem href="/about" title="Our Vision">
+              <ListItem href="/about" title="Our Vision">
                 At BikeNest, our vision is to lead the way in transforming urban
                 transportation by making cycling the preferred mode of travel
                 for everyone. We envision a future where cities are greener,
@@ -94,7 +94,7 @@ const NavbarItem = () => {
                 rental solutions, we aim to reduce the reliance on fossil fuels,
                 decrease traffic congestion, and promote a culture of
                 sustainability.
-              </ListItem> */}
+              </ListItem>
               {/* <ListItem href="/about" title="Contribution">
                 At BikeNest, we are dedicated to making a meaningful
                 contribution to the environment, our communities, and the
