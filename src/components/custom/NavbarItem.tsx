@@ -75,7 +75,7 @@ const NavbarItem = () => {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/about" title="Our Mission">
+              {/*  <ListItem href="/about" title="Our Mission">
                 At BikeNest, our mission is to make transportation accessible,
                 affordable, and sustainable by providing a reliable bike rental
                 service. We are committed to promoting eco-friendly mobility
@@ -84,8 +84,8 @@ const NavbarItem = () => {
                 goal is to empower individuals and communities by offering a
                 convenient and environmentally responsible alternative to
                 traditional transportation methods.
-              </ListItem>
-              <ListItem href="/about" title="Our Vision">
+              </ListItem> */}
+              {/* <ListItem href="/about" title="Our Vision">
                 At BikeNest, our vision is to lead the way in transforming urban
                 transportation by making cycling the preferred mode of travel
                 for everyone. We envision a future where cities are greener,
@@ -94,14 +94,14 @@ const NavbarItem = () => {
                 rental solutions, we aim to reduce the reliance on fossil fuels,
                 decrease traffic congestion, and promote a culture of
                 sustainability.
-              </ListItem>
-              <ListItem href="/about" title="Contribution">
+              </ListItem> */}
+              {/* <ListItem href="/about" title="Contribution">
                 At BikeNest, we are dedicated to making a meaningful
                 contribution to the environment, our communities, and the
                 broader goal of sustainable living. Our commitment extends
                 beyond just providing a bike rental service; it's about creating
                 a lasting positive impact on the world around us.
-              </ListItem>
+              </ListItem> */}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
