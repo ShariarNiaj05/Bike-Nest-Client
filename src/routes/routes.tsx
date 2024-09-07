@@ -13,6 +13,7 @@ import DashboardLayout from "@/layout/DashboardLayout";
 import DashboardLanding from "@/pages/DashboardLanding";
 import UpdateProfile from "@/pages/UpdateProfile";
 import { userPaths } from "./user.routes";
+import Bikes from "@/pages/Bikes";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/bikes",
-        element: <About />,
+        element: <Bikes />,
       },
     ],
   },
