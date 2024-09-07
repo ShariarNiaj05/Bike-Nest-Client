@@ -175,6 +175,13 @@ const NavbarItem = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
+          <Link to="/bikes">
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Bike List
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <Link to="/about">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About
