@@ -14,6 +14,7 @@ import DashboardLanding from "@/pages/DashboardLanding";
 import UpdateProfile from "@/pages/UpdateProfile";
 import { userPaths } from "./user.routes";
 import Bikes from "@/pages/Bikes";
+import BikeDetails from "@/pages/BikeDetails";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/bikes",
         element: <Bikes />,
+      },
+      {
+        path: "/bikes/:bikeId",
+        element: <BikeDetails />,
       },
     ],
   },
