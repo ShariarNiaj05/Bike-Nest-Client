@@ -51,7 +51,7 @@ const Bikes = () => {
   return (
     <div className="max-w-7xl mx-auto py-10 flex gap-8">
       {/* Filter Section - Sticky on scroll */}
-      <div className="w-1/4 h-fit sticky top-4 bg-white/30 shadow-primary shadow-sm p-6 rounded-lg backdrop-blur-sm border border-white/30">
+      <div className="w-1/5 h-fit sticky top-4 bg-white/30 shadow-primary shadow-sm p-6 rounded-lg backdrop-blur-sm border border-white/30">
         <h2 className="text-2xl font-bold mb-4">Filters</h2>
         <div className="flex flex-col gap-4">
           <input
