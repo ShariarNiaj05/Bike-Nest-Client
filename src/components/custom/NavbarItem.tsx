@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import React from "react";
 
-const components: { title: string; href: string; description: string }[] = [
+/* const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
     href: "/docs/primitives/alert-dialog",
@@ -48,7 +48,7 @@ const components: { title: string; href: string; description: string }[] = [
     description:
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
-];
+]; */
 
 const NavbarItem = () => {
   return (
