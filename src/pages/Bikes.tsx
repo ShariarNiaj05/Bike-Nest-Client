@@ -92,7 +92,7 @@ const Bikes = () => {
   );
 };
 
-const bikesData: TBike[] = [
+export const bikesData: TBike[] = [
   {
     _id: "1",
     brand: "Trek",

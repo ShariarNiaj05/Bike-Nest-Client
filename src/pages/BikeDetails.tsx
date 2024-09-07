@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { bikesData } from "./Bikes"; // Importing the sample data
 import { Button } from "@/components/ui/button"; // Assuming you're using a Button component
 import { TBike } from "@/types";
+import { bikesData } from "./Bikes";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
