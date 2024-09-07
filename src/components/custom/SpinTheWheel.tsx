@@ -1,28 +1,37 @@
-import { useState } from "react";
-import { Wheel } from "react-spinning-wheel";
+import React, { useState } from "react";
+import { Wheel } from "react-wheel-of-prizes";
+import "react-wheel-of-prizes/dist/index.css"; // Make sure the CSS is loaded
 
 const SpinTheWheel = () => {
-  const [result, setResult] = useState<number | null>(null);
+  const [winner, setWinner] = useState<string | null>(null);
 
-  const handleSpin = (winner: number) => {
-    setResult(winner);
-    // Add logic to apply the discount or save it to the user's account
+  const segments = ["10% Off", "20% Off", "30% Off", "5% Off", "15% Off"];
+  const segColors = ["#FFD700", "#FF6347", "#90EE90", "#87CEEB", "#FFB6C1"];
+  const onFinished = (winner: string) => {
+    setWinner(winner);
+    // Add logic to apply the discount, save it, or show it on the dashboard
   };
 
-  const segments = [10, 20, 30, 5, 15]; // Discount percentages
-  const segColors = ["#FFD700", "#FF6347", "#90EE90", "#87CEEB", "#FFB6C1"];
-
   return (
-    <div className="text-center">
+    <div className="text-center py-10">
+      <h1 className="text-4xl font-bold mb-6">Spin the Wheel and Win!</h1>
       <Wheel
         segments={segments}
         segColors={segColors}
-        onFinished={handleSpin}
+        onFinished={onFinished}
         primaryColor="black"
         contrastColor="white"
         buttonText="Spin"
+        isOnlyOnce={false} // Allows multiple spins
+        size={290}
+        upDuration={100}
+        downDuration={1000}
       />
-      {result !== null && <p className="mt-4">You won {result}% off!</p>}
+      {winner && (
+        <p className="mt-6 text-2xl font-semibold text-green-500">
+          Congratulations! You won {winner}
+        </p>
+      )}
     </div>
   );
 };
