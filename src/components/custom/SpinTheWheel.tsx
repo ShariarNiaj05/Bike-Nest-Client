@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Wheel } from "react-spinning-wheel";
-import "react-spinning-wheel/dist/index.css";
 
 const SpinTheWheel = () => {
   const [result, setResult] = useState<number | null>(null);
