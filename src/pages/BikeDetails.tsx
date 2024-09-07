@@ -1,7 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { TBike } from "@/types";
-import { bikesData } from "./Bikes";
+import { useMemo } from "react";
+import { bikesData } from "@/utils/demoBikes";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -10,13 +11,22 @@ const BikeDetail = () => {
   // Find the bike based on the ID from the URL
   const bike = bikesData.find((bike: TBike) => bike._id === id);
 
+  // Get similar bikes based on the brand (you can change the criteria as needed)
+  const similarBikes = useMemo(() => {
+    if (bike) {
+      return bikesData.filter(
+        (b: TBike) => b.brand === bike.brand && b._id !== bike._id
+      );
+    }
+    return [];
+  }, [bike]);
+
   const handleBookNow = () => {
     navigate(`/booking/${bike?._id}`);
   };
 
   const handleAddToCompare = async () => {
     // server action here
-    // For example:
   };
 
   if (!bike) {
@@ -84,6 +94,41 @@ const BikeDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Similar Bikes Section */}
+      {similarBikes.length > 0 && (
+        <div className="mt-10">
+          <h2 className="text-3xl font-bold mb-6 text-center">Similar Bikes</h2>
+          <table className="table-auto w-full bg-white shadow-lg rounded-lg overflow-hidden">
+            <thead>
+              <tr className="bg-gray-100 text-left">
+                <th className="p-4">Name</th>
+                <th className="p-4">Model</th>
+                <th className="p-4">CC</th>
+                <th className="p-4">Year</th>
+                <th className="p-4">Price/Hour</th>
+                <th className="p-4">Availability</th>
+              </tr>
+            </thead>
+            <tbody>
+              {similarBikes.map((similarBike) => (
+                <tr key={similarBike._id}>
+                  <td className="p-4">{similarBike.name}</td>
+                  <td className="p-4">{similarBike.model}</td>
+                  <td className="p-4">{similarBike.cc}</td>
+                  <td className="p-4">{similarBike.year}</td>
+                  <td className="p-4 font-bold text-primary">
+                    ${similarBike.pricePerHour}/hour
+                  </td>
+                  <td className="p-4">
+                    {similarBike.isAvailable ? "Available" : "Not Available"}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };
