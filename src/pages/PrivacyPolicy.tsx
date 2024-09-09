@@ -5,9 +5,7 @@ const PrivacyPolicyPage = () => {
         <h1 className="text-4xl font-bold text-center text-primary mb-8">
           Privacy Policy
         </h1>
-        <p className="text-gray-700 mb-4">
-          <strong>Last Updated:</strong> [Insert Date]
-        </p>
+
         <p className="text-gray-600 mb-8">
           At Bike Nest, your privacy is of utmost importance to us. This Privacy
           Policy outlines how we collect, use, and protect your personal
