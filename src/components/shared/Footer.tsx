@@ -17,7 +17,7 @@ const Footer = () => {
         {" "}
         <Link to={"#"}>Privacy Policy,</Link>{" "}
         <Link to={"#"}>Terms of Service,</Link>
-        <Link to={"#"}>Contact Us</Link>
+        <Link to={"/contact"}>Contact Us</Link>
       </div>
 
       <div className="flex gap-2 text-2xl">
