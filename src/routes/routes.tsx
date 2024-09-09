@@ -16,6 +16,7 @@ import { userPaths } from "./user.routes";
 import Bikes from "@/pages/Bikes";
 import BikeDetails from "@/pages/BikeDetails";
 import ContactPage from "@/pages/Contact";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactPage />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage />,
       },
       {
         path: "/bikes",
