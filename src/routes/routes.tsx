@@ -15,6 +15,7 @@ import UpdateProfile from "@/pages/UpdateProfile";
 import { userPaths } from "./user.routes";
 import Bikes from "@/pages/Bikes";
 import BikeDetails from "@/pages/BikeDetails";
+import ContactPage from "@/pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
       {
         path: "/bikes",
