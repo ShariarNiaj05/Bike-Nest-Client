@@ -5,9 +5,7 @@ const TermsOfService = () => {
         <h1 className="text-4xl font-bold text-center text-primary mb-8">
           Terms of Service
         </h1>
-        <p className="text-gray-700 mb-4">
-          <strong>Effective Date:</strong> [Insert Date]
-        </p>
+
         <p className="text-gray-600 mb-8">
           Welcome to Bike Nest! These Terms of Service govern your use of our
           website and services. By accessing or using Bike Nest, you agree to
