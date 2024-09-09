@@ -137,17 +137,14 @@ const TermsOfService = () => {
             <li>
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:support@bikenest.com"
+                href="shariarn85@gamil.com"
                 className="text-primary hover:underline"
               >
-                support@bikenest.com
+                shariarn85@gamil.com
               </a>
             </li>
             <li>
-              <strong>Phone:</strong> [Insert Phone Number]
-            </li>
-            <li>
-              <strong>Address:</strong> [Insert Office Address]
+              <strong>Phone:</strong> +8801850893033
             </li>
           </ul>
         </section>
