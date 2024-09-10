@@ -6,6 +6,12 @@ import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
 import thunk from "redux-thunk";
 
+const persistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["auth"], // persist auth state
+};
+
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
