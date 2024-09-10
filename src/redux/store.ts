@@ -15,7 +15,6 @@ import {
 
 import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
-import thunk from "redux-thunk";
 
 const persistConfig = {
   key: "root",
@@ -36,7 +35,7 @@ const rootReducer = combineReducers({
     getDefaultMiddleware().concat(baseApi.middleware),
 }); */
 
-const store = configureStore({
+export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddlewares) =>
     getDefaultMiddlewares({
