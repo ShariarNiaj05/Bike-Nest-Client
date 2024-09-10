@@ -1,5 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { baseApi } from "./api/baseApi";
+import authReducer from "../features/auth/authSlice";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { combineReducers } from "redux";
+import thunk from "redux-thunk";
 
 export const store = configureStore({
   reducer: {
