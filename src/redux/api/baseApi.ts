@@ -112,3 +112,10 @@ const baseQueryWithToken: BaseQueryFn<
 
   return result;
 };
+
+export const baseApi = createApi({
+  reducerPath: "baseApi",
+  baseQuery: baseQueryWithToken,
+  tagTypes: ["bikes"],
+  endpoints: () => ({}),
+});
