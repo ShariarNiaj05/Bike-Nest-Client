@@ -10,7 +10,6 @@ const Navbar = () => {
   if (!token) {
     return <Navigate to="/login" replace={true} />;
   }
-  console.log(token, "token from navbar");
   if (token) {
     user = token;
   }
