@@ -84,9 +84,6 @@ const baseQueryWithToken: BaseQueryFn<
     console.log("got 403 error in base api");
   }
   if (result?.error?.status === 401) {
-    //* Send Refresh
-    console.log("Sending refresh token");
-
     const res = await fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
       credentials: "include",

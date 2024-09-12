@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "@/redux/hooks";
 import { useLoginUserMutation } from "@/redux/features/authApi";
+import { setUser } from "@/redux/features/authSlice";
 // import { setUser } from "@/features/auth/authSlice";
 
 const Login = () => {
@@ -20,7 +21,7 @@ const Login = () => {
     try {
       const result = await loginUser({ email, password }).unwrap();
       console.log(result);
-      // dispatch(setUser(result.data)); // Store user data in Redux state
+      dispatch(setUser(result.data)); // Store user data in Redux state
       navigate("/"); // Redirect to the dashboard after successful login
     } catch (err: any) {
       setError(err?.data?.message || "Login failed. Please try again.");
