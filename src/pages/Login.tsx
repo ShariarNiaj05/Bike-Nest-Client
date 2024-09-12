@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "@/redux/hooks";
-import { useLoginUserMutation } from "@/redux/features/authSlice";
+import { useLoginUserMutation } from "@/redux/features/authApi";
 // import { setUser } from "@/features/auth/authSlice";
 
 const Login = () => {
