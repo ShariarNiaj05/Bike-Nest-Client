@@ -1,8 +1,19 @@
 import { Menubar, MenubarMenu } from "@radix-ui/react-menubar";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import NavbarItem from "../custom/NavbarItem";
+import { useAppSelector } from "@/redux/hooks";
+import { useCurrentToken } from "@/redux/features/authSlice";
 const Navbar = () => {
+  const token = useAppSelector(useCurrentToken);
+  let user;
+  if (!token) {
+    return <Navigate to="/login" replace={true} />;
+  }
+  console.log(token, "token from navbar");
+  if (token) {
+    user = token;
+  }
   return (
     <div className=" max-w-7xl mx-auto flex justify-between py-5 font-bold">
       {/* logo div  */}
@@ -32,9 +43,15 @@ const Navbar = () => {
       {/* Cart icon  */}
 
       <div>
-        <Link to={"/"}>
-          <h2>Login logout</h2>
-        </Link>
+        {user ? (
+          <Link to={"/"}>
+            <h2> logout</h2>
+          </Link>
+        ) : (
+          <Link to={"/login"}>
+            <h2>Login</h2>
+          </Link>
+        )}
       </div>
     </div>
   );
