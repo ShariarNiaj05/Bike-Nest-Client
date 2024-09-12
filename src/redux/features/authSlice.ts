@@ -1,4 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { baseApi } from "../api/baseApi";
+
+/* import { createSlice } from "@reduxjs/toolkit";
 import { baseApi } from "../api/baseApi";
 
 export interface AuthState {
@@ -34,3 +36,18 @@ const authSlice = createSlice({
 export const { logout } = authSlice.actions;
 
 export default authSlice.reducer;
+ */
+
+const authApi = baseApi.injectEndpoints({
+  endpoints: (builder) => ({
+    loginUser: builder.mutation({
+      query: (userInfo) => ({
+        url: "/auth/login",
+        method: "POST",
+        body: userInfo,
+      }),
+    }),
+  }),
+});
+
+export const { useLoginUserMutation } = authApi;

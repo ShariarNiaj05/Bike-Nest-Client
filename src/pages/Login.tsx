@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "@/redux/hooks";
+import { useLoginUserMutation } from "@/redux/features/authSlice";
 // import { setUser } from "@/features/auth/authSlice";
-import { useLoginUserMutation } from "@/redux/api/baseApi";
 
 const Login = () => {
   const [email, setEmail] = useState("");
