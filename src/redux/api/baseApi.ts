@@ -8,6 +8,7 @@ import {
   fetchBaseQuery,
 } from "@reduxjs/toolkit/query/react";
 import { RootState } from "../store";
+import { logout, setUser } from "../features/authSlice";
 
 // Define a service using a base URL and expected endpoints
 /* const baseUrl = "http://localhost:5000/api";
@@ -94,7 +95,7 @@ const baseQueryWithToken: BaseQueryFn<
     const data = await res.json();
     console.log("data in base api", data);
 
-    /* if (data?.data?.accessToken) {
+    if (data?.data?.accessToken) {
       const user = (api.getState() as RootState).auth.user;
 
       api.dispatch(
@@ -107,7 +108,7 @@ const baseQueryWithToken: BaseQueryFn<
       result = await baseQuery(args, api, extraOptions);
     } else {
       api.dispatch(logout());
-    } */
+    }
   }
 
   return result;
