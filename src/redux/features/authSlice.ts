@@ -25,15 +25,6 @@ const authSlice = createSlice({
       state.token = null;
     },
   },
-  /*  extraReducers: (builder) => {
-    builder.addMatcher(
-      baseApi.endpoints.loginUser.matchFulfilled,
-      (state, { payload }) => {
-        state.user = payload.data;
-        state.token = payload.token;
-      }
-    );
-  }, */
 });
 export const { setUser, logout } = authSlice.actions;
 

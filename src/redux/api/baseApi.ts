@@ -59,7 +59,7 @@ const baseQuery = fetchBaseQuery({
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token;
-
+    console.log("token form fetch base query", token);
     if (token) {
       headers.set("authorization", `${token}`);
     }
@@ -75,14 +75,14 @@ const baseQueryWithToken: BaseQueryFn<
 > = async (args, api, extraOptions): Promise<any> => {
   let result = await baseQuery(args, api, extraOptions);
 
-  if (result?.error?.status === 404) {
+  /* if (result?.error?.status === 404) {
     // toast.error(result?.error?.data?.message);
     console.log("got 404 error in base api");
   }
   if (result?.error?.status === 403) {
     // toast.error(result?.error?.data?.message);
     console.log("got 403 error in base api");
-  }
+  } */
   if (result?.error?.status === 401) {
     const res = await fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
