@@ -12,11 +12,15 @@ export const baseApi = createApi({
   }),
   endpoints: (builder) => ({
     loginUser: builder.mutation({
-      query: (loginData) => ({
-        url: "/auth/login",
-        method: "POST",
-        body: loginData,
-      }),
+      query: (loginData) => (
+        console.log(loginData),
+        {
+          url: "/auth/login",
+          method: "POST",
+
+          body: loginData,
+        }
+      ),
     }),
   }),
 });
