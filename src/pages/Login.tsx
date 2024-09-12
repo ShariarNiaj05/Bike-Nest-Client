@@ -21,7 +21,7 @@ const Login = () => {
     try {
       const result = await loginUser({ email, password }).unwrap();
       console.log(result);
-      dispatch(setUser(result.data)); // Store user data in Redux state
+      dispatch(setUser({ user: result.data, token: result.token })); // Store user data in Redux state
       navigate("/"); // Redirect to the dashboard after successful login
     } catch (err: any) {
       setError(err?.data?.message || "Login failed. Please try again.");
