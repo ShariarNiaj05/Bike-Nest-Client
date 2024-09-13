@@ -9,6 +9,7 @@ import {
 } from "@reduxjs/toolkit/query/react";
 import { RootState } from "../store";
 import { logout, setUser } from "../features/authSlice";
+import { Cookie } from "lucide-react";
 
 // Define a service using a base URL and expected endpoints
 /* const baseUrl = "http://localhost:5000/api";
@@ -58,6 +59,9 @@ const baseQuery = fetchBaseQuery({
   baseUrl: "http://localhost:5000/api",
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
+    console.log("headers", headers);
+    console.log("getState", getState);
+
     const token = (getState() as RootState).auth.token;
     console.log("token form fetch base query", token);
     if (token) {
