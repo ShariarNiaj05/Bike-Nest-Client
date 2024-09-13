@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="z-50">
         <Menubar>
           <MenubarMenu>
-            <NavbarItem />
+            <NavbarItem user={user} />
             {/* 
             <div className=" flex gap-5">
               <Link to={"/about"}>

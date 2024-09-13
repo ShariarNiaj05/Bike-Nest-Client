@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 import React from "react";
+import { TUser } from "@/redux/features/authSlice";
 
 /* const components: { title: string; href: string; description: string }[] = [
   {
@@ -50,7 +51,8 @@ import React from "react";
   },
 ]; */
 
-const NavbarItem = () => {
+const NavbarItem = ({ user }: { user: TUser | null }) => {
+  const { role } = user;
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -106,8 +108,8 @@ const NavbarItem = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
 
+        {/* User Routes */}
         <NavigationMenuItem>
-          {/* User Routes */}
           <NavigationMenuItem>
             <NavigationMenuTrigger>User Pages</NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -124,29 +126,31 @@ const NavbarItem = () => {
         </NavigationMenuItem>
 
         {/* Admin Routes */}
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Admin Pages</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href="/admin/bike-management" title="Bike Management">
-                Administer all the bikes in the system, including adding,
-                editing, or deleting bikes.
-              </ListItem>
-              <ListItem href="/admin/user-management" title="User Management">
-                Manage users and their roles within the system.
-              </ListItem>
-              <ListItem
-                href="/admin/user-rentals-management"
-                title="Rentals Management"
-              >
-                Manage user's rentals within the system.
-              </ListItem>
-              <ListItem href="/admin/coupons" title="Rentals Management">
-                Creating and Managing coupon codes{" "}
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+        {role === "admin" && (
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Admin Pages</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <ListItem href="/admin/bike-management" title="Bike Management">
+                  Administer all the bikes in the system, including adding,
+                  editing, or deleting bikes.
+                </ListItem>
+                <ListItem href="/admin/user-management" title="User Management">
+                  Manage users and their roles within the system.
+                </ListItem>
+                <ListItem
+                  href="/admin/user-rentals-management"
+                  title="Rentals Management"
+                >
+                  Manage user's rentals within the system.
+                </ListItem>
+                <ListItem href="/admin/coupons" title="Rentals Management">
+                  Creating and Managing coupon codes{" "}
+                </ListItem>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        )}
 
         {/* Nested Example (Components) */}
         <NavigationMenuItem>
