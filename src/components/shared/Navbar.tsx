@@ -3,16 +3,18 @@ import { Link, Navigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import NavbarItem from "../custom/NavbarItem";
 import { useAppSelector } from "@/redux/hooks";
-import { useCurrentToken } from "@/redux/features/authSlice";
+import { useCurrentToken, useCurrentUser } from "@/redux/features/authSlice";
 const Navbar = () => {
   const token = useAppSelector(useCurrentToken);
-  let user;
+
+  console.log("token from navbar", token);
+  const user = useAppSelector(useCurrentUser);
   if (!token) {
     return <Navigate to="/login" replace={true} />;
   }
-  if (token) {
-    user = token;
-  }
+  /* if (token) {
+    user = useAppSelector(useCurrentToken);
+  } */
 
   console.log("user from navbar", user);
   return (
