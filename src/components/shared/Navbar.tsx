@@ -3,8 +3,14 @@ import { Link, Navigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import NavbarItem from "../custom/NavbarItem";
 import { useAppSelector } from "@/redux/hooks";
-import { useCurrentToken, useCurrentUser } from "@/redux/features/authSlice";
+import {
+  logout,
+  useCurrentToken,
+  useCurrentUser,
+} from "@/redux/features/authSlice";
+import { useDispatch } from "react-redux";
 const Navbar = () => {
+  const dispatch = useDispatch();
   const token = useAppSelector(useCurrentToken);
 
   console.log("token from navbar", token);
@@ -48,7 +54,7 @@ const Navbar = () => {
       <div>
         {user ? (
           <Link to={"/"}>
-            <h2> logout</h2>
+            <h2 onClick={() => dispatch(logout())}> logout</h2>
           </Link>
         ) : (
           <Link to={"/login"}>
