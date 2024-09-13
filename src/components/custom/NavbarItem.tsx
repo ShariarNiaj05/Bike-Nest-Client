@@ -52,7 +52,7 @@ import { TUser } from "@/redux/features/authSlice";
 ]; */
 
 const NavbarItem = ({ user }: { user: TUser | null }) => {
-  const { role } = user;
+  const { role } = user as TUser;
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -109,21 +109,23 @@ const NavbarItem = ({ user }: { user: TUser | null }) => {
         </NavigationMenuItem>
 
         {/* User Routes */}
-        <NavigationMenuItem>
+        {role === "user" && (
           <NavigationMenuItem>
-            <NavigationMenuTrigger>User Pages</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <ListItem href="/my-rentals" title="My Rentals">
-                  Manage your current and past bike rentals here.
-                </ListItem>
-                <ListItem href="/profile" title="Profile">
-                  Update your profile details and preferences.
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>User Pages</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ListItem href="/dashboard/my-rentals" title="My Rentals">
+                    Manage your current and past bike rentals here.
+                  </ListItem>
+                  <ListItem href="/dashboard/profile" title="Profile">
+                    Update your profile details and preferences.
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
           </NavigationMenuItem>
-        </NavigationMenuItem>
+        )}
 
         {/* Admin Routes */}
         {role === "admin" && (
