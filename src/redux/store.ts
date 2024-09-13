@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { baseApi } from "./api/baseApi";
 import authReducer from "./features/authSlice";
 
@@ -20,6 +20,10 @@ const persistConfig = {
   storage,
   whitelist: ["auth"], // persist auth state
 };
+const rootReducer = combineReducers({
+  auth: authReducer,
+  // Add other reducers here
+});
 
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
 
