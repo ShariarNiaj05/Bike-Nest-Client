@@ -55,7 +55,7 @@ export const { useLoginUserMutation } = baseApi; */
 
 // export const { useGetBikesQuery } = baseApi;
 
-const baseQuery = fetchBaseQuery({
+/* const baseQuery = fetchBaseQuery({
   baseUrl: "http://localhost:5000/api",
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
@@ -70,7 +70,7 @@ const baseQuery = fetchBaseQuery({
 
     return headers;
   },
-});
+}); */
 
 // const baseQueryWithToken: BaseQueryFn<
 //   FetchArgs,
