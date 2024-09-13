@@ -13,6 +13,8 @@ const Navbar = () => {
   if (token) {
     user = token;
   }
+
+  console.log("user from navbar", user);
   return (
     <div className=" max-w-7xl mx-auto flex justify-between py-5 font-bold">
       {/* logo div  */}
