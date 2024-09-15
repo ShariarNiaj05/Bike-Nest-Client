@@ -9,10 +9,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { TUser, useCurrentUser } from "@/redux/features/authSlice";
+import { useAppSelector } from "@/redux/hooks";
 import { Link } from "react-router-dom";
 
 const SideBar = () => {
   const user: TUser | null = useAppSelector(useCurrentUser);
+  const { role } = user! || "";
   return (
     <div className="relative pt-2">
       <Sheet>
@@ -59,6 +62,7 @@ const SideBar = () => {
             </SheetClose>
 
             {/* ========================================admin routes from dashboard ========================== */}
+            {}
             <SheetClose asChild>
               <Link
                 to="/dashboard/admin-bike-management"
