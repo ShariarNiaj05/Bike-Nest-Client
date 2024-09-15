@@ -58,7 +58,10 @@ const DashboardLanding = () => {
     address: "123 Main St, Springfield",
   };
  */
-  console.log(user);
+  if (isFetching || isUserLoading || isLoading) {
+    return <p>loading......</p>;
+  }
+  console.log(user?.data);
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-accent p-6">
       <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden">
@@ -72,19 +75,19 @@ const DashboardLanding = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
             <div className="bg-accent p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-700">Name</h3>
-              <p className="text-gray-600">{user?.name}</p>
+              <p className="text-gray-600">{user?.data?.name}</p>
             </div>
             <div className="bg-accent p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-700">Email</h3>
-              <p className="text-gray-600">{user?.email}</p>
+              <p className="text-gray-600">{user?.data?.email}</p>
             </div>
             <div className="bg-accent p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-700">Phone</h3>
-              <p className="text-gray-600">{user?.phone}</p>
+              <p className="text-gray-600">{user?.data?.phone}</p>
             </div>
             <div className="bg-accent p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-700">Address</h3>
-              <p className="text-gray-600">{user?.address}</p>
+              <p className="text-gray-600">{user?.data?.address}</p>
             </div>
           </div>
 
