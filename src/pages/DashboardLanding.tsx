@@ -10,23 +10,26 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
+import { useUpdateProfileMutation } from "@/redux/features/authApi";
 import { TUser, useCurrentUser } from "@/redux/features/authSlice";
 import { useAppSelector } from "@/redux/hooks";
+import { useState } from "react";
 // import { Label } from "@/components/ui/label";
 
 const DashboardLanding = () => {
+  const user: TUser | null = useAppSelector(useCurrentUser);
+  const dispatch = useAppDispatch();
+
   const [name, setName] = useState(user?.name || "");
   const [email, setEmail] = useState(user?.email || "");
   const [phone, setPhone] = useState(user?.phone || "");
   const [address, setAddress] = useState(user?.address || "");
 
-  const user: TUser | null = useAppSelector(useCurrentUser);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     // Dispatch the updateProfile action
-    dispatch(updateProfile({ name, email, phone, address }));
+    dispatch(useUpdateProfileMutation({ name, email, phone, address }));
   };
 
   /* const user = {
@@ -82,7 +85,7 @@ const DashboardLanding = () => {
                 </DrawerDescription>
               </DrawerHeader>
 
-              <form className="p-4">
+              <form className="p-4" onSubmit={handleSubmit}>
                 {/* Center the form contents */}
                 <div className="flex flex-col space-y-4">
                   <div className="items-center space-x-4">
