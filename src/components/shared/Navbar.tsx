@@ -1,10 +1,9 @@
 import { Menubar, MenubarMenu } from "@radix-ui/react-menubar";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import NavbarItem from "../custom/NavbarItem";
 import { useAppSelector } from "@/redux/hooks";
 import {
-  AuthState,
   logout,
   TUser,
   // useCurrentToken,
