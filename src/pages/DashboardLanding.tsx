@@ -41,7 +41,7 @@ const DashboardLanding = () => {
       // Call the updateProfile mutation directly
       const response = await updateProfile({
         name,
-        email,
+        email: user?.data?.email,
         phone,
         address,
       }).unwrap();
@@ -113,8 +113,8 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="name"
-                      value={name ? name : user?.data?.name}
-                      onChange={(e) => setName(e.target.value)}
+                      value={user?.data?.name}
+                      // onChange={(e) => setName(e.target.value)}
                       className="flex-1"
                     />
                   </div>
@@ -122,7 +122,7 @@ const DashboardLanding = () => {
                     <Input
                       id="email"
                       readOnly
-                      value={email}
+                      value={email ? email : user?.data?.email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="flex-1"
                     />
@@ -130,7 +130,7 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="phone"
-                      value={phone}
+                      value={phone ? phone : user?.data?.phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className="flex-1"
                     />
@@ -138,7 +138,7 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="address"
-                      value={address}
+                      value={address ? address : user?.data?.address}
                       onChange={(e) => setAddress(e.target.value)}
                       className="flex-1"
                     />
