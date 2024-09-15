@@ -120,6 +120,7 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="email"
+                      readOnly
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="flex-1"
