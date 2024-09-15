@@ -1,4 +1,7 @@
+import { useSignUserMutation } from "@/redux/features/authApi";
+
 const Register = () => {
+  const [signUser] = useSignUserMutation();
   return (
     <div className="flex items-center justify-center h-screen bg-accent">
       <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg overflow-hidden flex">
