@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 import React from "react";
-import { TUser } from "@/redux/features/authSlice";
+import { AuthState } from "@/redux/features/authSlice";
 
 /* const components: { title: string; href: string; description: string }[] = [
   {
@@ -51,8 +51,8 @@ import { TUser } from "@/redux/features/authSlice";
   },
 ]; */
 
-const NavbarItem = ({ user }: { user: TUser | null }) => {
-  const { role } = user as TUser;
+const NavbarItem = ({ user }: { user: AuthState }) => {
+  const { role } = user;
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -109,7 +109,7 @@ const NavbarItem = ({ user }: { user: TUser | null }) => {
         </NavigationMenuItem>
 
         {/* User Routes */}
-        {role === "user" && (
+        {role === "user" ?? (
           <NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>User Pages</NavigationMenuTrigger>
@@ -128,7 +128,7 @@ const NavbarItem = ({ user }: { user: TUser | null }) => {
         )}
 
         {/* Admin Routes */}
-        {role === "admin" && (
+        {role === "admin" ?? (
           <NavigationMenuItem>
             <NavigationMenuTrigger>Admin Pages</NavigationMenuTrigger>
             <NavigationMenuContent>
