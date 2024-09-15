@@ -32,7 +32,7 @@ const Register = () => {
       }).unwrap();
       console.log(result);
       dispatch(setUser({ user: result.data, token: result.token })); // Store user data in Redux state
-      navigate("/"); // Redirect to the dashboard after successful registration
+      navigate("/dashboard"); // Redirect to the dashboard after successful registration
     } catch (err: any) {
       setError(err?.data?.message || "Registration failed. Please try again.");
     }
