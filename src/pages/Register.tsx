@@ -53,7 +53,7 @@ const Register = () => {
           <h2 className="text-4xl font-bold text-center mb-8 text-primary">
             Create An Account
           </h2>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleRegister}>
             <div>
               <label
                 htmlFor="name"
@@ -64,6 +64,8 @@ const Register = () => {
               <input
                 type="text"
                 name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
@@ -78,6 +80,8 @@ const Register = () => {
               <input
                 type="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
@@ -92,6 +96,8 @@ const Register = () => {
               <input
                 type="password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
@@ -106,6 +112,8 @@ const Register = () => {
               <input
                 type="text"
                 name="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
@@ -120,18 +128,23 @@ const Register = () => {
               <input
                 type="text"
                 name="address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
             </div>
+            {error && (
+              <p className="text-red-500 text-sm text-center">{error}</p>
+            )}
             <button
               type="submit"
               className="bg-primary text-white py-2 px-4 rounded-md w-full hover:bg-opacity-90 transition-colors"
+              disabled={isLoading}
             >
-              Sign Up
+              {isLoading ? "Signing up..." : "Sign Up"}
             </button>
           </form>
-
           <div className="mt-4 text-center">
             <p className="text-sm text-gray-600">
               Already have an account?{" "}
