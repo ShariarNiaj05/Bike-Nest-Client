@@ -15,7 +15,19 @@ import { useAppSelector } from "@/redux/hooks";
 // import { Label } from "@/components/ui/label";
 
 const DashboardLanding = () => {
+  const [name, setName] = useState(user?.name || "");
+  const [email, setEmail] = useState(user?.email || "");
+  const [phone, setPhone] = useState(user?.phone || "");
+  const [address, setAddress] = useState(user?.address || "");
+
   const user: TUser | null = useAppSelector(useCurrentUser);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Dispatch the updateProfile action
+    dispatch(updateProfile({ name, email, phone, address }));
+  };
 
   /* const user = {
     name: "John Doe",
