@@ -12,15 +12,12 @@ import {
 import { TUser, useCurrentUser } from "@/redux/features/authSlice";
 import { useAppSelector } from "@/redux/hooks";
 import { Link } from "react-router-dom";
-import {
-  NavigationMenuContent,
-  NavigationMenuItem,
-} from "../ui/navigation-menu";
 import { BikeIcon, HomeIcon } from "lucide-react";
 
 const SideBar = () => {
   const user: TUser | null = useAppSelector(useCurrentUser);
   const { role } = user! || "";
+
   return (
     <div className="relative">
       <Sheet>
@@ -59,11 +56,11 @@ const SideBar = () => {
           </SheetHeader>
 
           {/* Menu Links */}
-          <div className="flex flex-col py-4 space-y-4 px-4">
+          <div className="flex flex-col py-4 space-y-4 px-4 list-none">
             <SheetClose asChild>
               <Link
                 to="/dashboard"
-                className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                className="flex items-center text-sm font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
               >
                 <HomeIcon className="w-5 h-5 mr-2" />
                 Home
@@ -73,11 +70,11 @@ const SideBar = () => {
             {/* Admin Routes */}
             {role === "user" && (
               <>
-                <NavigationMenuItem>
+                <div className="list-none">
                   <SheetClose asChild>
                     <Link
                       to="/dashboard/admin-bike-management"
-                      className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                      className="flex items-center text-sm font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
                     >
                       <BikeIcon className="w-5 h-5 mr-2" />
                       Manage Bikes
@@ -86,7 +83,7 @@ const SideBar = () => {
                   <SheetClose asChild>
                     <Link
                       to="/dashboard/add-single-bike"
-                      className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                      className="flex items-center text-sm font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
                     >
                       <BikeIcon className="w-5 h-5 mr-2" />
                       Add Single Bike
@@ -95,7 +92,7 @@ const SideBar = () => {
                   <SheetClose asChild>
                     <Link
                       to="/dashboard/add-bulk-bike"
-                      className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                      className="flex items-center text-sm font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
                     >
                       <BikeIcon className="w-5 h-5 mr-2" />
                       Add Bulk Bikes
@@ -104,13 +101,13 @@ const SideBar = () => {
                   <SheetClose asChild>
                     <Link
                       to="/dashboard/return-bike"
-                      className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                      className="flex items-center text-sm font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
                     >
                       <BikeIcon className="w-5 h-5 mr-2" />
                       Return Bike
                     </Link>
                   </SheetClose>
-                </NavigationMenuItem>
+                </div>
               </>
             )}
 
@@ -118,7 +115,7 @@ const SideBar = () => {
             <SheetClose asChild>
               <Link
                 to="/dashboard/my-rentals"
-                className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                className="flex items-center text-sm font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
               >
                 <BikeIcon className="w-5 h-5 mr-2" />
                 My Rentals
