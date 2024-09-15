@@ -25,11 +25,12 @@ const DashboardLanding = () => {
   const [phone, setPhone] = useState(user?.phone || "");
   const [address, setAddress] = useState(user?.address || "");
 
+  const [updateProfile, { isLoading }] = useUpdateProfileMutation();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     // Dispatch the updateProfile action
-    dispatch(useUpdateProfileMutation({ name, email, phone, address }));
+    dispatch(updateProfile({ name, email, phone, address }));
   };
 
   /* const user = {
