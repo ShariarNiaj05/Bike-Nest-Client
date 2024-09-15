@@ -70,7 +70,7 @@ const DashboardLanding = () => {
                 </DrawerDescription>
               </DrawerHeader>
 
-              <div className="p-4">
+              <form className="p-4">
                 {/* Center the form contents */}
                 <div className="flex flex-col space-y-4">
                   <div className="items-center space-x-4">
@@ -102,7 +102,7 @@ const DashboardLanding = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </form>
 
               <DrawerFooter>
                 <Button type="submit">Save changes</Button>
