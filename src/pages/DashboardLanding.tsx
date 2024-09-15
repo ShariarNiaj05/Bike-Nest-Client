@@ -11,13 +11,21 @@ import {
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
 import { TUser, useCurrentUser } from "@/redux/features/authSlice";
-import { useUpdateProfileMutation } from "@/redux/features/user";
+import {
+  useGetUserProfileQuery,
+  useUpdateProfileMutation,
+} from "@/redux/features/user";
 import { useAppSelector } from "@/redux/hooks";
 import { useState } from "react";
 // import { Label } from "@/components/ui/label";
 
 const DashboardLanding = () => {
-  const user: TUser | null = useAppSelector(useCurrentUser);
+  // const user: TUser | null = useAppSelector(useCurrentUser);
+  const {
+    data: user,
+    isLoading: isUserLoading,
+    isFetching,
+  } = useGetUserProfileQuery(undefined);
   // const dispatch = useAppDispatch();
 
   const [name, setName] = useState(user?.name || "");
@@ -56,7 +64,7 @@ const DashboardLanding = () => {
       <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="p-8 text-center">
           <h2 className="text-4xl font-bold text-primary mb-6">
-            Welcome, {user?.name}!
+            Welcome, {user?.data?.name}!
           </h2>
           <p className="text-gray-600 text-lg mb-6">
             Here’s your profile information.

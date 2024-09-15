@@ -12,7 +12,16 @@ const userProfile = baseApi.injectEndpoints({
         };
       },
     }),
+    getUserProfile: builder.query({
+      query: () => {
+        return {
+          url: "/auth/users/me",
+          method: "GET",
+          //   body: "",
+        };
+      },
+    }),
   }),
 });
 
-export const { useUpdateProfileMutation } = userProfile;
+export const { useUpdateProfileMutation, useGetUserProfileQuery } = userProfile;
