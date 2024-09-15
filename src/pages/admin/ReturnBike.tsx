@@ -26,7 +26,7 @@ const ReturnBike = () => {
   const [selectedRental, setSelectedRental] = useState(null);
   const [endTime, setEndTime] = useState("");
 
-  const handleCalculateCost = (rentalId) => {
+  const handleCalculateCost = (rentalId: number) => {
     // Basic cost calculation logic (example: cost per hour is $5)
     const rental = rentals.find((r) => r.id === rentalId);
     if (rental) {
