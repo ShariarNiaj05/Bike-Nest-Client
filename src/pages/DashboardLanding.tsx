@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useUpdateProfileMutation } from "@/redux/features/authApi";
 import { TUser, useCurrentUser } from "@/redux/features/authSlice";
-import { useAppSelector } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useState } from "react";
 // import { Label } from "@/components/ui/label";
 
@@ -76,7 +76,6 @@ const DashboardLanding = () => {
               </Button>
             </DrawerTrigger>
 
-            {/* Set the width to 50% */}
             <DrawerContent className="w-full max-w-lg mx-auto">
               <DrawerHeader>
                 <DrawerTitle>Update Profile</DrawerTitle>
@@ -86,45 +85,48 @@ const DashboardLanding = () => {
               </DrawerHeader>
 
               <form className="p-4" onSubmit={handleSubmit}>
-                {/* Center the form contents */}
                 <div className="flex flex-col space-y-4">
                   <div className="items-center space-x-4">
                     <Input
                       id="name"
-                      defaultValue={user?.name}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       className="flex-1"
                     />
                   </div>
                   <div className="items-center space-x-4">
                     <Input
                       id="email"
-                      defaultValue={user?.email}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="flex-1"
                     />
                   </div>
                   <div className="items-center space-x-4">
                     <Input
                       id="phone"
-                      defaultValue={user?.phone}
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       className="flex-1"
                     />
                   </div>
                   <div className="items-center space-x-4">
                     <Input
                       id="address"
-                      defaultValue={user?.address}
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
                       className="flex-1"
                     />
                   </div>
                 </div>
-              </form>
 
-              <DrawerFooter>
-                <Button type="submit">Save changes</Button>
-                <DrawerClose asChild>
-                  <Button variant="outline">Cancel</Button>
-                </DrawerClose>
-              </DrawerFooter>
+                <DrawerFooter>
+                  <Button type="submit">Save changes</Button>
+                  <DrawerClose asChild>
+                    <Button variant="outline">Cancel</Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </form>
             </DrawerContent>
           </Drawer>
         </div>
