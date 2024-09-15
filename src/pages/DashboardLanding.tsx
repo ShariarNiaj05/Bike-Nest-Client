@@ -10,16 +10,20 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
+import { TUser, useCurrentUser } from "@/redux/features/authSlice";
+import { useAppSelector } from "@/redux/hooks";
 // import { Label } from "@/components/ui/label";
 
 const DashboardLanding = () => {
-  const user = {
+  const user: TUser | null = useAppSelector(useCurrentUser);
+
+  /* const user = {
     name: "John Doe",
     email: "johndoe@example.com",
     phone: "+1 234 567 890",
     address: "123 Main St, Springfield",
   };
-
+ */
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-accent p-6">
       <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden">
