@@ -109,7 +109,7 @@ const NavbarItem = ({ user }: { user: AuthState | null }) => {
         </NavigationMenuItem>
 
         {/* User Routes */}
-        {role === "user" ?? (
+        {role === "user" && (
           <NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>User Pages</NavigationMenuTrigger>
@@ -128,7 +128,7 @@ const NavbarItem = ({ user }: { user: AuthState | null }) => {
         )}
 
         {/* Admin Routes */}
-        {role === "admin" ?? (
+        {role === "admin" && (
           <NavigationMenuItem>
             <NavigationMenuTrigger>Admin Pages</NavigationMenuTrigger>
             <NavigationMenuContent>
