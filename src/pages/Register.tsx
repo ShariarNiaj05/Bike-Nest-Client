@@ -27,6 +27,7 @@ const Register = () => {
         email,
         password,
         phone,
+        role: "user",
         address,
       }).unwrap();
       console.log(result);
