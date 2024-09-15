@@ -62,39 +62,43 @@ const SideBar = () => {
             </SheetClose>
 
             {/* ========================================admin routes from dashboard ========================== */}
-            {}
-            <SheetClose asChild>
-              <Link
-                to="/dashboard/admin-bike-management"
-                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
-              >
-                Manage Bike (Admin)
-              </Link>
-            </SheetClose>
-            <SheetClose asChild>
-              <Link
-                to="/dashboard/add-single-bike"
-                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
-              >
-                Add Single Bike
-              </Link>
-            </SheetClose>
-            <SheetClose asChild>
-              <Link
-                to="/dashboard/add-bulk-bike"
-                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
-              >
-                Add Bulk Bike
-              </Link>
-            </SheetClose>
-            <SheetClose asChild>
-              <Link
-                to="/dashboard/return-bike"
-                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
-              >
-                Return Bike
-              </Link>
-            </SheetClose>
+            {role === "user" && (
+              <div>
+                <SheetClose asChild>
+                  <Link
+                    to="/dashboard/admin-bike-management"
+                    className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
+                  >
+                    Manage Bike (Admin)
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    to="/dashboard/add-single-bike"
+                    className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
+                  >
+                    Add Single Bike
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    to="/dashboard/add-bulk-bike"
+                    className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
+                  >
+                    Add Bulk Bike
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    to="/dashboard/return-bike"
+                    className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
+                  >
+                    Return Bike
+                  </Link>
+                </SheetClose>
+              </div>
+            )}
+
             {/* ========================================admin routes from dashboard ========================== */}
 
             {/* ========================================user routes from dashboard ========================== */}
