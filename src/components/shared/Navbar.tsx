@@ -15,12 +15,6 @@ const Navbar = () => {
 
   console.log("token from navbar", token);
   const user = useAppSelector(useCurrentUser);
-  if (!token) {
-    return <Navigate to="/login" replace={true} />;
-  }
-  /* if (token) {
-    user = useAppSelector(useCurrentToken);
-  } */
 
   console.log("user from navbar", user);
   return (
