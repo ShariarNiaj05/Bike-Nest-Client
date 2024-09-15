@@ -14,7 +14,7 @@ import React from "react";
 import { TUser } from "@/redux/features/authSlice";
 
 const NavbarItem = ({ user }: { user: TUser | null }) => {
-  const { role } = user!;
+  const { role } = user! || "";
   return (
     <NavigationMenu>
       <NavigationMenuList>
