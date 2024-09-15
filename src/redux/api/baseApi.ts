@@ -1,15 +1,15 @@
 // Need to use the React-specific entry point to import createApi
 import {
-  BaseQueryApi,
-  BaseQueryFn,
+  // BaseQueryApi,
+  // BaseQueryFn,
   createApi,
-  DefinitionType,
-  FetchArgs,
+  // DefinitionType,
+  // FetchArgs,
   fetchBaseQuery,
 } from "@reduxjs/toolkit/query/react";
 import { RootState } from "../store";
-import { logout, setUser } from "../features/authSlice";
-import { Cookie } from "lucide-react";
+// import { logout, setUser } from "../features/authSlice";
+// import { Cookie } from "lucide-react";
 
 // Define a service using a base URL and expected endpoints
 /* const baseUrl = "http://localhost:5000/api";
