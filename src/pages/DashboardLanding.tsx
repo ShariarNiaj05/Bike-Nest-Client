@@ -26,11 +26,21 @@ const DashboardLanding = () => {
   const [address, setAddress] = useState(user?.address || "");
 
   const [updateProfile, { isLoading }] = useUpdateProfileMutation();
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Dispatch the updateProfile action
-    dispatch(updateProfile({ name, email, phone, address }));
+    try {
+      // Call the updateProfile mutation directly
+      const response = await updateProfile({
+        name,
+        email,
+        phone,
+        address,
+      }).unwrap();
+      console.log("Profile updated successfully:", response);
+    } catch (error) {
+      console.error("Failed to update profile:", error);
+    }
   };
 
   /* const user = {
