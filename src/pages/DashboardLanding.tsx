@@ -10,8 +10,8 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
-import { useUpdateProfileMutation } from "@/redux/features/authApi";
 import { TUser, useCurrentUser } from "@/redux/features/authSlice";
+import { useUpdateProfileMutation } from "@/redux/features/user";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useState } from "react";
 // import { Label } from "@/components/ui/label";
