@@ -16,12 +16,13 @@ import {
   NavigationMenuContent,
   NavigationMenuItem,
 } from "../ui/navigation-menu";
+import { BikeIcon, HomeIcon } from "lucide-react";
 
 const SideBar = () => {
   const user: TUser | null = useAppSelector(useCurrentUser);
   const { role } = user! || "";
   return (
-    <div className="relative pt-2">
+    <div className="relative">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" className="m-4 p-2">
@@ -42,84 +43,93 @@ const SideBar = () => {
             </svg>
           </Button>
         </SheetTrigger>
+
         {/* Sheet Content */}
         <SheetContent
           side="left"
-          className="w-64 bg-accent"
-          onCloseAutoFocus={(e) => e.preventDefault()} // Prevents autofocus on close
+          className="w-64 bg-white dark:bg-gray-800 shadow-lg"
         >
-          <SheetHeader>
-            <SheetTitle className="text-xl font-bold">Dashboard</SheetTitle>
+          <SheetHeader className="p-4 border-b border-gray-300 dark:border-gray-700">
+            <SheetTitle className="text-2xl font-bold text-primary">
+              Dashboard
+            </SheetTitle>
             <SheetDescription className="text-sm text-gray-500">
               Navigate through the dashboard options.
             </SheetDescription>
           </SheetHeader>
+
           {/* Menu Links */}
-          <div className="flex flex-col gap-4 py-6">
+          <div className="flex flex-col py-4 space-y-4 px-4">
             <SheetClose asChild>
               <Link
                 to="/dashboard"
-                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
+                className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
               >
+                <HomeIcon className="w-5 h-5 mr-2" />
                 Home
               </Link>
             </SheetClose>
 
-            {/* ========================================admin routes from dashboard ========================== */}
+            {/* Admin Routes */}
             {role === "user" && (
-              <NavigationMenuItem>
-                <SheetClose asChild>
-                  <Link
-                    to="/dashboard/admin-bike-management"
-                    className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
-                  >
-                    Manage Bike (Admin)
-                  </Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Link
-                    to="/dashboard/add-single-bike"
-                    className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
-                  >
-                    Add Single Bike
-                  </Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Link
-                    to="/dashboard/add-bulk-bike"
-                    className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
-                  >
-                    Add Bulk Bike
-                  </Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Link
-                    to="/dashboard/return-bike"
-                    className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
-                  >
-                    Return Bike
-                  </Link>
-                </SheetClose>
-              </NavigationMenuItem>
+              <>
+                <NavigationMenuItem>
+                  <SheetClose asChild>
+                    <Link
+                      to="/dashboard/admin-bike-management"
+                      className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                    >
+                      <BikeIcon className="w-5 h-5 mr-2" />
+                      Manage Bikes
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      to="/dashboard/add-single-bike"
+                      className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                    >
+                      <BikeIcon className="w-5 h-5 mr-2" />
+                      Add Single Bike
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      to="/dashboard/add-bulk-bike"
+                      className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                    >
+                      <BikeIcon className="w-5 h-5 mr-2" />
+                      Add Bulk Bikes
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      to="/dashboard/return-bike"
+                      className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                    >
+                      <BikeIcon className="w-5 h-5 mr-2" />
+                      Return Bike
+                    </Link>
+                  </SheetClose>
+                </NavigationMenuItem>
+              </>
             )}
 
-            {/* ========================================admin routes from dashboard ========================== */}
-
-            {/* ========================================user routes from dashboard ========================== */}
+            {/* User Routes */}
             <SheetClose asChild>
               <Link
                 to="/dashboard/my-rentals"
-                className="text-lg font-semibold px-1 rounded hover:bg-primary hover:text-white"
+                className="flex items-center text-lg font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
               >
+                <BikeIcon className="w-5 h-5 mr-2" />
                 My Rentals
               </Link>
             </SheetClose>
-            {/* ========================================user routes from dashboard ========================== */}
           </div>
+
           {/* Close Button */}
-          <SheetFooter>
+          <SheetFooter className="px-4 pb-4">
             <SheetClose asChild>
-              <Button variant="outline" className="w-full mt-4">
+              <Button variant="outline" className="w-full">
                 Close Menu
               </Button>
             </SheetClose>
