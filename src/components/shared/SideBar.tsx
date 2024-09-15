@@ -112,15 +112,18 @@ const SideBar = () => {
             )}
 
             {/* User Routes */}
-            <SheetClose asChild>
-              <Link
-                to="/dashboard/my-rentals"
-                className="flex items-center text-sm font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
-              >
-                <BikeIcon className="w-5 h-5 mr-2" />
-                My Rentals
-              </Link>
-            </SheetClose>
+
+            {role === "user" && (
+              <SheetClose asChild>
+                <Link
+                  to="/dashboard/my-rentals"
+                  className="flex items-center text-sm font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                >
+                  <BikeIcon className="w-5 h-5 mr-2" />
+                  My Rentals
+                </Link>
+              </SheetClose>
+            )}
           </div>
 
           {/* Close Button */}
