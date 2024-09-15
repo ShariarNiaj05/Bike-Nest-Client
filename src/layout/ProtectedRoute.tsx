@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }: TProtectedRoute) => {
   // const token = useAppSelector(useCurrentToken);
   // console.log(user);
   // console.log(token);
-  const { role } = user || "";
+  const { role } = user! || "";
   /* if (!token) {
     return <Navigate to={"/login"} replace={true} />;
   } */

@@ -68,7 +68,7 @@ const SideBar = () => {
             </SheetClose>
 
             {/* Admin Routes */}
-            {role === "user" && (
+            {role === "admin" && (
               <>
                 <div className="list-none">
                   <SheetClose asChild>
