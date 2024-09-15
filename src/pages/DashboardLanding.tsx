@@ -29,7 +29,7 @@ const DashboardLanding = () => {
       <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="p-8 text-center">
           <h2 className="text-4xl font-bold text-primary mb-6">
-            Welcome, {user.name}!
+            Welcome, {user?.name}!
           </h2>
           <p className="text-gray-600 text-lg mb-6">
             Here’s your profile information.
@@ -37,19 +37,19 @@ const DashboardLanding = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
             <div className="bg-accent p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-700">Name</h3>
-              <p className="text-gray-600">{user.name}</p>
+              <p className="text-gray-600">{user?.name}</p>
             </div>
             <div className="bg-accent p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-700">Email</h3>
-              <p className="text-gray-600">{user.email}</p>
+              <p className="text-gray-600">{user?.email}</p>
             </div>
             <div className="bg-accent p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-700">Phone</h3>
-              <p className="text-gray-600">{user.phone}</p>
+              <p className="text-gray-600">{user?.phone}</p>
             </div>
             <div className="bg-accent p-4 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-700">Address</h3>
-              <p className="text-gray-600">{user.address}</p>
+              <p className="text-gray-600">{user?.address}</p>
             </div>
           </div>
 
@@ -76,28 +76,28 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="name"
-                      defaultValue={user.name}
+                      defaultValue={user?.name}
                       className="flex-1"
                     />
                   </div>
                   <div className="items-center space-x-4">
                     <Input
                       id="email"
-                      defaultValue={user.email}
+                      defaultValue={user?.email}
                       className="flex-1"
                     />
                   </div>
                   <div className="items-center space-x-4">
                     <Input
                       id="phone"
-                      defaultValue={user.phone}
+                      defaultValue={user?.phone}
                       className="flex-1"
                     />
                   </div>
                   <div className="items-center space-x-4">
                     <Input
                       id="address"
-                      defaultValue={user.address}
+                      defaultValue={user?.address}
                       className="flex-1"
                     />
                   </div>
