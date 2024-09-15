@@ -5,15 +5,14 @@ import NavbarItem from "../custom/NavbarItem";
 import { useAppSelector } from "@/redux/hooks";
 import {
   logout,
-  useCurrentToken,
+  // useCurrentToken,
   useCurrentUser,
 } from "@/redux/features/authSlice";
 import { useDispatch } from "react-redux";
 const Navbar = () => {
   const dispatch = useDispatch();
-  const token = useAppSelector(useCurrentToken);
+  // const token = useAppSelector(useCurrentToken);
 
-  console.log("token from navbar", token);
   const user = useAppSelector(useCurrentUser);
 
   console.log("user from navbar", user);
