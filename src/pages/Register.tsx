@@ -1,4 +1,8 @@
 import { useSignUserMutation } from "@/redux/features/authApi";
+import { setUser } from "@/redux/features/authSlice";
+import { useAppDispatch } from "@/redux/hooks";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -12,6 +16,26 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [signUser, { isLoading }] = useSignUserMutation();
+
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(""); // Reset error before attempting registration
+
+    try {
+      const result = await signUser({
+        name,
+        email,
+        password,
+        phone,
+        address,
+      }).unwrap();
+      console.log(result);
+      dispatch(setUser({ user: result.data, token: result.token })); // Store user data in Redux state
+      navigate("/"); // Redirect to the dashboard after successful registration
+    } catch (err: any) {
+      setError(err?.data?.message || "Registration failed. Please try again.");
+    }
+  };
   return (
     <div className="flex items-center justify-center h-screen bg-accent">
       <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg overflow-hidden flex">
