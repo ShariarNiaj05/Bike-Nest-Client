@@ -113,8 +113,8 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="name"
-                      value={user?.data?.name}
-                      // onChange={(e) => setName(e.target.value)}
+                      value={name ? name : user?.data?.name}
+                      onChange={(e) => setName(e.target.value)}
                       className="flex-1"
                     />
                   </div>
