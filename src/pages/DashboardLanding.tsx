@@ -12,13 +12,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { TUser, useCurrentUser } from "@/redux/features/authSlice";
 import { useUpdateProfileMutation } from "@/redux/features/user";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useAppSelector } from "@/redux/hooks";
 import { useState } from "react";
 // import { Label } from "@/components/ui/label";
 
 const DashboardLanding = () => {
   const user: TUser | null = useAppSelector(useCurrentUser);
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
   const [name, setName] = useState(user?.name || "");
   const [email, setEmail] = useState(user?.email || "");
@@ -50,6 +50,7 @@ const DashboardLanding = () => {
     address: "123 Main St, Springfield",
   };
  */
+  console.log(user);
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-accent p-6">
       <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden">
