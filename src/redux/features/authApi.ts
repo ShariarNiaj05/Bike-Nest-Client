@@ -16,13 +16,13 @@ const authApi = baseApi.injectEndpoints({
         body: userInfo,
       }),
     }),
-    updateProfile: builder.mutation({
+    /*  updateProfile: builder.mutation({
       query: (userInfo) => ({
         url: "/auth/users/me",
         method: "PUT",
         body: userInfo,
       }),
-    }),
+    }), */
   }),
 });
 
