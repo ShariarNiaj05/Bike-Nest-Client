@@ -1,7 +1,17 @@
 import { useSignUserMutation } from "@/redux/features/authApi";
 
 const Register = () => {
-  const [signUser] = useSignUserMutation();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [error, setError] = useState("");
+
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const [signUser, { isLoading }] = useSignUserMutation();
   return (
     <div className="flex items-center justify-center h-screen bg-accent">
       <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg overflow-hidden flex">
