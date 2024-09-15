@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 
 const SideBar = () => {
+  const user: TUser | null = useAppSelector(useCurrentUser);
   return (
     <div className="relative pt-2">
       <Sheet>
