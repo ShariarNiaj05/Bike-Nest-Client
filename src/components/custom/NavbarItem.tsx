@@ -51,7 +51,7 @@ import { AuthState } from "@/redux/features/authSlice";
   },
 ]; */
 
-const NavbarItem = ({ user }: { user: AuthState | null }) => {
+const NavbarItem = ({ user }: { user: AuthState }) => {
   const { role } = user;
   return (
     <NavigationMenu>

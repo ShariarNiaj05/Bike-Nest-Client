@@ -14,7 +14,7 @@ export type TUser = {
 };
 
 export interface AuthState {
-  user: null | TUser;
+  user: TUser | null;
   token: string | null;
 }
 

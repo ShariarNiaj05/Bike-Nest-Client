@@ -92,8 +92,8 @@ const Login = () => {
   );
 };
 
-const defaultValue = {
+/* const defaultValue = {
   email: "user@example.com",
   password: "password123",
-};
+}; */
 export default Login;
