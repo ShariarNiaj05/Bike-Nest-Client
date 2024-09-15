@@ -1,9 +1,4 @@
-import {
-  logout,
-  TUser,
-  useCurrentToken,
-  useCurrentUser,
-} from "@/redux/features/authSlice";
+import { logout, TUser, useCurrentUser } from "@/redux/features/authSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
