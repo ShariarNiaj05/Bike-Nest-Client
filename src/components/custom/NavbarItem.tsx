@@ -11,10 +11,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 import React from "react";
-import { AuthState } from "@/redux/features/authSlice";
+import { TUser } from "@/redux/features/authSlice";
 
-const NavbarItem = ({ user }: { user: AuthState }) => {
-  const { role } = user;
+const NavbarItem = ({ user }: { user: TUser | null }) => {
+  const { role } = user!;
   return (
     <NavigationMenu>
       <NavigationMenuList>

@@ -4,7 +4,9 @@ import logo from "../../assets/logo.png";
 import NavbarItem from "../custom/NavbarItem";
 import { useAppSelector } from "@/redux/hooks";
 import {
+  AuthState,
   logout,
+  TUser,
   // useCurrentToken,
   useCurrentUser,
 } from "@/redux/features/authSlice";
@@ -13,7 +15,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   // const token = useAppSelector(useCurrentToken);
 
-  const user = useAppSelector(useCurrentUser);
+  const user: TUser | null = useAppSelector(useCurrentUser);
 
   // console.log("user from navbar", user);
   return (
