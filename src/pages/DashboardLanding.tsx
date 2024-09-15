@@ -28,10 +28,10 @@ const DashboardLanding = () => {
   } = useGetUserProfileQuery(undefined);
   // const dispatch = useAppDispatch();
 
-  const [name, setName] = useState(user?.name || "");
-  const [email, setEmail] = useState(user?.email || "");
-  const [phone, setPhone] = useState(user?.phone || "");
-  const [address, setAddress] = useState(user?.address || "");
+  const [name, setName] = useState(user?.data?.name || "");
+  const [email, setEmail] = useState(user?.data?.name || "");
+  const [phone, setPhone] = useState(user?.data?.name || "");
+  const [address, setAddress] = useState(user?.data?.name || "");
 
   const [updateProfile, { isLoading }] = useUpdateProfileMutation();
   const handleSubmit = async (e: React.FormEvent) => {
@@ -61,6 +61,7 @@ const DashboardLanding = () => {
   if (isFetching || isUserLoading || isLoading) {
     return <p>loading......</p>;
   }
+  console.log("name", name);
   console.log(user?.data);
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-accent p-6">
@@ -112,7 +113,7 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="name"
-                      value={name}
+                      value={name ? name : user?.data?.name}
                       onChange={(e) => setName(e.target.value)}
                       className="flex-1"
                     />
