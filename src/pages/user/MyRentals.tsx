@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useGetMyRentalsQuery } from "@/redux/features/user";
+import { formatDate } from "@/utils/formatDate";
 
 // Demo Data
 /* const unpaidRentals = [
@@ -96,9 +97,13 @@ const MyRentals = () => {
                   {unpaidRentals.map((rental, index) => (
                     <tr key={index} className="bg-white border-b">
                       <td className="px-4 py-2">{rental?.bikeId?.name}</td>
-                      <td className="px-4 py-2">{rental.startTime}</td>
-                      <td className="px-4 py-2">{rental.returnTime}</td>
-                      <td className="px-4 py-2">{rental.totalCost}</td>
+                      <td className="px-4 py-2">
+                        {formatDate(rental.startTime)}
+                      </td>
+                      <td className="px-4 py-2">
+                        {formatDate(rental.returnTime)}
+                      </td>
+                      <td className="px-4 py-2">$ {rental.totalCost}</td>
                       <td className="px-4 py-2">
                         <Button
                           variant="outline"
@@ -138,10 +143,14 @@ const MyRentals = () => {
                 <tbody>
                   {paidRentals.map((rental, index) => (
                     <tr key={index} className="bg-white border-b">
-                      <td className="px-4 py-2">{rental.bikeName}</td>
-                      <td className="px-4 py-2">{rental.startTime}</td>
-                      <td className="px-4 py-2">{rental.returnTime}</td>
-                      <td className="px-4 py-2">{rental.totalCost}</td>
+                      <td className="px-4 py-2">{rental?.bikeId?.name}</td>
+                      <td className="px-4 py-2">
+                        {formatDate(rental.startTime)}
+                      </td>
+                      <td className="px-4 py-2">
+                        {formatDate(rental.returnTime)}
+                      </td>
+                      <td className="px-4 py-2">$ {rental.totalCost}</td>
                     </tr>
                   ))}
                 </tbody>
