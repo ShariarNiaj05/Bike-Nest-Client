@@ -123,7 +123,7 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="name"
-                      value={name ? name : user?.data?.name}
+                      value={name}
                       onChange={(e) => setName(e.target.value)}
                       className="flex-1"
                     />
@@ -132,7 +132,7 @@ const DashboardLanding = () => {
                     <Input
                       id="email"
                       readOnly
-                      value={email ? email : user?.data?.email}
+                      value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="flex-1"
                     />
@@ -140,7 +140,7 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="phone"
-                      value={phone ? phone : user?.data?.phone}
+                      value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className="flex-1"
                     />
@@ -148,7 +148,7 @@ const DashboardLanding = () => {
                   <div className="items-center space-x-4">
                     <Input
                       id="address"
-                      value={address ? address : user?.data?.address}
+                      value={address}
                       onChange={(e) => setAddress(e.target.value)}
                       className="flex-1"
                     />
