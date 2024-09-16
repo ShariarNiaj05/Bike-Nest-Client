@@ -12,6 +12,8 @@ import {
 import { useDispatch } from "react-redux";
 import { useContext } from "react";
 import { ThemeContext } from "@/lib/ThemeContext";
+import { Switch } from "../ui/switch";
+import { Label } from "../ui/label";
 const Navbar = () => {
   const dispatch = useDispatch();
   // const token = useAppSelector(useCurrentToken);
@@ -46,13 +48,20 @@ const Navbar = () => {
       </div>
 
       {/* Dark Mode Toggle */}
-      <div>
+      {/* <div>
         <button
           onClick={toggleTheme}
           className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded"
         >
           {theme === "dark" ? "Light Mode" : "Dark Mode"}
         </button>
+      </div> */}
+
+      <div className="flex items-center space-x-2">
+        <Switch onClick={toggleTheme} className="bg-white" id="airplane-mode" />
+        <Label htmlFor="airplane-mode">
+          {theme === "dark" ? "Light Mode" : "Dark Mode"}
+        </Label>
       </div>
 
       <div>
