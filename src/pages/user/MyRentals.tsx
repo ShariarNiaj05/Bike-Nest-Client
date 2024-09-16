@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useGetMyRentalsQuery } from "@/redux/features/user";
 
 // Demo Data
 const unpaidRentals = [
@@ -40,6 +41,9 @@ const paidRentals = [
 ];
 
 const MyRentals = () => {
+  const [data, { isLoading }] = useGetMyRentalsQuery(undefined);
+
+  console.log(data);
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       {/* Title */}
