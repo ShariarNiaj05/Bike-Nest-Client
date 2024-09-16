@@ -11,37 +11,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useGetMyRentalsQuery } from "@/redux/features/user";
 import { formatDate } from "@/utils/formatDate";
 
-// Demo Data
-/* const unpaidRentals = [
-  {
-    bikeName: "Yamaha R15",
-    startTime: "10:00 AM, 1st Sept",
-    returnTime: "10:00 AM, 2nd Sept",
-    totalCost: "$50",
-  },
-  {
-    bikeName: "Suzuki GSX-R1000",
-    startTime: "11:00 AM, 3rd Sept",
-    returnTime: "11:00 AM, 4th Sept",
-    totalCost: "$70",
-  },
-];
- */
-/* const paidRentals = [
-  {
-    bikeName: "Honda CBR600",
-    startTime: "9:00 AM, 1st Sept",
-    returnTime: "9:00 AM, 3rd Sept",
-    totalCost: "$100",
-  },
-  {
-    bikeName: "Ducati Panigale",
-    startTime: "12:00 PM, 5th Sept",
-    returnTime: "12:00 PM, 7th Sept",
-    totalCost: "$150",
-  },
-]; */
-
 const MyRentals = () => {
   const {
     data: myRentals,
