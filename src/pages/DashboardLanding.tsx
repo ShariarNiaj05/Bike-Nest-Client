@@ -1,3 +1,4 @@
+import Loading from "@/components/shared/Loading";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -16,7 +17,7 @@ import {
   useUpdateProfileMutation,
 } from "@/redux/features/user";
 import { useAppSelector } from "@/redux/hooks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { Label } from "@/components/ui/label";
 
 const DashboardLanding = () => {
@@ -27,6 +28,14 @@ const DashboardLanding = () => {
     isFetching,
   } = useGetUserProfileQuery(undefined);
   // const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (user?.data) {
+      setName(user.data.name);
+      setEmail(user.data.email);
+      setPhone(user.data.phone);
+      setAddress(user.data.address);
+    }
+  }, [user]);
 
   const [name, setName] = useState(user?.data?.name || "");
   const [email, setEmail] = useState(user?.data?.name || "");
@@ -59,7 +68,7 @@ const DashboardLanding = () => {
   };
  */
   if (isFetching || isUserLoading || isLoading) {
-    return <p>loading......</p>;
+    return <Loading />;
   }
   console.log("name", name);
   console.log(user?.data);
