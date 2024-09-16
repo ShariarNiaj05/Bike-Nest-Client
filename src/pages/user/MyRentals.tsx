@@ -43,7 +43,7 @@ const paidRentals = [
 const MyRentals = () => {
   const {
     data: myRentals,
-    isLoading: isUserLoading,
+    isLoading: isMyRentalsLoading,
     isFetching,
     refetch,
   } = useGetMyRentalsQuery(undefined);
