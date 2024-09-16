@@ -59,10 +59,6 @@ const DashboardLanding = () => {
     }
   };
 
-  useEffect(() => {
-    console.log("User profile data:", user); // Check data coming from API
-  }, [user]);
-
   /* const user = {
     name: "John Doe",
     email: "johndoe@example.com",
