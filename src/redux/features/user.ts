@@ -11,6 +11,7 @@ const userProfile = baseApi.injectEndpoints({
           body: userInfo,
         };
       },
+      providesTags: "profile",
     }),
     getUserProfile: builder.query({
       query: () => {
