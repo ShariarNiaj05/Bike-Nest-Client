@@ -67,7 +67,7 @@ const MyRentals = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {unpaidRentals.map((rental, index) => (
+                  {unpaidRentals.map((rental: IMyRental, index: number) => (
                     <tr key={index} className="bg-white border-b">
                       <td className="px-4 py-2">{rental?.bikeId?.name}</td>
                       <td className="px-4 py-2">
@@ -114,7 +114,7 @@ const MyRentals = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {paidRentals.map((rental, index) => (
+                  {paidRentals.map((rental: IMyRental, index: number) => (
                     <tr key={index} className="bg-white border-b">
                       <td className="px-4 py-2">{rental?.bikeId?.name}</td>
                       <td className="px-4 py-2">
