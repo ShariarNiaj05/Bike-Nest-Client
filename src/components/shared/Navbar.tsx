@@ -48,18 +48,28 @@ const Navbar = () => {
       </div>
 
       {/* Dark Mode Toggle */}
-      {/* <div>
-        <button
+      <div className="flex items-center space-x-3">
+        <Switch
           onClick={toggleTheme}
-          className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded"
+          id="theme-switcher"
+          className={`${
+            theme === "dark"
+              ? "bg-gray-600 border-gray-500"
+              : "bg-gray-200 border-gray-300"
+          } relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
         >
-          {theme === "dark" ? "Light Mode" : "Dark Mode"}
-        </button>
-      </div> */}
-
-      <div className="flex items-center space-x-2">
-        <Switch onClick={toggleTheme} className="bg-white" id="airplane-mode" />
-        <Label htmlFor="airplane-mode">
+          <span
+            className={`${
+              theme === "dark"
+                ? "translate-x-6 bg-white"
+                : "translate-x-1 bg-black"
+            } inline-block h-4 w-4 transform rounded-full transition-transform`}
+          />
+        </Switch>
+        <Label
+          htmlFor="theme-switcher"
+          className="cursor-pointer text-gray-800 dark:text-gray-300 text-sm"
+        >
           {theme === "dark" ? "Light Mode" : "Dark Mode"}
         </Label>
       </div>
