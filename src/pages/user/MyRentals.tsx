@@ -27,7 +27,7 @@ import { formatDate } from "@/utils/formatDate";
   },
 ];
  */
-const paidRentals = [
+/* const paidRentals = [
   {
     bikeName: "Honda CBR600",
     startTime: "9:00 AM, 1st Sept",
@@ -40,7 +40,7 @@ const paidRentals = [
     returnTime: "12:00 PM, 7th Sept",
     totalCost: "$150",
   },
-];
+]; */
 
 const MyRentals = () => {
   const {
@@ -57,6 +57,9 @@ const MyRentals = () => {
 
   const unpaidRentals = myRentals?.data.filter(
     (rental) => rental.isReturned === false
+  );
+  const paidRentals = myRentals?.data.filter(
+    (rental) => rental.isReturned === true
   );
   console.log(unpaidRentals);
   return (
