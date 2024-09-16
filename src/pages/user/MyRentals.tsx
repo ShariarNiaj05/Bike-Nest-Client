@@ -41,9 +41,14 @@ const paidRentals = [
 ];
 
 const MyRentals = () => {
-  const [data, { isLoading }] = useGetMyRentalsQuery(undefined);
+  const {
+    data: myRentals,
+    isLoading: isUserLoading,
+    isFetching,
+    refetch,
+  } = useGetMyRentalsQuery(undefined);
 
-  console.log(data);
+  console.log(myRentals);
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       {/* Title */}

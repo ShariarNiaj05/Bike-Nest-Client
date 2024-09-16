@@ -26,7 +26,7 @@ const userProfile = baseApi.injectEndpoints({
     getMyRentals: builder.query({
       query: () => {
         return {
-          url: "/auth/rentals",
+          url: "/rentals",
           method: "GET",
           //   ret,
         };
