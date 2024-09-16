@@ -10,12 +10,14 @@ import {
   useCurrentUser,
 } from "@/redux/features/authSlice";
 import { useDispatch } from "react-redux";
+import { useContext } from "react";
+import { ThemeContext } from "@/lib/ThemeContext";
 const Navbar = () => {
   const dispatch = useDispatch();
   // const token = useAppSelector(useCurrentToken);
 
   const user: TUser | null = useAppSelector(useCurrentUser);
-
+  const { theme, toggleTheme } = useContext(ThemeContext);
   // console.log("user from navbar", user);
   return (
     <div className=" max-w-7xl mx-auto flex justify-between py-5 font-bold">
@@ -43,7 +45,15 @@ const Navbar = () => {
         </Menubar>
       </div>
 
-      {/* Cart icon  */}
+      {/* Dark Mode Toggle */}
+      <div>
+        <button
+          onClick={toggleTheme}
+          className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded"
+        >
+          {theme === "dark" ? "Light Mode" : "Dark Mode"}
+        </button>
+      </div>
 
       <div>
         {user ? (
