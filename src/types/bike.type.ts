@@ -1,4 +1,4 @@
-/* export type TBike = {
+export type TBike = {
   _id: string;
   brand: string;
   model: string;
@@ -9,9 +9,9 @@
   year: number;
   name: string;
   description: string;
-}; */
+};
 
-export interface TBike {
+export interface IBike {
   _id: string;
   name: string;
   description: string;

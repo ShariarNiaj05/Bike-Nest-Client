@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useGetMyRentalsQuery } from "@/redux/features/user";
+import { IMyRental } from "@/types/myRental.type";
 import { formatDate } from "@/utils/formatDate";
 
 const MyRentals = () => {
@@ -25,10 +26,10 @@ const MyRentals = () => {
   console.log(myRentals);
 
   const unpaidRentals = myRentals?.data.filter(
-    (rental) => rental.isReturned === false
+    (rental: IMyRental) => rental.isReturned === false
   );
   const paidRentals = myRentals?.data.filter(
-    (rental) => rental.isReturned === true
+    (rental: IMyRental) => rental.isReturned === true
   );
   console.log(unpaidRentals);
   return (
