@@ -72,6 +72,10 @@ const DashboardLanding = () => {
   }
   console.log("name", name);
   console.log(user?.data);
+  if (!user?.data) {
+    return <p>No user data available</p>; // Handle undefined user data
+  }
+
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-accent p-6">
       <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden">
