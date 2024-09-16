@@ -11,14 +11,11 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
-import { TUser, useCurrentUser } from "@/redux/features/authSlice";
 import {
   useGetUserProfileQuery,
   useUpdateProfileMutation,
 } from "@/redux/features/user";
-import { useAppSelector } from "@/redux/hooks";
 import { useEffect, useState } from "react";
-// import { Label } from "@/components/ui/label";
 
 const DashboardLanding = () => {
   // const user: TUser | null = useAppSelector(useCurrentUser);
