@@ -23,6 +23,7 @@ const DashboardLanding = () => {
     data: user,
     isLoading: isUserLoading,
     isFetching,
+    refetch,
   } = useGetUserProfileQuery(undefined);
   // const dispatch = useAppDispatch();
   useEffect(() => {
@@ -51,6 +52,7 @@ const DashboardLanding = () => {
         phone,
         address,
       }).unwrap();
+      refetch();
       console.log("Profile updated successfully:", response);
     } catch (error) {
       console.error("Failed to update profile:", error);
