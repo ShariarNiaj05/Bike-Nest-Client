@@ -20,6 +20,8 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@reduxjs/toolkit": "^2.2.6",
+    "@stripe/react-stripe-js": "^2.8.0",
+    "@stripe/stripe-js": "^4.4.0",
     "@types/aos": "^3.0.7",
     "@types/react-lazy-load-image-component": "^1.6.4",
     "@types/react-star-rating-component": "^1.4.4",

@@ -18,6 +18,7 @@ import BikeDetails from "@/pages/BikeDetails";
 import ContactPage from "@/pages/Contact";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
+import PaymentPage from "@/pages/PaymentPage";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "bikes/:id",
         element: <BikeDetails />,
+      },
+      {
+        path: "payment",
+        element: <PaymentPage />,
       },
     ],
   },
