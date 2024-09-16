@@ -17,7 +17,7 @@ const MyRentals = () => {
     data: myRentals,
     isLoading: isMyRentalsLoading,
     isFetching,
-    refetch,
+    // refetch,
   } = useGetMyRentalsQuery(undefined);
 
   if (isMyRentalsLoading || isFetching) {
