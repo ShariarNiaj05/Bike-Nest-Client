@@ -1,3 +1,4 @@
+import Loading from "@/components/shared/Loading";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useGetMyRentalsQuery } from "@/redux/features/user";
 
 // Demo Data
-const unpaidRentals = [
+/* const unpaidRentals = [
   {
     bikeName: "Yamaha R15",
     startTime: "10:00 AM, 1st Sept",
@@ -24,7 +25,7 @@ const unpaidRentals = [
     totalCost: "$70",
   },
 ];
-
+ */
 const paidRentals = [
   {
     bikeName: "Honda CBR600",
@@ -48,7 +49,15 @@ const MyRentals = () => {
     refetch,
   } = useGetMyRentalsQuery(undefined);
 
+  if (isMyRentalsLoading || isFetching) {
+    return <Loading />;
+  }
   console.log(myRentals);
+
+  const unpaidRentals = myRentals?.data.filter(
+    (rental) => rental.isReturned === false
+  );
+  console.log(unpaidRentals);
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       {/* Title */}
