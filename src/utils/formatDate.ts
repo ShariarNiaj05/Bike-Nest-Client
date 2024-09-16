@@ -18,7 +18,3 @@ export const formatDate = (dateString: string) => {
 
   return `${dayWithSuffix} ${month}, ${year}`;
 };
-
-// Example usage:
-const dateStr = "2024-06-10T09:00:00.000Z";
-console.log(formatDate(dateStr)); // Output: 10th June, 2024
