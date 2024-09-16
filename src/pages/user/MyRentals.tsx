@@ -95,7 +95,7 @@ const MyRentals = () => {
                 <tbody>
                   {unpaidRentals.map((rental, index) => (
                     <tr key={index} className="bg-white border-b">
-                      <td className="px-4 py-2">{rental.bikeName}</td>
+                      <td className="px-4 py-2">{rental?.bikeId?.name}</td>
                       <td className="px-4 py-2">{rental.startTime}</td>
                       <td className="px-4 py-2">{rental.returnTime}</td>
                       <td className="px-4 py-2">{rental.totalCost}</td>
