@@ -12,7 +12,7 @@ const Bikes = () => {
   const [filters, setFilters] = useState({
     brand: "",
     model: "",
-    available: false,
+    isAvailable: false,
   });
 
   // Handle Filter Change
@@ -46,7 +46,7 @@ const Bikes = () => {
         const isModelMatch = filters.model
           ? bike.model.toLowerCase().includes(filters.model.toLowerCase())
           : true;
-        const isAvailableMatch = filters.available
+        const isAvailableMatch = filters.isAvailable
           ? bike.isAvailable === true
           : true;
         return isBrandMatch && isModelMatch && isAvailableMatch;
@@ -66,6 +66,8 @@ const Bikes = () => {
       </p>
     );
   }
+
+  console.log(bikes);
   return (
     <div className="max-w-7xl mx-auto py-10 flex gap-8">
       {/* Filter Section - Sticky on scroll */}
@@ -92,7 +94,7 @@ const Bikes = () => {
             <input
               type="checkbox"
               name="available"
-              checked={filters.available}
+              checked={filters.isAvailable}
               onChange={handleFilterChange}
             />
             <span className="ml-2">Available</span>
