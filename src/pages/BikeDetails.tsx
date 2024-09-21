@@ -115,7 +115,7 @@ const BikeDetail = () => {
               </tr>
             </thead>
             <tbody>
-              {similarBikes.map((similarBike) => (
+              {similarBikes?.map((similarBike: TBike) => (
                 <tr key={similarBike._id}>
                   <td className="p-4">{similarBike.name}</td>
                   <td className="p-4">{similarBike.model}</td>
