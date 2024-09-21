@@ -12,7 +12,7 @@ const Bikes = () => {
   const [filters, setFilters] = useState({
     brand: "",
     model: "",
-    isAvailable: false,
+    available: false,
   });
 
   // Handle Filter Change
@@ -46,7 +46,7 @@ const Bikes = () => {
         const isModelMatch = filters.model
           ? bike.model.toLowerCase().includes(filters.model.toLowerCase())
           : true;
-        const isAvailableMatch = filters.isAvailable
+        const isAvailableMatch = filters.available
           ? bike.isAvailable === true
           : true;
         return isBrandMatch && isModelMatch && isAvailableMatch;
@@ -94,7 +94,7 @@ const Bikes = () => {
             <input
               type="checkbox"
               name="available"
-              checked={filters.isAvailable}
+              checked={filters.available}
               onChange={handleFilterChange}
             />
             <span className="ml-2">Available</span>
