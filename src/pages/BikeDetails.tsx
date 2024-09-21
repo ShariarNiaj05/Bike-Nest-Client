@@ -3,24 +3,27 @@ import { Button } from "@/components/ui/button";
 import { TBike } from "@/types";
 import { useMemo } from "react";
 import { bikesData } from "@/utils/demoBikes";
-import { useBikeDetailsQuery } from "@/redux/features/bikes";
+import { useBikeDetailsQuery, useBikesQuery } from "@/redux/features/bikes";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { data } = useBikeDetailsQuery(id);
   const bike = data?.data;
-  // console.log(data);
+
+  // Fetch all bikes
+  const { data: allBikesData } = useBikesQuery(undefined);
+  const allBikes = allBikesData?.data || [];
 
   // Get similar bikes based on the brand (you can change the criteria as needed)
   const similarBikes = useMemo(() => {
     if (bike) {
-      return bikesData.filter(
+      return allBikes.filter(
         (b: TBike) => b.brand === bike.brand && b._id !== bike._id
       );
     }
     return [];
-  }, [bike]);
+  }, [bike, allBikes]);
 
   const handleBookNow = () => {
     navigate(`/booking/${bike?._id}`);
