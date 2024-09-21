@@ -23,7 +23,7 @@ const BikeDetail = () => {
       );
     }
     return [];
-  }, [bike, allBikes]);
+  }, [bike, allBikesData?.data]);
 
   const handleBookNow = () => {
     navigate(`/booking/${bike?._id}`);
