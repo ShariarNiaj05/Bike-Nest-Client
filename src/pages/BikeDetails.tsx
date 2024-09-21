@@ -9,7 +9,7 @@ const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { data } = useBikeDetailsQuery(id);
-  const bike = data.data;
+  const bike = data?.data;
   // console.log(data);
   // Find the bike based on the ID from the URL
   // const bike = bikesData.find((bike: TBike) => bike._id === id);
