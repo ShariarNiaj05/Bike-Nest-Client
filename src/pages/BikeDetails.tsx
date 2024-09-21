@@ -8,10 +8,10 @@ import { useBikeDetailsQuery } from "@/redux/features/bikes";
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { data } = useBikeDetailsQuery(id);
+  const { data: bike } = useBikeDetailsQuery(id);
   console.log(data);
   // Find the bike based on the ID from the URL
-  const bike = bikesData.find((bike: TBike) => bike._id === id);
+  // const bike = bikesData.find((bike: TBike) => bike._id === id);
 
   // Get similar bikes based on the brand (you can change the criteria as needed)
   const similarBikes = useMemo(() => {
