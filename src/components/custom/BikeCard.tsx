@@ -6,6 +6,7 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
   const navigate = useNavigate();
 
   const handleViewDetail = (id: string) => {
+    console.log(id);
     navigate(`/bikes/${id}`); // Redirect to bike detail page
   };
   return (
