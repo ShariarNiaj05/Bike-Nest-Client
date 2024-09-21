@@ -38,19 +38,21 @@ const Bikes = () => {
 
   // Filter Bikes
   useEffect(() => {
-    const filtered = bikes.filter((bike: TBike) => {
-      const isBrandMatch = filters.brand
-        ? bike.brand.toLowerCase().includes(filters.brand.toLowerCase())
-        : true;
-      const isModelMatch = filters.model
-        ? bike.model.toLowerCase().includes(filters.model.toLowerCase())
-        : true;
-      const isAvailableMatch = filters.available
-        ? bike.isAvailable === true
-        : true;
-      return isBrandMatch && isModelMatch && isAvailableMatch;
-    });
-    setFilteredBikes(filtered);
+    if (Array.isArray(bikes)) {
+      const filtered = bikes.filter((bike: TBike) => {
+        const isBrandMatch = filters.brand
+          ? bike.brand.toLowerCase().includes(filters.brand.toLowerCase())
+          : true;
+        const isModelMatch = filters.model
+          ? bike.model.toLowerCase().includes(filters.model.toLowerCase())
+          : true;
+        const isAvailableMatch = filters.available
+          ? bike.isAvailable === true
+          : true;
+        return isBrandMatch && isModelMatch && isAvailableMatch;
+      });
+      setFilteredBikes(filtered);
+    }
   }, [filters, bikes]);
 
   if (isLoading) {
@@ -100,7 +102,7 @@ const Bikes = () => {
 
       {/* Bike Listing */}
       <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredBikes.map((bike) => (
+        {filteredBikes?.map((bike) => (
           <BikeCard key={bike._id} bike={bike} />
         ))}
       </div>
