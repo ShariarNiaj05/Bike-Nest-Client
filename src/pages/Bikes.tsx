@@ -2,19 +2,18 @@ import BikeCard from "@/components/custom/BikeCard";
 import Loading from "@/components/shared/Loading";
 import { useBikesQuery } from "@/redux/features/bikes";
 import { TBike } from "@/types";
-import { bikesData } from "@/utils/demoBikes";
+// import { bikesData } from "@/utils/demoBikes";
 import React, { useState, useEffect } from "react";
 
 const Bikes = () => {
-  const [filteredBikes, setFilteredBikes] = useState<TBike[]>(bikesData);
+  const { data, isLoading } = useBikesQuery(undefined);
+  const bikes = data?.data;
+  const [filteredBikes, setFilteredBikes] = useState<TBike[]>(bikes);
   const [filters, setFilters] = useState({
     brand: "",
     model: "",
     available: false,
   });
-
-  const { data, isLoading } = useBikesQuery(undefined);
-  const bikes = data?.data;
 
   // Handle Filter Change
   const handleFilterChange = (
@@ -39,7 +38,7 @@ const Bikes = () => {
 
   // Filter Bikes
   useEffect(() => {
-    const filtered = bikesData.filter((bike) => {
+    const filtered = bikes.filter((bike: TBike) => {
       const isBrandMatch = filters.brand
         ? bike.brand.toLowerCase().includes(filters.brand.toLowerCase())
         : true;
@@ -52,7 +51,7 @@ const Bikes = () => {
       return isBrandMatch && isModelMatch && isAvailableMatch;
     });
     setFilteredBikes(filtered);
-  }, [filters]);
+  }, [filters, bikes]);
 
   if (isLoading) {
     return <Loading />;
