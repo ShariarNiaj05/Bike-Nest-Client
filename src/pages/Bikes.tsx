@@ -1,4 +1,6 @@
 import BikeCard from "@/components/custom/BikeCard";
+import Loading from "@/components/shared/Loading";
+import { useBikesQuery } from "@/redux/features/bikes";
 import { TBike } from "@/types";
 import { bikesData } from "@/utils/demoBikes";
 import React, { useState, useEffect } from "react";
@@ -10,6 +12,9 @@ const Bikes = () => {
     model: "",
     available: false,
   });
+
+  const { data, isLoading } = useBikesQuery(undefined);
+  const bikes = data?.data;
 
   // Handle Filter Change
   const handleFilterChange = (
@@ -49,6 +54,17 @@ const Bikes = () => {
     setFilteredBikes(filtered);
   }, [filters]);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (!Array.isArray(bikes)) {
+    return (
+      <p className="text-center text-red-500">
+        No bikes available at the moment.
+      </p>
+    );
+  }
   return (
     <div className="max-w-7xl mx-auto py-10 flex gap-8">
       {/* Filter Section - Sticky on scroll */}
