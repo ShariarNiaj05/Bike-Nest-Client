@@ -11,7 +11,16 @@ const bikes = baseApi.injectEndpoints({
       },
       // providesTags: ["profile"],
     }),
+    BikeDetails: builder.query({
+      query: ({ id }) => {
+        return {
+          url: `/bikes/${id}`,
+          method: "GET",
+        };
+      },
+      // providesTags: ["profile"],
+    }),
   }),
 });
 
-export const { useBikesQuery } = bikes;
+export const { useBikesQuery, useBikeDetailsQuery } = bikes;

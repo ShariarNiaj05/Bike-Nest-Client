@@ -3,11 +3,13 @@ import { Button } from "@/components/ui/button";
 import { TBike } from "@/types";
 import { useMemo } from "react";
 import { bikesData } from "@/utils/demoBikes";
+import { useBikeDetailsQuery } from "@/redux/features/bikes";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-
+  const { data } = useBikeDetailsQuery(id);
+  console.log(data);
   // Find the bike based on the ID from the URL
   const bike = bikesData.find((bike: TBike) => bike._id === id);
 
