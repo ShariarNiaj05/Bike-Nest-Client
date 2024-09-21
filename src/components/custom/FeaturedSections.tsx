@@ -4,10 +4,10 @@ import { useBikesQuery } from "@/redux/features/bikes";
 import Loading from "../shared/Loading";
 
 const FeaturedSections = () => {
-  const { data: bikes, isLoading, isPending } = useBikesQuery(undefined);
+  const { data: bikes, isLoading } = useBikesQuery(undefined);
   console.log(bikes);
 
-  if (isLoading || isPending) {
+  if (isLoading) {
     return <Loading />;
   }
   return (
