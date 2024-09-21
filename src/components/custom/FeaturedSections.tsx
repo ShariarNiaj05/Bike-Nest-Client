@@ -4,11 +4,20 @@ import { useBikesQuery } from "@/redux/features/bikes";
 import Loading from "../shared/Loading";
 
 const FeaturedSections = () => {
-  const { data: bikes, isLoading } = useBikesQuery(undefined);
+  const { data, isLoading } = useBikesQuery(undefined);
+  const bikes = data?.data;
   console.log(bikes);
 
-  if (isLoading || !Array.isArray(bikes)) {
+  if (isLoading) {
     return <Loading />;
+  }
+
+  if (!Array.isArray(bikes)) {
+    return (
+      <p className="text-center text-red-500">
+        No bikes available at the moment.
+      </p>
+    );
   }
   return (
     <section className="py-12 bg-accent">
