@@ -5,7 +5,7 @@ const bikes = baseApi.injectEndpoints({
     bikes: builder.query({
       query: () => {
         return {
-          url: "/auth/users/me",
+          url: "/bikes",
           method: "GET",
         };
       },
