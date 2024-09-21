@@ -4,7 +4,7 @@ import { useBikesQuery } from "@/redux/features/bikes";
 
 const FeaturedSections = () => {
   const { data: bikes } = useBikesQuery(undefined);
-
+  console.log(bikes);
   return (
     <section className="py-12 bg-accent">
       <div className="container mx-auto px-4">
@@ -21,7 +21,7 @@ const FeaturedSections = () => {
   );
 };
 
-const bikes: TBike[] = [
+/* const bikes: TBike[] = [
   {
     _id: "1",
     brand: "Trek",
@@ -63,6 +63,6 @@ const bikes: TBike[] = [
     description:
       "An advanced hybrid bike designed for fitness and adventure rides, offering excellent control.",
   },
-];
+]; */
 
 export default FeaturedSections;
