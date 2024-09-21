@@ -7,7 +7,7 @@ const FeaturedSections = () => {
   const { data: bikes, isLoading } = useBikesQuery(undefined);
   console.log(bikes);
 
-  if (isLoading) {
+  if (isLoading || !Array.isArray(bikes)) {
     return <Loading />;
   }
   return (
