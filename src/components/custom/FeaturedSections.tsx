@@ -1,7 +1,10 @@
 import { TBike } from "@/types";
 import BikeCard from "./BikeCard";
+import { useBikesQuery } from "@/redux/features/bikes";
 
 const FeaturedSections = () => {
+  const { data: bikes } = useBikesQuery(undefined);
+
   return (
     <section className="py-12 bg-accent">
       <div className="container mx-auto px-4">
