@@ -1,10 +1,15 @@
 import { TBike } from "@/types";
 import BikeCard from "./BikeCard";
 import { useBikesQuery } from "@/redux/features/bikes";
+import Loading from "../shared/Loading";
 
 const FeaturedSections = () => {
-  const { data: bikes } = useBikesQuery(undefined);
+  const { data: bikes, isLoading, isPending } = useBikesQuery(undefined);
   console.log(bikes);
+
+  if (isLoading || isPending) {
+    return <Loading />;
+  }
   return (
     <section className="py-12 bg-accent">
       <div className="container mx-auto px-4">
