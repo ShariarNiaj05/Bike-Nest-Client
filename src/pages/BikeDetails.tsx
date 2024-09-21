@@ -2,7 +2,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { TBike } from "@/types";
 import { useMemo } from "react";
-import { bikesData } from "@/utils/demoBikes";
 import { useBikeDetailsQuery, useBikesQuery } from "@/redux/features/bikes";
 
 const BikeDetail = () => {
