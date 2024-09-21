@@ -6,7 +6,6 @@ import Loading from "../shared/Loading";
 const FeaturedSections = () => {
   const { data, isLoading } = useBikesQuery(undefined);
   const bikes = data?.data;
-  console.log(bikes);
 
   if (isLoading) {
     return <Loading />;
