@@ -13,6 +13,7 @@ const bikes = baseApi.injectEndpoints({
     }),
     BikeDetails: builder.query({
       query: (id) => {
+        console.log("id in redux", id);
         return {
           url: `/bikes/${id}`,
           method: "GET",
