@@ -12,7 +12,7 @@ const bikes = baseApi.injectEndpoints({
       // providesTags: ["profile"],
     }),
     BikeDetails: builder.query({
-      query: ({ id }) => {
+      query: (id) => {
         return {
           url: `/bikes/${id}`,
           method: "GET",
