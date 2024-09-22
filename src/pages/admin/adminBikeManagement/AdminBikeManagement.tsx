@@ -159,7 +159,7 @@ const AdminBikeManagement = () => {
                   required
                 />
               </div>
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <Label htmlFor="isAvailable">Available</Label>
                 <Input
                   id="isAvailable"
@@ -167,7 +167,7 @@ const AdminBikeManagement = () => {
                   checked={formValues.isAvailable}
                   onChange={handleChange}
                 />
-              </div>
+              </div> */}
               <div className="space-y-2">
                 <Label htmlFor="cc">CC</Label>
                 <Input
