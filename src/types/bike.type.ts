@@ -1,5 +1,5 @@
 export type TBike = {
-  _id: string;
+  _id?: string;
   brand: string;
   model: string;
   imageUrl: string;
@@ -12,7 +12,7 @@ export type TBike = {
 };
 
 export interface IBike {
-  _id: string;
+  _id?: string;
   name: string;
   description: string;
   pricePerHour: number;
