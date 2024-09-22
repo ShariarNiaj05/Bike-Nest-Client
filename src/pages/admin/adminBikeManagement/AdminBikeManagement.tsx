@@ -24,15 +24,14 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useBikesQuery } from "@/redux/features/bikes";
 import Loading from "@/components/shared/Loading";
+import { TBike } from "@/types";
 
 const AdminBikeManagement = () => {
-  const [selectedBike, setSelectedBike] = useState(null);
-  const [bikeToDelete, setBikeToDelete] = useState(null);
-
   const { data, isLoading } = useBikesQuery(undefined);
   const bikes = data?.data;
   console.log(bikes);
-
+  const [selectedBike, setSelectedBike] = useState<TBike>(bikes);
+  const [bikeToDelete, setBikeToDelete] = useState(null);
   // Handle Delete Confirmation
   const handleDelete = () => {
     console.log("Deleted bike with ID:", bikeToDelete.id);
@@ -40,8 +39,8 @@ const AdminBikeManagement = () => {
   };
 
   // Handle Update (prefill the modal with bike data)
-  const handleUpdate = (bike) => {
-    console.log("update bike id:", bike.id);
+  const handleUpdate = (bike: TBike) => {
+    console.log("update bike id:", bike._id);
     setSelectedBike(bike); // Set the selected bike to be updated
   };
 
