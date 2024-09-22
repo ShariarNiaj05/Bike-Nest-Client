@@ -27,6 +27,9 @@ const AdminBikeManagement = () => {
   const [selectedBike, setSelectedBike] = useState(null);
   const [bikeToDelete, setBikeToDelete] = useState(null);
 
+  const { data, isLoading } = useBikesQuery(undefined);
+  const bikes = data?.data;
+
   // Handle Delete Confirmation
   const handleDelete = () => {
     console.log("Deleted bike with ID:", bikeToDelete.id);
