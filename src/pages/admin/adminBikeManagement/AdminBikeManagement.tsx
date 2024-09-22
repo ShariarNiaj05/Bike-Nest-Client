@@ -95,7 +95,7 @@ const AdminBikeManagement = () => {
                 <Input
                   id="price"
                   type="number"
-                  defaultValue={selectedBike?.price || ""}
+                  defaultValue={selectedBike?.pricePerHour || ""}
                   required
                 />
               </div>
@@ -153,14 +153,14 @@ const AdminBikeManagement = () => {
               </tr>
             </thead>
             <tbody>
-              {bikes?.map((bike) => (
+              {bikes?.map((bike: TBike) => (
                 <tr key={bike.id} className="bg-white border-b">
                   <td className="px-4 py-2">{bike.name}</td>
                   <td className="px-4 py-2">{bike.brand}</td>
                   <td className="px-4 py-2">{bike.model}</td>
                   <td className="px-4 py-2">{bike.year}</td>
-                  <td className="px-4 py-2">{bike.price}</td>
-                  <td className="px-4 py-2">{bike.availability}</td>
+                  <td className="px-4 py-2">{bike.pricePerHour}</td>
+                  <td className="px-4 py-2">{bike.isAvailable}</td>
                   <td className="px-4 py-2">
                     <Dialog>
                       <DialogTrigger asChild>
