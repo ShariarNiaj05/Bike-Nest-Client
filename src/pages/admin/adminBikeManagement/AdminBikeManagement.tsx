@@ -202,7 +202,7 @@ const AdminBikeManagement = () => {
                             <Input
                               id="price"
                               type="number"
-                              defaultValue={selectedBike?.price || ""}
+                              defaultValue={selectedBike?.pricePerHour || ""}
                               required
                             />
                           </div>
