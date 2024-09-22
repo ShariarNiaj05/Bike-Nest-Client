@@ -69,7 +69,33 @@ const AdminBikeManagement = () => {
   // Handle Add New Bike
   const handleAddNewBike = () => {
     setSelectedBike(null); // Reset the selected bike to null for creating a new bike
+    setFormValues({
+      name: "",
+      description: "",
+      pricePerHour: 0,
+      imageUrl: "",
+      isAvailable: true,
+      cc: 0,
+      year: 0,
+      model: "",
+      brand: "",
+    });
   };
+
+  // Handle Form Submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (selectedBike) {
+      console.log("Updating bike:", formValues);
+    } else {
+      console.log("Adding new bike:", formValues);
+    }
+    // Add your POST or PUT request logic here
+  };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   if (isLoading) {
     return <Loading />;
