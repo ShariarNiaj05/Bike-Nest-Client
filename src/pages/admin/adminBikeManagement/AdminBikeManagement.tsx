@@ -70,8 +70,8 @@ const AdminBikeManagement = () => {
   };
 
   // Handle Update
-  const handleUpdate = async (bike: TBike) => {
-    // e.preventDefault();
+  const handleUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
 
     if (!selectedBike) return;
 
