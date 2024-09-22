@@ -121,12 +121,13 @@ const AdminBikeManagement = () => {
                 {selectedBike ? `Update ${selectedBike.name}` : "Add New Bike"}
               </DialogTitle>
             </DialogHeader>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input
                   id="name"
-                  defaultValue={selectedBike?.name || ""}
+                  value={formValues.name}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -134,17 +135,37 @@ const AdminBikeManagement = () => {
                 <Label htmlFor="description">Description</Label>
                 <Input
                   id="description"
-                  defaultValue={selectedBike?.description || ""}
+                  value={formValues.description}
+                  onChange={handleChange}
                   required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="price">Price</Label>
+                <Label htmlFor="pricePerHour">Price Per Hour</Label>
                 <Input
-                  id="price"
+                  id="pricePerHour"
                   type="number"
-                  defaultValue={selectedBike?.pricePerHour || ""}
+                  value={formValues.pricePerHour}
+                  onChange={handleChange}
                   required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="imageUrl">Image URL</Label>
+                <Input
+                  id="imageUrl"
+                  value={formValues.imageUrl}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="isAvailable">Available</Label>
+                <Input
+                  id="isAvailable"
+                  type="checkbox"
+                  checked={formValues.isAvailable}
+                  onChange={handleChange}
                 />
               </div>
               <div className="space-y-2">
@@ -152,7 +173,8 @@ const AdminBikeManagement = () => {
                 <Input
                   id="cc"
                   type="number"
-                  defaultValue={selectedBike?.cc || ""}
+                  value={formValues.cc}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -161,7 +183,17 @@ const AdminBikeManagement = () => {
                 <Input
                   id="year"
                   type="number"
-                  defaultValue={selectedBike?.year || ""}
+                  value={formValues.year}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="model">Model</Label>
+                <Input
+                  id="model"
+                  value={formValues.model}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -169,16 +201,17 @@ const AdminBikeManagement = () => {
                 <Label htmlFor="brand">Brand</Label>
                 <Input
                   id="brand"
-                  defaultValue={selectedBike?.brand || ""}
+                  value={formValues.brand}
+                  onChange={handleChange}
                   required
                 />
               </div>
+              <DialogFooter>
+                <Button type="submit">
+                  {selectedBike ? "Update Bike" : "Add Bike"}
+                </Button>
+              </DialogFooter>
             </form>
-            <DialogFooter>
-              <Button type="submit">
-                {selectedBike ? "Update Bike" : "Add Bike"}
-              </Button>
-            </DialogFooter>
           </DialogContent>
         </Dialog>
       </div>
