@@ -61,16 +61,14 @@ const AdminBikeManagement = () => {
   };
 
   // Handle Delete Confirmation
-  const handleDelete = () => {
-    console.log("Deleted bike with ID:", bikeToDelete?._id);
-    setBikeToDelete(null); // Clear the selected bike after deletion
+  const handleDelete = (id) => {
+    console.log("Deleted bike with ID:", id);
   };
 
   // Handle Update
   const handleUpdate = (bike: TBike) => {
     console.log("update bike id:", bike._id);
     setSelectedBike(bike); // Set the selected bike to be updated
-    setFormValues(bike); // Prefill the form values
   };
 
   const handleAddNewBike = () => {
@@ -337,7 +335,7 @@ const AdminBikeManagement = () => {
                           variant="destructive"
                           size="sm"
                           className="ml-2"
-                          onClick={() => setBikeToDelete(bike)}
+                          // onClick={() => setBikeToDelete(bike)}
                         >
                           Delete
                         </Button>
