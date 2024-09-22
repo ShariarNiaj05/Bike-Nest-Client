@@ -25,6 +25,13 @@ import {
 import { useBikesQuery } from "@/redux/features/bikes";
 import Loading from "@/components/shared/Loading";
 import { TBike } from "@/types";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const AdminBikeManagement = () => {
   const { data, isLoading } = useBikesQuery(undefined);
@@ -55,7 +62,7 @@ const AdminBikeManagement = () => {
 
   // Handle Delete Confirmation
   const handleDelete = () => {
-    console.log("Deleted bike with ID:", bikeToDelete.id);
+    console.log("Deleted bike with ID:", bikeToDelete?._id);
     setBikeToDelete(null); // Clear the selected bike after deletion
   };
 
@@ -199,12 +206,24 @@ const AdminBikeManagement = () => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="brand">Brand</Label>
-                <Input
-                  id="brand"
-                  value={formValues.brand}
-                  onChange={handleChange}
-                  required
-                />
+                <Select
+                  defaultValue={selectedBike?.brand || ""}
+                  onValueChange={(value) =>
+                    setSelectedBike({ ...selectedBike, brand: value })
+                  }
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select brand" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Yamaha">Yamaha</SelectItem>
+                    <SelectItem value="Honda">Honda</SelectItem>
+                    <SelectItem value="Suzuki">Suzuki</SelectItem>
+                    <SelectItem value="Kawasaki">Kawasaki</SelectItem>
+                    <SelectItem value="Ducati">Ducati</SelectItem>
+                    {/* Add more brand options as needed */}
+                  </SelectContent>
+                </Select>
               </div>
               <DialogFooter>
                 <Button type="submit">
