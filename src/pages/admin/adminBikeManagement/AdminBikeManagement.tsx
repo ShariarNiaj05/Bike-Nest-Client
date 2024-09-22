@@ -91,7 +91,7 @@ const AdminBikeManagement = () => {
       await updateBike(payload);
       alert("Bike upated successfully!");
     } catch (error) {
-      console.error("Failed to add bike:", error);
+      console.error("Failed to updated bike:", error);
     }
   };
 
