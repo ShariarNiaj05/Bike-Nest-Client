@@ -70,29 +70,18 @@ const AdminBikeManagement = () => {
   };
 
   // Handle Update
-  const handleUpdate = async (bike: TBike) => {
-    console.log("update bike:", bike);
-    setSelectedBike(bike); // Set the selected bike to be updated
-    // Convert the values to numbers before submission
-    const id = bike._id;
-    const bikeData = {
-      ...formData,
-      pricePerHour: Number(formData.pricePerHour),
-      cc: Number(formData.cc),
-      year: Number(formData.year),
-    };
-
-    const payload = {
-      id,
-      bikeData,
-    };
-
-    try {
-      await updateBike(payload);
-      alert("Bike upated successfully!");
-    } catch (error) {
-      console.error("Failed to updated bike:", error);
-    }
+  const handleUpdate = (bike: TBike) => {
+    setSelectedBike(bike);
+    setFormData({
+      name: bike.name,
+      description: bike.description,
+      pricePerHour: bike.pricePerHour,
+      imageUrl: bike.imageUrl,
+      cc: bike.cc,
+      year: bike.year,
+      model: bike.model,
+      brand: bike.brand,
+    });
   };
 
   const handleAddNewBike = () => {
@@ -121,10 +110,29 @@ const AdminBikeManagement = () => {
     };
 
     try {
-      await addBike(bikeData);
-      alert("Bike added successfully!");
+      if (selectedBike) {
+        // Update bike
+        await updateBike({ id: selectedBike._id, data: bikeData }); // Fixing the payload structure here
+        alert("Bike updated successfully!");
+      } else {
+        // Add new bike
+        await addBike(bikeData);
+        alert("Bike added successfully!");
+      }
+
+      // Reset form data
+      setFormData({
+        name: "",
+        description: "",
+        pricePerHour: 0,
+        imageUrl: "",
+        cc: 0,
+        year: 0,
+        model: "",
+        brand: "",
+      });
     } catch (error) {
-      console.error("Failed to add bike:", error);
+      console.error("Failed to submit bike:", error);
     }
   };
 
