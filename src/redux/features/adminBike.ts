@@ -12,6 +12,17 @@ const adminBike = baseApi.injectEndpoints({
       },
       invalidatesTags: ["bikes"],
     }),
+    updateBike: builder.mutation({
+      query: (payload) => {
+        const { id, data } = payload;
+        return {
+          url: `/bikes/${id}`,
+          method: "POST",
+          body: data,
+        };
+      },
+      invalidatesTags: ["bikes"],
+    }),
   }),
 });
 
