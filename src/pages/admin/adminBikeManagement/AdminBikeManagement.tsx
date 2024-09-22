@@ -89,8 +89,17 @@ const AdminBikeManagement = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Convert the values to numbers before submission
+    const bikeData = {
+      ...formData,
+      pricePerHour: Number(formData.pricePerHour),
+      cc: Number(formData.cc),
+      year: Number(formData.year),
+    };
+
     try {
-      await addBike(formData);
+      await addBike(bikeData);
       alert("Bike added successfully!");
     } catch (error) {
       console.error("Failed to add bike:", error);
