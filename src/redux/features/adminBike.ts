@@ -26,4 +26,4 @@ const adminBike = baseApi.injectEndpoints({
   }),
 });
 
-export const { useAddBikeMutation } = adminBike;
+export const { useAddBikeMutation, useUpdateBikeMutation } = adminBike;
