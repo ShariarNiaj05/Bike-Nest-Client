@@ -32,12 +32,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useAddBikeMutation } from "@/redux/features/adminBike";
+import {
+  useAddBikeMutation,
+  useUpdateBikeMutation,
+} from "@/redux/features/adminBike";
 
 const AdminBikeManagement = () => {
   const { data, isLoading } = useBikesQuery(undefined);
   const bikes = data?.data;
   const [addBike] = useAddBikeMutation();
+  const [updateBike] = useUpdateBikeMutation();
 
   const [selectedBike, setSelectedBike] = useState<Partial<TBike> | null>(null);
   const [formData, setFormData] = useState({
