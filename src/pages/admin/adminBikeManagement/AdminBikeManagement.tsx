@@ -38,27 +38,26 @@ const AdminBikeManagement = () => {
   const { data, isLoading } = useBikesQuery(undefined);
   const bikes = data?.data;
   const [addBike] = useAddBikeMutation();
-  const [selectedBike, setSelectedBike] = useState<TBike | null>(null);
-  const [bikeToDelete, setBikeToDelete] = useState<TBike | null>(null);
 
-  const [formValues, setFormValues] = useState({
+  const [selectedBike, setSelectedBike] = useState<Partial<TBike> | null>(null);
+  const [formData, setFormData] = useState({
     name: "",
     description: "",
     pricePerHour: 0,
     imageUrl: "",
-    isAvailable: true,
     cc: 0,
     year: 0,
     model: "",
     brand: "",
   });
+  console.log(formData);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value, type, checked } = e.target;
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [id]: type === "checkbox" ? checked : value,
-    }));
+  const handleBrandChange = (value: string) => {
+    setFormData({ ...formData, brand: value });
   };
 
   // Handle Delete Confirmation
@@ -74,15 +73,13 @@ const AdminBikeManagement = () => {
     setFormValues(bike); // Prefill the form values
   };
 
-  // Handle Add New Bike
   const handleAddNewBike = () => {
-    setSelectedBike(null); // Reset the selected bike to null for creating a new bike
-    setFormValues({
+    setSelectedBike(null);
+    setFormData({
       name: "",
       description: "",
       pricePerHour: 0,
       imageUrl: "",
-      isAvailable: true,
       cc: 0,
       year: 0,
       model: "",
@@ -90,31 +87,26 @@ const AdminBikeManagement = () => {
     });
   };
 
-  // Handle Form Submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (selectedBike) {
-      console.log("Updating bike:", formValues);
-    } else {
-      console.log("Adding new bike:", formValues);
+    try {
+      await addBike(formData);
+      alert("Bike added successfully!");
+    } catch (error) {
+      console.error("Failed to add bike:", error);
     }
-    // Add your POST or PUT request logic here
   };
 
   if (isLoading) {
     return <Loading />;
   }
 
-  if (isLoading) {
-    return <Loading />;
-  }
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <h1 className="text-4xl font-bold text-center mb-8 text-primary">
         Bike Management
       </h1>
 
-      {/* Add New Bike Button */}
       <div className="mb-6 flex justify-center">
         <Dialog>
           <DialogTrigger asChild>
@@ -134,8 +126,8 @@ const AdminBikeManagement = () => {
                 <Label htmlFor="name">Name</Label>
                 <Input
                   id="name"
-                  value={formValues.name}
-                  onChange={handleChange}
+                  value={formData.name}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -143,8 +135,8 @@ const AdminBikeManagement = () => {
                 <Label htmlFor="description">Description</Label>
                 <Input
                   id="description"
-                  value={formValues.description}
-                  onChange={handleChange}
+                  value={formData.description}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -153,8 +145,8 @@ const AdminBikeManagement = () => {
                 <Input
                   id="pricePerHour"
                   type="number"
-                  value={formValues.pricePerHour}
-                  onChange={handleChange}
+                  value={Number(formData.pricePerHour)}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -162,27 +154,18 @@ const AdminBikeManagement = () => {
                 <Label htmlFor="imageUrl">Image URL</Label>
                 <Input
                   id="imageUrl"
-                  value={formValues.imageUrl}
-                  onChange={handleChange}
+                  value={formData.imageUrl}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
-              {/* <div className="space-y-2">
-                <Label htmlFor="isAvailable">Available</Label>
-                <Input
-                  id="isAvailable"
-                  type="checkbox"
-                  checked={formValues.isAvailable}
-                  onChange={handleChange}
-                />
-              </div> */}
               <div className="space-y-2">
                 <Label htmlFor="cc">CC</Label>
                 <Input
                   id="cc"
                   type="number"
-                  value={formValues.cc}
-                  onChange={handleChange}
+                  value={Number(formData.cc)}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -191,8 +174,8 @@ const AdminBikeManagement = () => {
                 <Input
                   id="year"
                   type="number"
-                  value={formValues.year}
-                  onChange={handleChange}
+                  value={Number(formData.year)}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -200,29 +183,25 @@ const AdminBikeManagement = () => {
                 <Label htmlFor="model">Model</Label>
                 <Input
                   id="model"
-                  value={formValues.model}
-                  onChange={handleChange}
+                  value={formData.model}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="brand">Brand</Label>
                 <Select
-                  defaultValue={selectedBike?.brand || ""}
-                  onValueChange={(value) =>
-                    setSelectedBike({ ...selectedBike, brand: value })
-                  }
+                  onValueChange={handleBrandChange}
+                  defaultValue={formData.brand}
                 >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select brand" />
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select a brand" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="Yamaha">Yamaha</SelectItem>
                     <SelectItem value="Honda">Honda</SelectItem>
                     <SelectItem value="Suzuki">Suzuki</SelectItem>
                     <SelectItem value="Kawasaki">Kawasaki</SelectItem>
-                    <SelectItem value="Ducati">Ducati</SelectItem>
-                    {/* Add more brand options as needed */}
                   </SelectContent>
                 </Select>
               </div>
