@@ -22,6 +22,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { useBikesQuery } from "@/redux/features/bikes";
+import Loading from "@/components/shared/Loading";
 
 const AdminBikeManagement = () => {
   const [selectedBike, setSelectedBike] = useState(null);
@@ -29,6 +31,7 @@ const AdminBikeManagement = () => {
 
   const { data, isLoading } = useBikesQuery(undefined);
   const bikes = data?.data;
+  console.log(bikes);
 
   // Handle Delete Confirmation
   const handleDelete = () => {
@@ -47,6 +50,9 @@ const AdminBikeManagement = () => {
     setSelectedBike(null); // Reset the selected bike to null for creating a new bike
   };
 
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <h1 className="text-4xl font-bold text-center mb-8 text-primary">
@@ -148,7 +154,7 @@ const AdminBikeManagement = () => {
               </tr>
             </thead>
             <tbody>
-              {bikes.map((bike) => (
+              {bikes?.map((bike) => (
                 <tr key={bike.id} className="bg-white border-b">
                   <td className="px-4 py-2">{bike.name}</td>
                   <td className="px-4 py-2">{bike.brand}</td>
