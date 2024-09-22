@@ -32,6 +32,27 @@ const AdminBikeManagement = () => {
   console.log(bikes);
   const [selectedBike, setSelectedBike] = useState<TBike | null>(null);
   const [bikeToDelete, setBikeToDelete] = useState<TBike | null>(null);
+
+  const [formValues, setFormValues] = useState({
+    name: "",
+    description: "",
+    pricePerHour: 0,
+    imageUrl: "",
+    isAvailable: true,
+    cc: 0,
+    year: 0,
+    model: "",
+    brand: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value, type, checked } = e.target;
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [id]: type === "checkbox" ? checked : value,
+    }));
+  };
+
   // Handle Delete Confirmation
   const handleDelete = () => {
     console.log("Deleted bike with ID:", bikeToDelete.id);
