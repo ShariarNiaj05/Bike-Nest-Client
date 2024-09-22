@@ -17,7 +17,7 @@ const adminBike = baseApi.injectEndpoints({
         const { id, data } = payload;
         return {
           url: `/bikes/${id}`,
-          method: "POST",
+          method: "PUT",
           body: data,
         };
       },

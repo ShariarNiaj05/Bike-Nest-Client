@@ -70,9 +70,25 @@ const AdminBikeManagement = () => {
   };
 
   // Handle Update
-  const handleUpdate = (bike: TBike) => {
-    console.log("update bike id:", bike._id);
-    setSelectedBike(bike); // Set the selected bike to be updated
+  const handleUpdate = async (bike: TBike) => {
+    // e.preventDefault();
+
+    if (!selectedBike) return;
+
+    const updatedBikeData = {
+      ...formData,
+      id: selectedBike._id, // Ensure the ID is passed to identify which bike to update
+      pricePerHour: Number(formData.pricePerHour),
+      cc: Number(formData.cc),
+      year: Number(formData.year),
+    };
+
+    try {
+      await updateBike(updatedBikeData);
+      alert("Bike updated successfully!");
+    } catch (error) {
+      console.error("Failed to update bike:", error);
+    }
   };
 
   const handleAddNewBike = () => {
