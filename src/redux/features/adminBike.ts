@@ -13,8 +13,7 @@ const adminBike = baseApi.injectEndpoints({
       invalidatesTags: ["bikes"],
     }),
     updateBike: builder.mutation({
-      query: (payload) => {
-        const { id, data } = payload;
+      query: ({ id, data }) => {
         return {
           url: `/bikes/${id}`,
           method: "PUT",

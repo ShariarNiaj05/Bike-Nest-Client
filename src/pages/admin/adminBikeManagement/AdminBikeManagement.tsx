@@ -112,7 +112,7 @@ const AdminBikeManagement = () => {
     try {
       if (selectedBike) {
         // Update bike
-        await updateBike({ id: selectedBike._id, data: bikeData }); // Fixing the payload structure here
+        await updateBike({ id: selectedBike._id, data: bikeData });
         alert("Bike updated successfully!");
       } else {
         // Add new bike
@@ -353,7 +353,7 @@ const AdminBikeManagement = () => {
                           </div>
                         </form>
                         <DialogFooter>
-                          <Button type="submit">
+                          <Button type="submit" onClick={handleSubmit}>
                             {selectedBike ? "Update Bike" : "Add Bike"}
                           </Button>
                         </DialogFooter>
