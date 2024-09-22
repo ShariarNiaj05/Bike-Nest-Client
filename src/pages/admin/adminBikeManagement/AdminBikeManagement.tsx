@@ -70,24 +70,28 @@ const AdminBikeManagement = () => {
   };
 
   // Handle Update
-  const handleUpdate = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!selectedBike) return;
-
-    const updatedBikeData = {
+  const handleUpdate = async (bike: TBike) => {
+    console.log("update bike:", bike);
+    setSelectedBike(bike); // Set the selected bike to be updated
+    // Convert the values to numbers before submission
+    const id = bike._id;
+    const bikeData = {
       ...formData,
-      id: selectedBike._id, // Ensure the ID is passed to identify which bike to update
       pricePerHour: Number(formData.pricePerHour),
       cc: Number(formData.cc),
       year: Number(formData.year),
     };
 
+    const payload = {
+      id,
+      bikeData,
+    };
+
     try {
-      await updateBike(updatedBikeData);
-      alert("Bike updated successfully!");
+      await updateBike(payload);
+      alert("Bike upated successfully!");
     } catch (error) {
-      console.error("Failed to update bike:", error);
+      console.error("Failed to add bike:", error);
     }
   };
 
