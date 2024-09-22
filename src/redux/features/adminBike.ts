@@ -6,7 +6,8 @@ const adminBike = baseApi.injectEndpoints({
       query: (data) => {
         return {
           url: "/bikes",
-          method: "GET",
+          method: "POST",
+          body: data,
         };
       },
       // providesTags: ["profile"],
