@@ -154,7 +154,7 @@ const AdminBikeManagement = () => {
             </thead>
             <tbody>
               {bikes?.map((bike: TBike) => (
-                <tr key={bike.id} className="bg-white border-b">
+                <tr key={bike._id} className="bg-white border-b">
                   <td className="px-4 py-2">{bike.name}</td>
                   <td className="px-4 py-2">{bike.brand}</td>
                   <td className="px-4 py-2">{bike.model}</td>
