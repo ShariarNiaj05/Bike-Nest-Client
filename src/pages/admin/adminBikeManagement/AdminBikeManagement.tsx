@@ -281,7 +281,7 @@ const AdminBikeManagement = () => {
 };
 
 // Sample Data
-const bikes = [
+/* const bikes = [
   {
     id: 1,
     name: "Yamaha R15",
@@ -304,6 +304,6 @@ const bikes = [
     brand: "Honda",
     availability: "Not Available",
   },
-];
+]; */
 
 export default AdminBikeManagement;
