@@ -32,11 +32,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useAddBikeMutation } from "@/redux/features/adminBike";
 
 const AdminBikeManagement = () => {
   const { data, isLoading } = useBikesQuery(undefined);
   const bikes = data?.data;
-  console.log(bikes);
+  const [addBike] = useAddBikeMutation();
   const [selectedBike, setSelectedBike] = useState<TBike | null>(null);
   const [bikeToDelete, setBikeToDelete] = useState<TBike | null>(null);
 
