@@ -9,7 +9,7 @@ const bikes = baseApi.injectEndpoints({
           method: "GET",
         };
       },
-      // providesTags: ["profile"],
+      providesTags: ["bikes"],
     }),
     BikeDetails: builder.query({
       query: (id) => {
@@ -18,7 +18,7 @@ const bikes = baseApi.injectEndpoints({
           method: "GET",
         };
       },
-      // providesTags: ["profile"],
+      providesTags: ["bikes"],
     }),
   }),
 });

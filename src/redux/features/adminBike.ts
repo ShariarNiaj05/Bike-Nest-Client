@@ -10,7 +10,7 @@ const adminBike = baseApi.injectEndpoints({
           body: data,
         };
       },
-      // providesTags: ["profile"],
+      invalidatesTags: ["bikes"],
     }),
   }),
 });
