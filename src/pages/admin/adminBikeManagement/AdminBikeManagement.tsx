@@ -59,10 +59,11 @@ const AdminBikeManagement = () => {
     setBikeToDelete(null); // Clear the selected bike after deletion
   };
 
-  // Handle Update (prefill the modal with bike data)
+  // Handle Update
   const handleUpdate = (bike: TBike) => {
     console.log("update bike id:", bike._id);
     setSelectedBike(bike); // Set the selected bike to be updated
+    setFormValues(bike); // Prefill the form values
   };
 
   // Handle Add New Bike
