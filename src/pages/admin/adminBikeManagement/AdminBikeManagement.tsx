@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -54,7 +54,22 @@ const AdminBikeManagement = () => {
     model: "",
     brand: "",
   });
-  console.log(formData);
+
+  useEffect(() => {
+    if (selectedBike) {
+      setFormData({
+        name: selectedBike.name || "",
+        description: selectedBike.description || "",
+        pricePerHour: selectedBike.pricePerHour || 0,
+        imageUrl: selectedBike.imageUrl || "",
+        cc: selectedBike.cc || 0,
+        year: selectedBike.year || 0,
+        model: selectedBike.model || "",
+        brand: selectedBike.brand || "",
+      });
+    }
+  }, [selectedBike]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
@@ -70,7 +85,7 @@ const AdminBikeManagement = () => {
   };
 
   // Handle Update
-  const handleUpdate = (bike: TBike) => {
+  /*  const handleUpdate = (bike: TBike) => {
     setSelectedBike(bike);
     console.log("handle update,", bike);
     setFormData({
@@ -83,6 +98,10 @@ const AdminBikeManagement = () => {
       model: bike.model,
       brand: bike.brand,
     });
+  }; */
+
+  const handleUpdate = (bike: TBike) => {
+    setSelectedBike(bike);
   };
 
   const handleAddNewBike = () => {
@@ -109,9 +128,10 @@ const AdminBikeManagement = () => {
       cc: Number(formData.cc),
       year: Number(formData.year),
     };
-    console.log("updated bikeData", bikeData);
+
     try {
       if (selectedBike) {
+        console.log(selectedBike, "get selected bike during update");
         // Update bike
         await updateBike({ id: selectedBike._id, data: bikeData });
         alert("Bike updated successfully!");

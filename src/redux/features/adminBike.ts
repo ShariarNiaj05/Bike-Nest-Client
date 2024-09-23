@@ -14,6 +14,8 @@ const adminBike = baseApi.injectEndpoints({
     }),
     updateBike: builder.mutation({
       query: ({ id, data }) => {
+        console.log(data, "data from redux");
+        console.log(id, "id from redux");
         return {
           url: `/bikes/${id}`,
           method: "PUT",
