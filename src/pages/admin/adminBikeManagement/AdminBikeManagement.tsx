@@ -424,7 +424,7 @@ const AdminBikeManagement = () => {
                               event: React.MouseEvent<HTMLButtonElement>
                             ) => {
                               event.preventDefault();
-                              handleDelete(bike._id);
+                              handleDelete(bike._id as string);
                             }}
                           >
                             Delete
