@@ -72,6 +72,7 @@ const AdminBikeManagement = () => {
   // Handle Update
   const handleUpdate = (bike: TBike) => {
     setSelectedBike(bike);
+    console.log("handle update,", bike);
     setFormData({
       name: bike.name,
       description: bike.description,
@@ -108,7 +109,7 @@ const AdminBikeManagement = () => {
       cc: Number(formData.cc),
       year: Number(formData.year),
     };
-
+    console.log("updated bikeData", bikeData);
     try {
       if (selectedBike) {
         // Update bike
