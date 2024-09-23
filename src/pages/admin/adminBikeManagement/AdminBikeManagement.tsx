@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -43,7 +43,7 @@ const AdminBikeManagement = () => {
   const [addBike] = useAddBikeMutation();
   const [updateBike] = useUpdateBikeMutation();
 
-  const [selectedBike, setSelectedBike] = useState<Partial<TBike> | null>(null);
+  const [selectedBike, setSelectedBike] = useState<TBike | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -54,35 +54,44 @@ const AdminBikeManagement = () => {
     model: "",
     brand: "",
   });
-  console.log(formData);
+
+  useEffect(() => {
+    if (selectedBike) {
+      setFormData({
+        name: selectedBike.name,
+        description: selectedBike.description,
+        pricePerHour: selectedBike.pricePerHour,
+        imageUrl: selectedBike.imageUrl,
+        cc: selectedBike.cc,
+        year: selectedBike.year,
+        model: selectedBike.model,
+        brand: selectedBike.brand,
+      });
+    }
+  }, [selectedBike]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+    setFormData((prev) => ({
+      ...prev,
+      [id]:
+        id === "pricePerHour" || id === "cc" || id === "year"
+          ? Number(value)
+          : value,
+    }));
   };
 
   const handleBrandChange = (value: string) => {
-    setFormData({ ...formData, brand: value });
+    setFormData((prev) => ({ ...prev, brand: value }));
   };
 
-  // Handle Delete Confirmation
-  const handleDelete = (id) => {
+  const handleDelete = (id: string) => {
     console.log("Deleted bike with ID:", id);
+    // delete functionality here
   };
 
-  // Handle Update
   const handleUpdate = (bike: TBike) => {
     setSelectedBike(bike);
-    console.log("handle update,", bike);
-    setFormData({
-      name: bike.name,
-      description: bike.description,
-      pricePerHour: bike.pricePerHour,
-      imageUrl: bike.imageUrl,
-      cc: bike.cc,
-      year: bike.year,
-      model: bike.model,
-      brand: bike.brand,
-    });
   };
 
   const handleAddNewBike = () => {
@@ -101,39 +110,18 @@ const AdminBikeManagement = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Convert the values to numbers before submission
-    const bikeData = {
-      ...formData,
-      pricePerHour: Number(formData.pricePerHour),
-      cc: Number(formData.cc),
-      year: Number(formData.year),
-    };
-    console.log("updated bikeData", bikeData);
     try {
       if (selectedBike) {
-        // Update bike
-        await updateBike({ id: selectedBike._id, data: bikeData });
+        await updateBike({ id: selectedBike._id, data: formData }).unwrap();
         alert("Bike updated successfully!");
       } else {
-        // Add new bike
-        await addBike(bikeData);
+        await addBike(formData).unwrap();
         alert("Bike added successfully!");
       }
-
-      // Reset form data
-      setFormData({
-        name: "",
-        description: "",
-        pricePerHour: 0,
-        imageUrl: "",
-        cc: 0,
-        year: 0,
-        model: "",
-        brand: "",
-      });
+      handleAddNewBike(); // Reset form after submission
     } catch (error) {
       console.error("Failed to submit bike:", error);
+      alert("Failed to submit bike. Please try again.");
     }
   };
 
@@ -232,7 +220,7 @@ const AdminBikeManagement = () => {
                 <Label htmlFor="brand">Brand</Label>
                 <Select
                   onValueChange={handleBrandChange}
-                  defaultValue={formData.brand}
+                  value={formData.brand}
                 >
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select a brand" />
@@ -280,7 +268,9 @@ const AdminBikeManagement = () => {
                   <td className="px-4 py-2">{bike.model}</td>
                   <td className="px-4 py-2">{bike.year}</td>
                   <td className="px-4 py-2">{bike.pricePerHour}</td>
-                  <td className="px-4 py-2">{bike.isAvailable}</td>
+                  <td className="px-4 py-2">
+                    {bike.isAvailable ? "Available" : "Not Available"}
+                  </td>
                   <td className="px-4 py-2">
                     <Dialog>
                       <DialogTrigger asChild>
@@ -300,12 +290,13 @@ const AdminBikeManagement = () => {
                               : "Add New Bike"}
                           </DialogTitle>
                         </DialogHeader>
-                        <form className="space-y-4">
+                        <form className="space-y-4" onSubmit={handleSubmit}>
                           <div className="space-y-2">
                             <Label htmlFor="name">Name</Label>
                             <Input
                               id="name"
-                              defaultValue={selectedBike?.name || ""}
+                              value={formData.name}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
@@ -313,16 +304,27 @@ const AdminBikeManagement = () => {
                             <Label htmlFor="description">Description</Label>
                             <Input
                               id="description"
-                              defaultValue={selectedBike?.description || ""}
+                              value={formData.description}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="price">Price</Label>
+                            <Label htmlFor="pricePerHour">Price Per Hour</Label>
                             <Input
-                              id="price"
+                              id="pricePerHour"
                               type="number"
-                              defaultValue={selectedBike?.pricePerHour || ""}
+                              value={Number(formData.pricePerHour)}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="imageUrl">Image URL</Label>
+                            <Input
+                              id="imageUrl"
+                              value={formData.imageUrl}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
@@ -331,7 +333,8 @@ const AdminBikeManagement = () => {
                             <Input
                               id="cc"
                               type="number"
-                              defaultValue={selectedBike?.cc || ""}
+                              value={Number(formData.cc)}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
@@ -340,24 +343,50 @@ const AdminBikeManagement = () => {
                             <Input
                               id="year"
                               type="number"
-                              defaultValue={selectedBike?.year || ""}
+                              value={Number(formData.year)}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="model">Model</Label>
+                            <Input
+                              id="model"
+                              value={formData.model}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="brand">Brand</Label>
-                            <Input
-                              id="brand"
-                              defaultValue={selectedBike?.brand || ""}
-                              required
-                            />
+                            <Select
+                              onValueChange={handleBrandChange}
+                              value={formData.brand}
+                            >
+                              <SelectTrigger className="w-full">
+                                <SelectValue placeholder="Select a brand" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="Yamaha">Yamaha</SelectItem>
+                                <SelectItem value="Honda">Honda</SelectItem>
+                                <SelectItem value="Suzuki">Suzuki</SelectItem>
+                                <SelectItem value="Kawasaki">
+                                  Kawasaki
+                                </SelectItem>
+                              </SelectContent>
+                            </Select>
                           </div>
+                          <DialogFooter>
+                            <Button type="submit">
+                              {selectedBike ? "Update Bike" : "Add Bike"}
+                            </Button>
+                          </DialogFooter>
                         </form>
-                        <DialogFooter>
+                        {/*    <DialogFooter>
                           <Button type="submit" onClick={handleSubmit}>
                             {selectedBike ? "Update Bike" : "Add Bike"}
                           </Button>
-                        </DialogFooter>
+                        </DialogFooter> */}
                       </DialogContent>
                     </Dialog>
 
