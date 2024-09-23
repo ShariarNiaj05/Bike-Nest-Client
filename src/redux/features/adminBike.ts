@@ -14,8 +14,6 @@ const adminBike = baseApi.injectEndpoints({
     }),
     updateBike: builder.mutation({
       query: ({ id, data }) => {
-        console.log(data, "data from redux");
-        console.log(id, "id from redux");
         return {
           url: `/bikes/${id}`,
           method: "PUT",
@@ -24,7 +22,21 @@ const adminBike = baseApi.injectEndpoints({
       },
       invalidatesTags: ["bikes"],
     }),
+    deleteBike: builder.mutation({
+      query: (id) => {
+        return {
+          url: `/bikes/${id}`,
+          method: "DELETE",
+          // body: data,
+        };
+      },
+      invalidatesTags: ["bikes"],
+    }),
   }),
 });
 
-export const { useAddBikeMutation, useUpdateBikeMutation } = adminBike;
+export const {
+  useAddBikeMutation,
+  useUpdateBikeMutation,
+  useDeleteBikeMutation,
+} = adminBike;
