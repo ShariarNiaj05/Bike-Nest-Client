@@ -220,7 +220,7 @@ const AdminBikeManagement = () => {
                 <Label htmlFor="brand">Brand</Label>
                 <Select
                   onValueChange={handleBrandChange}
-                  defaultValue={formData.brand}
+                  value={formData.brand}
                 >
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select a brand" />
@@ -268,7 +268,9 @@ const AdminBikeManagement = () => {
                   <td className="px-4 py-2">{bike.model}</td>
                   <td className="px-4 py-2">{bike.year}</td>
                   <td className="px-4 py-2">{bike.pricePerHour}</td>
-                  <td className="px-4 py-2">{bike.isAvailable}</td>
+                  <td className="px-4 py-2">
+                    {bike.isAvailable ? "Available" : "Not Available"}
+                  </td>
                   <td className="px-4 py-2">
                     <Dialog>
                       <DialogTrigger asChild>
@@ -288,12 +290,13 @@ const AdminBikeManagement = () => {
                               : "Add New Bike"}
                           </DialogTitle>
                         </DialogHeader>
-                        <form className="space-y-4">
+                        <form className="space-y-4" onSubmit={handleSubmit}>
                           <div className="space-y-2">
                             <Label htmlFor="name">Name</Label>
                             <Input
                               id="name"
-                              defaultValue={selectedBike?.name || ""}
+                              value={formData.name}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
@@ -301,16 +304,27 @@ const AdminBikeManagement = () => {
                             <Label htmlFor="description">Description</Label>
                             <Input
                               id="description"
-                              defaultValue={selectedBike?.description || ""}
+                              value={formData.description}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="price">Price</Label>
+                            <Label htmlFor="pricePerHour">Price Per Hour</Label>
                             <Input
-                              id="price"
+                              id="pricePerHour"
                               type="number"
-                              defaultValue={selectedBike?.pricePerHour || ""}
+                              value={Number(formData.pricePerHour)}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="imageUrl">Image URL</Label>
+                            <Input
+                              id="imageUrl"
+                              value={formData.imageUrl}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
@@ -319,7 +333,8 @@ const AdminBikeManagement = () => {
                             <Input
                               id="cc"
                               type="number"
-                              defaultValue={selectedBike?.cc || ""}
+                              value={Number(formData.cc)}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
@@ -328,24 +343,50 @@ const AdminBikeManagement = () => {
                             <Input
                               id="year"
                               type="number"
-                              defaultValue={selectedBike?.year || ""}
+                              value={Number(formData.year)}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="model">Model</Label>
+                            <Input
+                              id="model"
+                              value={formData.model}
+                              onChange={handleInputChange}
                               required
                             />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="brand">Brand</Label>
-                            <Input
-                              id="brand"
-                              defaultValue={selectedBike?.brand || ""}
-                              required
-                            />
+                            <Select
+                              onValueChange={handleBrandChange}
+                              value={formData.brand}
+                            >
+                              <SelectTrigger className="w-full">
+                                <SelectValue placeholder="Select a brand" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="Yamaha">Yamaha</SelectItem>
+                                <SelectItem value="Honda">Honda</SelectItem>
+                                <SelectItem value="Suzuki">Suzuki</SelectItem>
+                                <SelectItem value="Kawasaki">
+                                  Kawasaki
+                                </SelectItem>
+                              </SelectContent>
+                            </Select>
                           </div>
+                          <DialogFooter>
+                            <Button type="submit">
+                              {selectedBike ? "Update Bike" : "Add Bike"}
+                            </Button>
+                          </DialogFooter>
                         </form>
-                        <DialogFooter>
+                        {/*    <DialogFooter>
                           <Button type="submit" onClick={handleSubmit}>
                             {selectedBike ? "Update Bike" : "Add Bike"}
                           </Button>
-                        </DialogFooter>
+                        </DialogFooter> */}
                       </DialogContent>
                     </Dialog>
 
