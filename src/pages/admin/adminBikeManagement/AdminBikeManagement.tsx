@@ -34,6 +34,7 @@ import {
 } from "@/components/ui/select";
 import {
   useAddBikeMutation,
+  useDeleteBikeMutation,
   useUpdateBikeMutation,
 } from "@/redux/features/adminBike";
 
@@ -42,6 +43,7 @@ const AdminBikeManagement = () => {
   const bikes = data?.data;
   const [addBike] = useAddBikeMutation();
   const [updateBike] = useUpdateBikeMutation();
+  const [deleteBike] = useDeleteBikeMutation();
 
   const [selectedBike, setSelectedBike] = useState<TBike | null>(null);
   const [formData, setFormData] = useState({
@@ -85,9 +87,14 @@ const AdminBikeManagement = () => {
     setFormData((prev) => ({ ...prev, brand: value }));
   };
 
-  const handleDelete = (id: string) => {
-    console.log("Deleted bike with ID:", id);
-    // delete functionality here
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteBike(id).unwrap();
+      alert("Bike deleted successfully!");
+    } catch (error) {
+      console.error("Failed to delete bike:", error);
+      alert("Failed to delete bike. Please try again.");
+    }
   };
 
   const handleUpdate = (bike: TBike) => {
@@ -412,7 +419,14 @@ const AdminBikeManagement = () => {
                         </AlertDialogHeader>
                         <AlertDialogFooter>
                           <AlertDialogCancel>Cancel</AlertDialogCancel>
-                          <AlertDialogAction onClick={handleDelete}>
+                          <AlertDialogAction
+                            onClick={(
+                              event: React.MouseEvent<HTMLButtonElement>
+                            ) => {
+                              event.preventDefault();
+                              handleDelete(bike._id);
+                            }}
+                          >
                             Delete
                           </AlertDialogAction>
                         </AlertDialogFooter>
