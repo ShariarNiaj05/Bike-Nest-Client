@@ -43,7 +43,7 @@ const AdminBikeManagement = () => {
   const [addBike] = useAddBikeMutation();
   const [updateBike] = useUpdateBikeMutation();
 
-  const [selectedBike, setSelectedBike] = useState<Partial<TBike> | null>(null);
+  const [selectedBike, setSelectedBike] = useState<TBike | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -58,47 +58,37 @@ const AdminBikeManagement = () => {
   useEffect(() => {
     if (selectedBike) {
       setFormData({
-        name: selectedBike.name || "",
-        description: selectedBike.description || "",
-        pricePerHour: selectedBike.pricePerHour || 0,
-        imageUrl: selectedBike.imageUrl || "",
-        cc: selectedBike.cc || 0,
-        year: selectedBike.year || 0,
-        model: selectedBike.model || "",
-        brand: selectedBike.brand || "",
+        name: selectedBike.name,
+        description: selectedBike.description,
+        pricePerHour: selectedBike.pricePerHour,
+        imageUrl: selectedBike.imageUrl,
+        cc: selectedBike.cc,
+        year: selectedBike.year,
+        model: selectedBike.model,
+        brand: selectedBike.brand,
       });
     }
   }, [selectedBike]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+    setFormData((prev) => ({
+      ...prev,
+      [id]:
+        id === "pricePerHour" || id === "cc" || id === "year"
+          ? Number(value)
+          : value,
+    }));
   };
 
   const handleBrandChange = (value: string) => {
-    setFormData({ ...formData, brand: value });
+    setFormData((prev) => ({ ...prev, brand: value }));
   };
 
-  // Handle Delete Confirmation
-  const handleDelete = (id) => {
+  const handleDelete = (id: string) => {
     console.log("Deleted bike with ID:", id);
+    // delete functionality here
   };
-
-  // Handle Update
-  /*  const handleUpdate = (bike: TBike) => {
-    setSelectedBike(bike);
-    console.log("handle update,", bike);
-    setFormData({
-      name: bike.name,
-      description: bike.description,
-      pricePerHour: bike.pricePerHour,
-      imageUrl: bike.imageUrl,
-      cc: bike.cc,
-      year: bike.year,
-      model: bike.model,
-      brand: bike.brand,
-    });
-  }; */
 
   const handleUpdate = (bike: TBike) => {
     setSelectedBike(bike);
@@ -120,40 +110,18 @@ const AdminBikeManagement = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Convert the values to numbers before submission
-    const bikeData = {
-      ...formData,
-      pricePerHour: Number(formData.pricePerHour),
-      cc: Number(formData.cc),
-      year: Number(formData.year),
-    };
-
     try {
       if (selectedBike) {
-        console.log(selectedBike, "get selected bike during update");
-        // Update bike
-        await updateBike({ id: selectedBike._id, data: bikeData });
+        await updateBike({ id: selectedBike._id, data: formData }).unwrap();
         alert("Bike updated successfully!");
       } else {
-        // Add new bike
-        await addBike(bikeData);
+        await addBike(formData).unwrap();
         alert("Bike added successfully!");
       }
-
-      // Reset form data
-      setFormData({
-        name: "",
-        description: "",
-        pricePerHour: 0,
-        imageUrl: "",
-        cc: 0,
-        year: 0,
-        model: "",
-        brand: "",
-      });
+      handleAddNewBike(); // Reset form after submission
     } catch (error) {
       console.error("Failed to submit bike:", error);
+      alert("Failed to submit bike. Please try again.");
     }
   };
 
