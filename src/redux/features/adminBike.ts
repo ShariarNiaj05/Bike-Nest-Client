@@ -24,6 +24,7 @@ const adminBike = baseApi.injectEndpoints({
     }),
     deleteBike: builder.mutation({
       query: (id) => {
+        console.log("delete id", id);
         return {
           url: `/bikes/${id}`,
           method: "DELETE",
