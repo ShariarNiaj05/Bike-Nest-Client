@@ -15,7 +15,7 @@ const manageUser = baseApi.injectEndpoints({
       query: (id: string) => {
         return {
           url: "/auth",
-          method: "GET",
+          method: "DELETE",
           body: id,
         };
       },
