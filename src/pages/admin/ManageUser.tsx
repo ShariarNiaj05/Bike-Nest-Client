@@ -1,11 +1,17 @@
 import Loading from "@/components/shared/Loading";
 import { Button } from "@/components/ui/button";
 import { Table } from "@/components/ui/table";
-import { useGetAllUsersQuery } from "@/redux/features/manageUser";
+import {
+  useDeleteUserMutation,
+  useGetAllUsersQuery,
+} from "@/redux/features/manageUser";
 
 const ManageUser = () => {
   const { data, isLoading, isFetching } = useGetAllUsersQuery(undefined);
   const users = data?.data;
+
+  const [deleteUser] = useDeleteUserMutation();
+
   const handleDelete = (userId: string) => {
     console.log(userId);
   };
