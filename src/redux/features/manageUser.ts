@@ -27,7 +27,7 @@ const manageUser = baseApi.injectEndpoints({
         console.log(id);
         return {
           url: "/auth",
-          method: "DELETE",
+          method: "PATCH",
           body: id,
         };
       },
