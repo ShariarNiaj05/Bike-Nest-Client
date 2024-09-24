@@ -4,7 +4,7 @@ import { Table } from "@/components/ui/table";
 import { useGetAllUsersQuery } from "@/redux/features/manageUser";
 
 const ManageUser = () => {
-  const { data: users, isLoading } = useGetAllUsersQuery(undefined);
+  const { data: users, isLoading, isFetching } = useGetAllUsersQuery(undefined);
 
   const handleDelete = (userId: string) => {
     console.log(userId);
@@ -14,7 +14,7 @@ const ManageUser = () => {
     console.log(userId);
   };
 
-  if (isLoading) return <Loading />;
+  if (isLoading || isFetching) return <Loading />;
   console.log(users);
   return (
     <div className="container mx-auto p-4">
@@ -31,7 +31,7 @@ const ManageUser = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {users?.map((user) => (
             <tr key={user.id}>
               <td>{user.name}</td>
               <td>{user.email}</td>
