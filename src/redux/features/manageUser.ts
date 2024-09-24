@@ -2,19 +2,10 @@ import { baseApi } from "../api/baseApi";
 
 const manageUser = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    bikes: builder.query({
+    getAllUsers: builder.query({
       query: () => {
         return {
-          url: "/bikes",
-          method: "GET",
-        };
-      },
-      providesTags: ["bikes"],
-    }),
-    BikeDetails: builder.query({
-      query: (id) => {
-        return {
-          url: `/bikes/${id}`,
+          url: "/auth",
           method: "GET",
         };
       },
@@ -23,4 +14,4 @@ const manageUser = baseApi.injectEndpoints({
   }),
 });
 
-export const {} = manageUser;
+export const { useGetAllUsersQuery } = manageUser;
