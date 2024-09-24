@@ -1,7 +1,24 @@
-import { Table } from "../../components/ui/table";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/button";
+import { Table } from "@/components/ui/table";
 
 const ManageUser = () => {
+  const handleDelete = (userId: string) => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      dispatch(deleteUser(userId));
+    }
+  };
+
+  const handlePromote = (userId: string) => {
+    if (
+      window.confirm("Are you sure you want to promote this user to admin?")
+    ) {
+      dispatch(promoteUser(userId));
+    }
+  };
+  const users = [];
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-4xl font-bold text-center mb-8 text-primary">
@@ -23,12 +40,15 @@ const ManageUser = () => {
               <td>{user.email}</td>
               <td>{user.role}</td>
               <td>
-                <Button variant="danger" onClick={() => handleDelete(user.id)}>
+                <Button
+                  variant="destructive"
+                  onClick={() => handleDelete(user.id)}
+                >
                   Delete
                 </Button>
                 {user.role !== "admin" && (
                   <Button
-                    variant="success"
+                    // variant="success"
                     onClick={() => handlePromote(user.id)}
                   >
                     Promote
