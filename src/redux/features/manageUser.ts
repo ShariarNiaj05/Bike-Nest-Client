@@ -9,7 +9,17 @@ const manageUser = baseApi.injectEndpoints({
           method: "GET",
         };
       },
-      providesTags: ["bikes"],
+      providesTags: ["users"],
+    }),
+    deleteUser: builder.mutation({
+      query: (id: string) => {
+        return {
+          url: "/auth",
+          method: "GET",
+          body: id,
+        };
+      },
+      invalidatesTags: ["users"],
     }),
   }),
 });

@@ -4,8 +4,8 @@ import { Table } from "@/components/ui/table";
 import { useGetAllUsersQuery } from "@/redux/features/manageUser";
 
 const ManageUser = () => {
-  const { data: users, isLoading, isFetching } = useGetAllUsersQuery(undefined);
-
+  const { data, isLoading, isFetching } = useGetAllUsersQuery(undefined);
+  const users = data?.data;
   const handleDelete = (userId: string) => {
     console.log(userId);
   };
@@ -31,29 +31,30 @@ const ManageUser = () => {
           </tr>
         </thead>
         <tbody>
-          {users?.map((user) => (
-            <tr key={user.id}>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.role}</td>
-              <td>
-                <Button
-                  variant="destructive"
-                  onClick={() => handleDelete(user.id)}
-                >
-                  Delete
-                </Button>
-                {user.role !== "admin" && (
+          {Array.isArray(users) &&
+            users?.map((user) => (
+              <tr key={user.id}>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.role}</td>
+                <td>
                   <Button
-                    // variant="success"
-                    onClick={() => handlePromote(user.id)}
+                    variant="destructive"
+                    onClick={() => handleDelete(user.id)}
                   >
-                    Promote
+                    Delete
                   </Button>
-                )}
-              </td>
-            </tr>
-          ))}
+                  {user.role !== "admin" && (
+                    <Button
+                      // variant="success"
+                      onClick={() => handlePromote(user.id)}
+                    >
+                      Promote
+                    </Button>
+                  )}
+                </td>
+              </tr>
+            ))}
         </tbody>
       </Table>
     </div>
