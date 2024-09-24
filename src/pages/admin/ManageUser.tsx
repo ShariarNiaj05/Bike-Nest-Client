@@ -1,3 +1,4 @@
+import Loading from "@/components/shared/Loading";
 import { Button } from "@/components/ui/button";
 import { Table } from "@/components/ui/table";
 import { useGetAllUsersQuery } from "@/redux/features/manageUser";
@@ -13,6 +14,8 @@ const ManageUser = () => {
     console.log(userId);
   };
 
+  if (isLoading) return <Loading />;
+  console.log(users);
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-4xl font-bold text-center mb-8 text-primary">
