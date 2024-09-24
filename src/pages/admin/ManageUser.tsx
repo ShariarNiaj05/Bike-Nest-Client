@@ -1,21 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Table } from "@/components/ui/table";
+import { useGetAllUsersQuery } from "@/redux/features/manageUser";
 
 const ManageUser = () => {
+  const { data: users, isLoading } = useGetAllUsersQuery(undefined);
+
   const handleDelete = (userId: string) => {
-    if (window.confirm("Are you sure you want to delete this user?")) {
-      dispatch(deleteUser(userId));
-    }
+    console.log(userId);
   };
 
   const handlePromote = (userId: string) => {
-    if (
-      window.confirm("Are you sure you want to promote this user to admin?")
-    ) {
-      dispatch(promoteUser(userId));
-    }
+    console.log(userId);
   };
-  const users = [];
 
   return (
     <div className="container mx-auto p-4">
