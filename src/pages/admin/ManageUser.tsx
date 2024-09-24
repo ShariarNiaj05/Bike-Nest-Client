@@ -4,6 +4,7 @@ import { Table } from "@/components/ui/table";
 import {
   useDeleteUserMutation,
   useGetAllUsersQuery,
+  usePromoteUserMutation,
 } from "@/redux/features/manageUser";
 
 const ManageUser = () => {
@@ -11,6 +12,7 @@ const ManageUser = () => {
   const users = data?.data;
 
   const [deleteUser] = useDeleteUserMutation();
+  const [promoteUser] = usePromoteUserMutation();
 
   const handleDelete = (userId: string) => {
     console.log(userId);
@@ -19,6 +21,7 @@ const ManageUser = () => {
 
   const handlePromote = (userId: string) => {
     console.log(userId);
+    promoteUser(userId);
   };
 
   if (isLoading || isFetching) return <Loading />;

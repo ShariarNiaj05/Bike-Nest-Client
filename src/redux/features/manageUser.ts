@@ -36,4 +36,8 @@ const manageUser = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetAllUsersQuery, useDeleteUserMutation } = manageUser;
+export const {
+  useGetAllUsersQuery,
+  useDeleteUserMutation,
+  usePromoteUserMutation,
+} = manageUser;
