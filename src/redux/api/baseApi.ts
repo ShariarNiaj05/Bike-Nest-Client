@@ -7,7 +7,6 @@ export const baseApi = createApi({
     baseUrl: "http://localhost:5000/api",
     prepareHeaders: (headers, { getState }) => {
       const token = (getState() as RootState).auth?.auth.token;
-      console.log("Token in header:", token);
 
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
