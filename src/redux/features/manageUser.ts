@@ -26,7 +26,7 @@ const manageUser = baseApi.injectEndpoints({
       query: (id: string) => {
         console.log(id);
         return {
-          url: "/auth",
+          url: "/auth/promote-role",
           method: "PATCH",
           body: id,
         };
