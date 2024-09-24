@@ -22,6 +22,17 @@ const manageUser = baseApi.injectEndpoints({
       },
       invalidatesTags: ["users"],
     }),
+    promoteUser: builder.mutation({
+      query: (id: string) => {
+        console.log(id);
+        return {
+          url: "/auth",
+          method: "DELETE",
+          body: id,
+        };
+      },
+      invalidatesTags: ["users"],
+    }),
   }),
 });
 
