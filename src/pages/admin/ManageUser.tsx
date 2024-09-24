@@ -14,6 +14,7 @@ const ManageUser = () => {
 
   const handleDelete = (userId: string) => {
     console.log(userId);
+    deleteUser(userId);
   };
 
   const handlePromote = (userId: string) => {
