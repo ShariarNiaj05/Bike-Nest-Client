@@ -107,6 +107,15 @@ const SideBar = () => {
                       Return Bike
                     </Link>
                   </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      to="/dashboard/manage-user"
+                      className="flex items-center text-sm font-semibold px-4 py-2 rounded hover:bg-primary hover:text-white transition-colors"
+                    >
+                      <BikeIcon className="w-5 h-5 mr-2" />
+                      Manage User
+                    </Link>
+                  </SheetClose>
                 </div>
               </>
             )}
