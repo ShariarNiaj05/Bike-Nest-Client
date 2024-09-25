@@ -17,7 +17,7 @@ const manageUser = baseApi.injectEndpoints({
         return {
           url: "/auth",
           method: "DELETE",
-          body: id,
+          body: { id },
         };
       },
       invalidatesTags: ["users"],
@@ -28,7 +28,7 @@ const manageUser = baseApi.injectEndpoints({
         return {
           url: "/auth/promote-role",
           method: "PATCH",
-          body: id,
+          body: { id },
         };
       },
       invalidatesTags: ["users"],
