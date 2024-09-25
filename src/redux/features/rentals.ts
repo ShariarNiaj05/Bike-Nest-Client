@@ -3,8 +3,7 @@ import { baseApi } from "../api/baseApi";
 const rentals = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getAllRentalsForUser: builder.query({
-      query: (id) => {
-        console.log("delete id", id);
+      query: () => {
         return {
           url: `/bikes/${id}`,
           method: "DELETE",
