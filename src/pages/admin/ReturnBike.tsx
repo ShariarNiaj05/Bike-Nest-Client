@@ -24,7 +24,7 @@ import { useGetAllRentalsForUserQuery } from "@/redux/features/rentals";
 
 const ReturnBike = () => {
   const { data } = useGetAllRentalsForUserQuery(undefined);
-  // const [rentals, setRentals] = useState(demoRentals);
+  const [rentals, setRentals] = useState(data.data);
   const [selectedRental, setSelectedRental] = useState(null);
   const [endTime, setEndTime] = useState("");
 
@@ -48,6 +48,7 @@ const ReturnBike = () => {
     alert("Bike returned successfully!");
   };
 
+  console.log(data);
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6">Return Bike</h1>
