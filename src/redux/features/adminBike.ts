@@ -33,6 +33,17 @@ const adminBike = baseApi.injectEndpoints({
       },
       invalidatesTags: ["bikes"],
     }),
+    returnBike: builder.mutation({
+      query: (id) => {
+        console.log("delete id", id);
+        return {
+          url: `/bikes/${id}`,
+          method: "DELETE",
+          // body: data,
+        };
+      },
+      invalidatesTags: ["bikes"],
+    }),
   }),
 });
 
