@@ -6,6 +6,7 @@ import {
   useGetAllUsersQuery,
   usePromoteUserMutation,
 } from "@/redux/features/manageUser";
+import { IUser } from "@/types/user.type";
 
 const ManageUser = () => {
   const { data, isLoading, isFetching } = useGetAllUsersQuery(undefined);
@@ -41,30 +42,29 @@ const ManageUser = () => {
           </tr>
         </thead>
         <tbody>
-          {Array.isArray(users) &&
-            users?.map((user) => (
-              <tr key={user.id}>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.role}</td>
-                <td>
+          {users?.map((user: IUser) => (
+            <tr key={user._id}>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.role}</td>
+              <td>
+                <Button
+                  variant="destructive"
+                  onClick={() => handleDelete(user._id)}
+                >
+                  Delete
+                </Button>
+                {user.role !== "admin" && (
                   <Button
-                    variant="destructive"
-                    onClick={() => handleDelete(user.id)}
+                    // variant="success"
+                    onClick={() => handlePromote(user._id)}
                   >
-                    Delete
+                    Promote
                   </Button>
-                  {user.role !== "admin" && (
-                    <Button
-                      // variant="success"
-                      onClick={() => handlePromote(user.id)}
-                    >
-                      Promote
-                    </Button>
-                  )}
-                </td>
-              </tr>
-            ))}
+                )}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </div>
