@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useGetAllRentalsForUserQuery } from "@/redux/features/rentals";
+import Loading from "@/components/shared/Loading";
 
 /* const demoRentals = [
   {
@@ -23,8 +24,8 @@ import { useGetAllRentalsForUserQuery } from "@/redux/features/rentals";
 ]; */
 
 const ReturnBike = () => {
-  const { data } = useGetAllRentalsForUserQuery(undefined);
-  const [rentals, setRentals] = useState(data.data);
+  const { data, isLoading } = useGetAllRentalsForUserQuery(undefined);
+  const [rentals, setRentals] = useState([]);
   const [selectedRental, setSelectedRental] = useState(null);
   const [endTime, setEndTime] = useState("");
 
@@ -47,7 +48,7 @@ const ReturnBike = () => {
   const handleReturnBike = () => {
     alert("Bike returned successfully!");
   };
-
+  if (isLoading) return <Loading />;
   console.log(data);
   return (
     <div className="p-6">
