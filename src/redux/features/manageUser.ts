@@ -13,7 +13,6 @@ const manageUser = baseApi.injectEndpoints({
     }),
     deleteUser: builder.mutation({
       query: (id: string) => {
-        console.log(id);
         return {
           url: "/auth",
           method: "DELETE",
@@ -24,7 +23,6 @@ const manageUser = baseApi.injectEndpoints({
     }),
     promoteUser: builder.mutation({
       query: (id: string) => {
-        console.log(id);
         return {
           url: "/auth/promote-role",
           method: "PATCH",
