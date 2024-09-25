@@ -35,10 +35,11 @@ const adminBike = baseApi.injectEndpoints({
     }),
     returnBike: builder.mutation({
       query: (id) => {
+        // const { id } = payload;
         console.log("delete id", id);
         return {
-          url: `/bikes/${id}`,
-          method: "DELETE",
+          url: `/rentals/${id}/return`,
+          method: "put",
           // body: data,
         };
       },
