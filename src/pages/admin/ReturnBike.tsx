@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-const demoRentals = [
+/* const demoRentals = [
   {
     id: 1,
     bikeName: "Mountain Bike",
@@ -19,7 +19,7 @@ const demoRentals = [
     returnTime: null,
     cost: 0,
   },
-];
+]; */
 
 const ReturnBike = () => {
   const [rentals, setRentals] = useState(demoRentals);
