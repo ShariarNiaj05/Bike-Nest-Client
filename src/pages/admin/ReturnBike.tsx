@@ -50,14 +50,14 @@ const ReturnBike = () => {
     alert("Bike returned successfully!");
   };
   if (isLoading) return <Loading />;
-
+  console.log(rentals);
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6">Return Bike</h1>
       {rentals?.map((rental) => (
-        <Card key={rental.id} className="mb-4">
+        <Card key={rental._id} className="mb-4">
           <CardHeader>
-            <CardTitle>{rental.bikeName}</CardTitle>
+            <CardTitle>{rental?.bikeId?.name}</CardTitle>
           </CardHeader>
           <CardContent>
             <p>Start Time: {rental.startTime}</p>
@@ -65,13 +65,13 @@ const ReturnBike = () => {
               End Time
             </Label>
             <Input
-              id={`end-time-${rental.id}`}
+              id={`end-time-${rental._id}`}
               type="datetime-local"
               onChange={(e) => setEndTime(e.target.value)}
             />
             <Button
               className="mt-2"
-              onClick={() => handleCalculateCost(rental.id)}
+              onClick={() => handleCalculateCost(rental._id)}
             >
               Calculate Cost
             </Button>
