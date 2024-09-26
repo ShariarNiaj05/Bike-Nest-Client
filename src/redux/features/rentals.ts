@@ -2,7 +2,7 @@ import { baseApi } from "../api/baseApi";
 
 const rentals = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getAllRentalsForUser: builder.query({
+    getAllBikeToBeReturn: builder.query({
       query: () => {
         return {
           url: `/rentals}`,
@@ -27,4 +27,4 @@ const rentals = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetAllRentalsForUserQuery, useReturnBikeMutation } = rentals;
+export const { useGetAllBikeToBeReturnQuery, useReturnBikeMutation } = rentals;
