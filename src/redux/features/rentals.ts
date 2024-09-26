@@ -5,7 +5,7 @@ const rentals = baseApi.injectEndpoints({
     getAllBikeToBeReturn: builder.query({
       query: () => {
         return {
-          url: `/rentals}`,
+          url: `/rentals`,
           method: "GET",
           // body: data,
         };
