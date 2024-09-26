@@ -25,11 +25,12 @@ import Loading from "@/components/shared/Loading";
 
 const ReturnBike = () => {
   const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
-  const [rentals, setRentals] = useState(data?.data);
+  // const [rentals, setRentals] = useState([]);
   const [selectedRental, setSelectedRental] = useState(null);
   const [endTime, setEndTime] = useState("");
 
-  const handleCalculateCost = (rentalId: number) => {
+  const rentals = data?.data;
+  /*   const handleCalculateCost = (rentalId: number) => {
     // Basic cost calculation logic (example: cost per hour is $5)
     const rental = rentals.find((r) => r.id === rentalId);
     if (rental) {
@@ -43,16 +44,17 @@ const ReturnBike = () => {
         )
       );
     }
-  };
+  }; */
 
   const handleReturnBike = () => {
     alert("Bike returned successfully!");
   };
   if (isLoading) return <Loading />;
+
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6">Return Bike</h1>
-      {rentals.map((rental) => (
+      {rentals?.map((rental) => (
         <Card key={rental.id} className="mb-4">
           <CardHeader>
             <CardTitle>{rental.bikeName}</CardTitle>
