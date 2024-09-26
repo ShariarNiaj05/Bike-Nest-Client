@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useGetAllRentalsForUserQuery } from "@/redux/features/rentals";
+import { useGetAllBikeToBeReturnQuery } from "@/redux/features/rentals";
 import Loading from "@/components/shared/Loading";
 
 /* const demoRentals = [
@@ -24,7 +24,7 @@ import Loading from "@/components/shared/Loading";
 ]; */
 
 const ReturnBike = () => {
-  const { data, isLoading } = useGetAllRentalsForUserQuery(undefined);
+  const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
   const [rentals, setRentals] = useState([]);
   const [selectedRental, setSelectedRental] = useState(null);
   const [endTime, setEndTime] = useState("");
