@@ -13,9 +13,6 @@ import { formatDate } from "@/utils/formatDate";
 const ReturnBike = () => {
   const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
   const [returnBike] = useReturnBikeMutation();
-  // const [rentals, setRentals] = useState([]);
-  // const [selectedRental, setSelectedRental] = useState(null);
-  // const [endTime, setEndTime] = useState("");
 
   const rentals = data?.data?.filter((rental) => rental?.isReturned === false);
 
