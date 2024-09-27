@@ -7,23 +7,6 @@ import { useGetAllBikeToBeReturnQuery } from "@/redux/features/rentals";
 import Loading from "@/components/shared/Loading";
 import { formatDate } from "@/utils/formatDate";
 
-/* const demoRentals = [
-  {
-    id: 1,
-    bikeName: "Mountain Bike",
-    startTime: "2024-09-01 08:00",
-    returnTime: null,
-    cost: 0,
-  },
-  {
-    id: 2,
-    bikeName: "Road Bike",
-    startTime: "2024-09-05 09:00",
-    returnTime: null,
-    cost: 0,
-  },
-]; */
-
 const ReturnBike = () => {
   const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
   // const [rentals, setRentals] = useState([]);
