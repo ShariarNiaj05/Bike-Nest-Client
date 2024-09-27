@@ -1,3 +1,11 @@
+# File Structure
+
+README.md
+SERVICE.md
+LICENSE.md
+
+# README.md
+
 # Bike Nest
 
 ## Introduction
@@ -77,4 +85,14 @@ Or simply navigate to the folder and open VS Code in that directory.
 
 The server will start running on http://localhost:5173 or http://localhost:5174
 
-[Service](./src/pages/service.md)
+# SERVICE.md
+
+# Bike Nest Services
+
+service information goes here
+
+# LICENSE.md
+
+# License
+
+license text goes here
