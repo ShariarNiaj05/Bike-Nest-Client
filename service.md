@@ -1,3 +1,3 @@
-# Bike Nest Services
+# Bike Nest Service
 
-service information goes here
+Service details will place here
