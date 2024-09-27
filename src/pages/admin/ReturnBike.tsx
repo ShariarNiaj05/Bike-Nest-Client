@@ -9,7 +9,7 @@ import {
 } from "@/redux/features/rentals";
 import Loading from "@/components/shared/Loading";
 import { formatDate } from "@/utils/formatDate";
-import { TRental } from "@/types";
+import { TBike, TRental } from "@/types";
 
 const ReturnBike = () => {
   const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
