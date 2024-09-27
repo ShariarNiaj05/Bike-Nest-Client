@@ -23,7 +23,7 @@ const MyRentals = () => {
   if (isMyRentalsLoading || isFetching) {
     return <Loading />;
   }
-  // console.log(myRentals);
+  console.log(myRentals);
 
   const unpaidRentals = myRentals?.data.filter(
     (rental: IMyRental) => rental.isReturned === false
