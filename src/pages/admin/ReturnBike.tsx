@@ -32,7 +32,8 @@ const ReturnBike = () => {
 
   const rentals = data?.data;
 
-  const handleReturnBike = () => {
+  const handleReturnBike = (id) => {
+    console.log("return bike id", id);
     alert("Bike returned successfully!");
   };
   if (isLoading) return <Loading />;
@@ -56,14 +57,15 @@ const ReturnBike = () => {
               onChange={(e) => setEndTime(e.target.value)}
             />
             <Button className="mt-2">Calculate Cost</Button>
-            {rental.cost > 0 && (
-              <div className="mt-2">
-                <p>Calculated Cost: ${rental.cost}</p>
-                <Button onClick={handleReturnBike} className="mt-2">
-                  Return Bike
-                </Button>
-              </div>
-            )}
+            <div className="mt-2">
+              <p>Calculated Cost: ${rental.cost}</p>
+              <Button
+                onClick={() => handleReturnBike(rental._id)}
+                className="mt-2"
+              >
+                Return Bike
+              </Button>
+            </div>
           </CardContent>
         </Card>
       ))}
