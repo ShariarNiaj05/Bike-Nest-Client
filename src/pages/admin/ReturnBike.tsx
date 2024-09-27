@@ -28,7 +28,7 @@ const ReturnBike = () => {
   const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
   // const [rentals, setRentals] = useState([]);
   // const [selectedRental, setSelectedRental] = useState(null);
-  const [endTime, setEndTime] = useState("");
+  // const [endTime, setEndTime] = useState("");
 
   const rentals = data?.data;
 
