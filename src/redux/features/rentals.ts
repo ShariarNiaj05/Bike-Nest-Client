@@ -15,7 +15,7 @@ const rentals = baseApi.injectEndpoints({
     returnBike: builder.mutation({
       query: (id) => {
         // const { id } = payload;
-        console.log("delete id", id);
+        console.log("return id under redux", id);
         return {
           url: `/rentals/${id}/return`,
           method: "put",
