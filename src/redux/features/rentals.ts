@@ -14,8 +14,6 @@ const rentals = baseApi.injectEndpoints({
     }),
     returnBike: builder.mutation({
       query: (id) => {
-        // const { id } = payload;
-        console.log("return id under redux", id);
         return {
           url: `/rentals/${id}/return`,
           method: "put",
@@ -23,6 +21,16 @@ const rentals = baseApi.injectEndpoints({
         };
       },
       invalidatesTags: ["rentals"],
+    }),
+    getMyRentals: builder.query({
+      query: () => {
+        return {
+          url: "/rentals/rentals-for-user",
+          method: "GET",
+          //   ret,
+        };
+      },
+      providesTags: ["rentals"],
     }),
   }),
 });

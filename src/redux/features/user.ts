@@ -23,21 +23,7 @@ const userProfile = baseApi.injectEndpoints({
       },
       // invalidatesTags: ["profile"],
     }),
-    getMyRentals: builder.query({
-      query: () => {
-        return {
-          url: "/rentals/rentals-for-user",
-          method: "GET",
-          //   ret,
-        };
-      },
-      // invalidatesTags: ["profile"],
-    }),
   }),
 });
 
-export const {
-  useUpdateProfileMutation,
-  useGetUserProfileQuery,
-  useGetMyRentalsQuery,
-} = userProfile;
+export const { useUpdateProfileMutation, useGetUserProfileQuery } = userProfile;
