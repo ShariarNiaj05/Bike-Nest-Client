@@ -35,4 +35,8 @@ const rentals = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetAllBikeToBeReturnQuery, useReturnBikeMutation } = rentals;
+export const {
+  useGetAllBikeToBeReturnQuery,
+  useReturnBikeMutation,
+  useGetMyRentalsQuery,
+} = rentals;
