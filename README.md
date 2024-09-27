@@ -87,12 +87,11 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 
 # SERVICE.md
 
-# Bike Nest Services
-
-service information goes here
+<!--
 
 # LICENSE.md
 
 # License
 
 license text goes here
+ -->
