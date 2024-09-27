@@ -27,7 +27,7 @@ import { formatDate } from "@/utils/formatDate";
 const ReturnBike = () => {
   const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
   // const [rentals, setRentals] = useState([]);
-  const [selectedRental, setSelectedRental] = useState(null);
+  // const [selectedRental, setSelectedRental] = useState(null);
   const [endTime, setEndTime] = useState("");
 
   const rentals = data?.data;
@@ -48,14 +48,14 @@ const ReturnBike = () => {
           </CardHeader>
           <CardContent>
             <p>Start Time: {formatDate(rental.startTime)}</p>
-            <Label htmlFor={`end-time-${rental.id}`} className="block mt-2">
+            {/* <Label htmlFor={`end-time-${rental.id}`} className="block mt-2">
               End Time
-            </Label>
-            <Input
+            </Label> */}
+            {/*  <Input
               id={`end-time-${rental._id}`}
               type="datetime-local"
               onChange={(e) => setEndTime(e.target.value)}
-            />
+            /> */}
             <div className="mt-2">
               <Button
                 onClick={() => handleReturnBike(rental._id)}
