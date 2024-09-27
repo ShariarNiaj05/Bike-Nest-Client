@@ -17,7 +17,7 @@ const ReturnBike = () => {
   // const [selectedRental, setSelectedRental] = useState(null);
   // const [endTime, setEndTime] = useState("");
 
-  const rentals = data?.data;
+  const rentals = data?.data?.filter((rental) => rental?.isReturned === false);
 
   const handleReturnBike = (id) => {
     console.log("return bike id", id);
