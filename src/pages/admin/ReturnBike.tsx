@@ -3,12 +3,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useGetAllBikeToBeReturnQuery } from "@/redux/features/rentals";
+import {
+  useGetAllBikeToBeReturnQuery,
+  useReturnBikeMutation,
+} from "@/redux/features/rentals";
 import Loading from "@/components/shared/Loading";
 import { formatDate } from "@/utils/formatDate";
 
 const ReturnBike = () => {
   const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
+  const [returnBike] = useReturnBikeMutation();
   // const [rentals, setRentals] = useState([]);
   // const [selectedRental, setSelectedRental] = useState(null);
   // const [endTime, setEndTime] = useState("");
