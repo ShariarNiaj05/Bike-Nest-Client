@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useGetAllBikeToBeReturnQuery } from "@/redux/features/rentals";
 import Loading from "@/components/shared/Loading";
+import { formatDate } from "@/utils/formatDate";
 
 /* const demoRentals = [
   {
@@ -30,21 +31,6 @@ const ReturnBike = () => {
   const [endTime, setEndTime] = useState("");
 
   const rentals = data?.data;
-  /*   const handleCalculateCost = (rentalId: number) => {
-    // Basic cost calculation logic (example: cost per hour is $5)
-    const rental = rentals.find((r) => r.id === rentalId);
-    if (rental) {
-      const start = new Date(rental.startTime);
-      const end = new Date(endTime);
-      const hours = Math.ceil((end - start) / (1000 * 60 * 60));
-      const cost = hours * 5;
-      setRentals(
-        rentals.map((r) =>
-          r.id === rentalId ? { ...r, returnTime: endTime, cost } : r
-        )
-      );
-    }
-  }; */
 
   const handleReturnBike = () => {
     alert("Bike returned successfully!");
@@ -60,7 +46,7 @@ const ReturnBike = () => {
             <CardTitle>{rental?.bikeId?.name}</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>Start Time: {rental.startTime}</p>
+            <p>Start Time: {formatDate(rental.startTime)}</p>
             <Label htmlFor={`end-time-${rental.id}`} className="block mt-2">
               End Time
             </Label>
