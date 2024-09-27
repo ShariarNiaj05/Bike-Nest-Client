@@ -1,5 +1,6 @@
 export type TBike = {
   _id?: string;
+  name: string;
   brand: string;
   model: string;
   imageUrl: string;
@@ -7,7 +8,6 @@ export type TBike = {
   isAvailable?: boolean; // Defaults to true if not provided
   cc: number;
   year: number;
-  name: string;
   description: string;
 };
 
