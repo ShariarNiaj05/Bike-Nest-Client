@@ -55,12 +55,7 @@ const ReturnBike = () => {
               type="datetime-local"
               onChange={(e) => setEndTime(e.target.value)}
             />
-            <Button
-              className="mt-2"
-              onClick={() => handleCalculateCost(rental._id)}
-            >
-              Calculate Cost
-            </Button>
+            <Button className="mt-2">Calculate Cost</Button>
             {rental.cost > 0 && (
               <div className="mt-2">
                 <p>Calculated Cost: ${rental.cost}</p>
