@@ -4,8 +4,8 @@ import { TBike } from "./bike.type";
 export type TRental = {
   userId: string | TUser;
   bikeId: string | TBike;
-  startTime: Date;
-  returnTime: Date;
+  startTime: Date | string;
+  returnTime: Date | string;
   totalCost: number;
   isReturned: boolean;
 };

@@ -9,14 +9,17 @@ import {
 } from "@/redux/features/rentals";
 import Loading from "@/components/shared/Loading";
 import { formatDate } from "@/utils/formatDate";
+import { TRental } from "@/types";
 
 const ReturnBike = () => {
   const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
   const [returnBike] = useReturnBikeMutation();
 
-  const rentals = data?.data?.filter((rental) => rental?.isReturned === false);
+  const rentals = data?.data?.filter(
+    (rental: TRental) => rental?.isReturned === false
+  );
 
-  const handleReturnBike = (id) => {
+  const handleReturnBike = (id: string) => {
     console.log("return bike id", id);
     returnBike(id);
     // alert("Bike returned successfully!");
@@ -26,7 +29,7 @@ const ReturnBike = () => {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6">Return Bike</h1>
-      {rentals?.map((rental) => (
+      {rentals?.map((rental: TRental) => (
         <Card key={rental._id} className="mb-4">
           <CardHeader>
             <CardTitle>{rental?.bikeId?.name}</CardTitle>
