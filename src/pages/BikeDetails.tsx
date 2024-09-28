@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { TBike } from "@/types";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useBikeDetailsQuery, useBikesQuery } from "@/redux/features/bikes";
 
 const BikeDetail = () => {
@@ -9,7 +9,10 @@ const BikeDetail = () => {
   const navigate = useNavigate();
   const { data } = useBikeDetailsQuery(id);
   const bike = data?.data;
-
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [startTime, setStartTime] = useState("");
+  const [createBooking, { isLoading: isBookingLoading }] =
+    useCreateBookingMutation();
   // Fetch all bikes
   const { data: allBikesData } = useBikesQuery(undefined);
 
