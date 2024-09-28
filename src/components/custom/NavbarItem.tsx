@@ -74,13 +74,13 @@ const NavbarItem = ({ user }: { user: TUser | null }) => {
         {role === "user" && (
           <NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>User Pages</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Dashboard</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <ListItem href="/dashboard/my-rentals" title="My Rentals">
                     Manage your current and past bike rentals here.
                   </ListItem>
-                  <ListItem href="/dashboard/profile" title="Profile">
+                  <ListItem href="/dashboard" title="Profile">
                     Update your profile details and preferences.
                   </ListItem>
                 </ul>
@@ -95,6 +95,9 @@ const NavbarItem = ({ user }: { user: TUser | null }) => {
             <NavigationMenuTrigger>Dashboard</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <ListItem href="/dashboard" title="Profile">
+                  Update your profile details and preferences.
+                </ListItem>
                 <ListItem
                   href="/dashboard/admin-bike-management"
                   title="Bike Management"
