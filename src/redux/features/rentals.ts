@@ -49,4 +49,5 @@ export const {
   useGetAllBikeToBeReturnQuery,
   useReturnBikeMutation,
   useGetMyRentalsQuery,
+  useCreateBookingMutation,
 } = rentals;
