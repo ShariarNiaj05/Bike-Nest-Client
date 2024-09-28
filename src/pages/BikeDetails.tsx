@@ -13,6 +13,7 @@ const BikeDetail = () => {
   const [startTime, setStartTime] = useState("");
   const [createBooking, { isLoading: isBookingLoading }] =
     useCreateBookingMutation();
+
   // Fetch all bikes
   const { data: allBikesData } = useBikesQuery(undefined);
 
@@ -27,8 +28,12 @@ const BikeDetail = () => {
     return [];
   }, [bike, allBikesData?.data]);
 
-  const handleBookNow = () => {
+  /*   const handleBookNow = () => {
     navigate(`/booking/${bike?._id}`);
+  }; */
+
+  const handleBookNow = () => {
+    setIsBookingModalOpen(true);
   };
 
   const handleAddToCompare = async () => {
