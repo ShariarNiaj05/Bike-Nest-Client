@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { TBike } from "@/types";
 import { useMemo, useState } from "react";
 import { useBikeDetailsQuery, useBikesQuery } from "@/redux/features/bikes";
+import { useCreateBookingMutation } from "@/redux/features/rentals";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -11,8 +12,8 @@ const BikeDetail = () => {
   const bike = data?.data;
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [startTime, setStartTime] = useState("");
-  /*   const [createBooking, { isLoading: isBookingLoading }] =
-    useCreateBookingMutation(); */
+  const [createBooking, { isLoading: isBookingLoading }] =
+    useCreateBookingMutation();
 
   // Fetch all bikes
   const { data: allBikesData } = useBikesQuery(undefined);
