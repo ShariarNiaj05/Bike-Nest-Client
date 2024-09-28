@@ -4,7 +4,7 @@ import { TBike } from "@/types";
 import { useMemo, useState } from "react";
 import { useBikeDetailsQuery, useBikesQuery } from "@/redux/features/bikes";
 import { useCreateBookingMutation } from "@/redux/features/rentals";
-import { toast } from "@/hooks/use-toast";
+// import { toast } from "@/hooks/use-toast";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -14,6 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { toast } from "@/hooks/use-toast";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
