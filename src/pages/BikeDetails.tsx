@@ -4,7 +4,6 @@ import { TBike } from "@/types";
 import { useMemo, useState } from "react";
 import { useBikeDetailsQuery, useBikesQuery } from "@/redux/features/bikes";
 import { useCreateBookingMutation } from "@/redux/features/rentals";
-import { toast } from "sonner";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
