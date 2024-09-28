@@ -95,20 +95,23 @@ const NavbarItem = ({ user }: { user: TUser | null }) => {
             <NavigationMenuTrigger>Dashboard</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <ListItem href="/admin/bike-management" title="Bike Management">
+                <ListItem
+                  href="/dashboard/admin-bike-management"
+                  title="Bike Management"
+                >
                   Administer all the bikes in the system, including adding,
                   editing, or deleting bikes.
                 </ListItem>
-                <ListItem href="/admin/user-management" title="User Management">
+                <ListItem href="/dashboard/manage-user" title="User Management">
                   Manage users and their roles within the system.
                 </ListItem>
                 <ListItem
-                  href="/admin/user-rentals-management"
+                  href="/dashboard/return-bike"
                   title="Rentals Management"
                 >
                   Manage user's rentals within the system.
                 </ListItem>
-                <ListItem href="/admin/coupons" title="Rentals Management">
+                <ListItem href="/dashboard/add-bulk-bike" title="Add Bulk Bike">
                   Creating and Managing coupon codes{" "}
                 </ListItem>
               </ul>
