@@ -4,6 +4,7 @@ import { TBike } from "@/types";
 import { useMemo, useState } from "react";
 import { useBikeDetailsQuery, useBikesQuery } from "@/redux/features/bikes";
 import { useCreateBookingMutation } from "@/redux/features/rentals";
+import { toast } from "@/hooks/use-toast";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -143,6 +144,38 @@ const BikeDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Booking Modal */}
+      <Dialog open={isBookingModalOpen} onOpenChange={setIsBookingModalOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Book {bike.name}</DialogTitle>
+            <DialogDescription>
+              Please select your preferred start time. You'll be charged an
+              advance payment of 100 TK.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="startTime" className="text-right">
+                Start Time
+              </Label>
+              <Input
+                id="startTime"
+                type="datetime-local"
+                value={startTime}
+                onChange={(e) => setStartTime(e.target.value)}
+                className="col-span-3"
+              />
+            </div>
+          </div>
+          <div className="flex justify-end">
+            <Button onClick={handleBookingSubmit} disabled={isBookingLoading}>
+              {isBookingLoading ? "Processing..." : "Book and Pay"}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Similar Bikes Section */}
       {similarBikes.length > 0 && (
