@@ -7,11 +7,14 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { Button } from "@/components/ui/button"; // Import your button component
+import { useParams } from "react-router-dom";
 
 // Load your Stripe public key
 const stripePromise = loadStripe("your-stripe-public-key");
 
 const PaymentPage = () => {
+  const { bookingId } = useParams<{ bookingId: string }>();
+
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentError, setPaymentError] = useState("");
   const [paymentSuccess, setPaymentSuccess] = useState(false);
