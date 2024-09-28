@@ -117,7 +117,7 @@ const NavbarItem = ({ user }: { user: TUser | null }) => {
         )}
 
         {/* Nested Example (Components) */}
-        <NavigationMenuItem>
+        {/*  <NavigationMenuItem>
           <NavigationMenuTrigger>Components</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -140,7 +140,7 @@ const NavbarItem = ({ user }: { user: TUser | null }) => {
               </ListItem>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
 
         <NavigationMenuItem>
           <Link to="/bikes">
