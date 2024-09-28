@@ -4,6 +4,7 @@ import { TBike } from "@/types";
 import { useMemo, useState } from "react";
 import { useBikeDetailsQuery, useBikesQuery } from "@/redux/features/bikes";
 import { useCreateBookingMutation } from "@/redux/features/rentals";
+import { toast } from "sonner";
 
 const BikeDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -39,6 +40,43 @@ const BikeDetail = () => {
 
   const handleAddToCompare = async () => {
     // server action here
+  };
+
+  const handleBookingSubmit = async () => {
+    if (!startTime) {
+      toast({
+        title: "Error",
+        description: "Please select a start time",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const result = await createBooking({
+        bikeId: bike?._id,
+        startTime: new Date(startTime).toISOString(),
+      }).unwrap();
+
+      setIsBookingModalOpen(false);
+      toast({
+        title: "Booking Successful",
+        description:
+          "Your booking has been confirmed. Redirecting to payment...",
+      });
+
+      // Redirect to payment page
+      setTimeout(() => {
+        navigate(`/payment/${result.bookingId}`);
+      }, 2000);
+    } catch (error) {
+      toast({
+        title: "Booking Failed",
+        description:
+          "There was an error processing your booking. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   if (!bike) {
