@@ -11,8 +11,8 @@ const BikeDetail = () => {
   const bike = data?.data;
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [startTime, setStartTime] = useState("");
-  const [createBooking, { isLoading: isBookingLoading }] =
-    useCreateBookingMutation();
+  /*   const [createBooking, { isLoading: isBookingLoading }] =
+    useCreateBookingMutation(); */
 
   // Fetch all bikes
   const { data: allBikesData } = useBikesQuery(undefined);
