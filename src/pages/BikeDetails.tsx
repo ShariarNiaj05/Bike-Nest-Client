@@ -13,7 +13,6 @@ const BikeDetail = () => {
   // Fetch all bikes
   const { data: allBikesData } = useBikesQuery(undefined);
 
-  // Get similar bikes based on the brand (you can change the criteria as needed)
   const similarBikes = useMemo(() => {
     const allBikes = allBikesData?.data || [];
 
