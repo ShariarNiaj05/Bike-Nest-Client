@@ -42,6 +42,9 @@ const rentals = baseApi.injectEndpoints({
       },
       invalidatesTags: ["rentals"],
     }),
+    getBookingDetails: builder.query({
+      query: (bookingId) => `bookings/${bookingId}`,
+    }),
   }),
 });
 
