@@ -32,6 +32,16 @@ const rentals = baseApi.injectEndpoints({
       },
       providesTags: ["rentals"],
     }),
+    createBooking: builder.mutation({
+      query: (data) => {
+        return {
+          url: "/rentals",
+          method: "POST",
+          body: data,
+        };
+      },
+      invalidatesTags: ["rentals"],
+    }),
   }),
 });
 
