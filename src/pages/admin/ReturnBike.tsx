@@ -19,7 +19,6 @@ const ReturnBike = () => {
   const handleReturnBike = (id: string) => {
     console.log("return bike id", id);
     returnBike(id);
-    // alert("Bike returned successfully!");
   };
   if (isLoading) return <Loading />;
   console.log(rentals);
