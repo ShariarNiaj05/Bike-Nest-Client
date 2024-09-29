@@ -8,17 +8,14 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { Button } from "@/components/ui/button";
-import { useNavigate, useParams } from "react-router-dom";
-import { useToast } from "@/hooks/use-toast";
+import { useParams } from "react-router-dom";
 
 // Load your Stripe public key
 const stripePromise = loadStripe("stripe-public-key");
 
 const PaymentPage: React.FC = () => {
-  const { bookingId } = useParams<{ bookingId: string }>();
+  // const { bookingId } = useParams<{ bookingId: string }>();
 
-  const navigate = useNavigate();
-  const { toast } = useToast();
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentError, setPaymentError] = useState("");
   const [paymentSuccess, setPaymentSuccess] = useState(false);
