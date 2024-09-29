@@ -1,7 +1,4 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   useGetAllBikeToBeReturnQuery,
@@ -9,7 +6,7 @@ import {
 } from "@/redux/features/rentals";
 import Loading from "@/components/shared/Loading";
 import { formatDate } from "@/utils/formatDate";
-import { TBike, TRental } from "@/types";
+import { TRental } from "@/types";
 
 const ReturnBike = () => {
   const { data, isLoading } = useGetAllBikeToBeReturnQuery(undefined);
