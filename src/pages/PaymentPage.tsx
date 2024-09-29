@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
   Elements,
@@ -34,7 +35,7 @@ const PaymentPage = () => {
 
         <Elements stripe={stripePromise}>
           <PaymentForm
-            isProcessing={isProcessing}
+            // isProcessing={isProcessing}
             setIsProcessing={setIsProcessing}
             setPaymentError={setPaymentError}
             setPaymentSuccess={setPaymentSuccess}
