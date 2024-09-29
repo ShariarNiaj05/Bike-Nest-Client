@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState } from "react";
+import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
   Elements,
@@ -12,7 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
 // Load your Stripe public key
-const stripePromise = loadStripe("your-stripe-public-key");
+const stripePromise = loadStripe("stripe-public-key");
 
 const PaymentPage = () => {
   const { bookingId } = useParams<{ bookingId: string }>();
@@ -60,9 +60,9 @@ const PaymentPage = () => {
 
 // Payment form component
 const PaymentForm = ({
-  setIsProcessing,
-  setPaymentError,
-  setPaymentSuccess,
+  setIsProcessing: React.Dispatch<React.SetStateAction<boolean>>,
+  setPaymentError: React.Dispatch<React.SetStateAction<string | undefined>>,
+  setPaymentSuccess: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const stripe = useStripe();
   const elements = useElements();
