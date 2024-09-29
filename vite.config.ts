@@ -9,9 +9,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
+  /*  build: {
     rollupOptions: {
       external: ["prop-types"],
     },
-  },
+  }, */
 });
