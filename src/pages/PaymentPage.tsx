@@ -67,7 +67,7 @@ interface PaymentFormProps {
   setPaymentSuccess: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const PaymentForm: React.FC<PaymentFormProps> = ({
+export const PaymentForm: React.FC<PaymentFormProps> = ({
   setIsProcessing,
   setPaymentError,
   setPaymentSuccess,
@@ -92,13 +92,17 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         card: cardElement,
       });
 
-    if (error) {
-      setPaymentError(error.message);
-      setIsProcessing(false);
+      if (error) {
+        setPaymentError(error.message || "An error occurred");
+        setIsProcessing(false);
+      } else {
+        // Call your backend to create the payment intent and handle confirmation
+        console.log("Payment successful:", paymentMethod);
+        setPaymentSuccess(true);
+        setIsProcessing(false);
+      }
     } else {
-      // Call your backend to create the payment intent and handle confirmation
-      console.log("Payment successful:", paymentMethod);
-      setPaymentSuccess(true);
+      setPaymentError("Card element not found");
       setIsProcessing(false);
     }
   };
