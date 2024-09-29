@@ -86,10 +86,11 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
 
     const cardElement = elements.getElement(CardElement);
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: "card",
-      card: cardElement,
-    });
+    if (cardElement) {
+      const { error, paymentMethod } = await stripe.createPaymentMethod({
+        type: "card",
+        card: cardElement,
+      });
 
     if (error) {
       setPaymentError(error.message);
