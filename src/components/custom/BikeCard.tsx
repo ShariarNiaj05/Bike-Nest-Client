@@ -49,7 +49,7 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
       {/* View Details Button */}
       <Button
         className="px-6 py-2 bg-primary text-white rounded-lg shadow-md hover:bg-secondary hover:shadow-lg transition-all duration-300"
-        onClick={() => handleViewDetail(bike?._id)}
+        onClick={() => handleViewDetail(bike?._id as string)}
       >
         View Details
       </Button>
