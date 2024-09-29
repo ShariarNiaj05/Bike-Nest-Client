@@ -14,7 +14,7 @@ import { useToast } from "@/hooks/use-toast";
 // Load your Stripe public key
 const stripePromise = loadStripe("stripe-public-key");
 
-const PaymentPage = () => {
+const PaymentPage: React.FC = () => {
   const { bookingId } = useParams<{ bookingId: string }>();
 
   const navigate = useNavigate();
@@ -59,10 +59,18 @@ const PaymentPage = () => {
 };
 
 // Payment form component
-const PaymentForm = ({
-  setIsProcessing: React.Dispatch<React.SetStateAction<boolean>>,
-  setPaymentError: React.Dispatch<React.SetStateAction<string | undefined>>,
+
+// Payment form component
+interface PaymentFormProps {
+  setIsProcessing: React.Dispatch<React.SetStateAction<boolean>>;
+  setPaymentError: React.Dispatch<React.SetStateAction<string>>;
   setPaymentSuccess: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const PaymentForm: React.FC<PaymentFormProps> = ({
+  setIsProcessing,
+  setPaymentError,
+  setPaymentSuccess,
 }) => {
   const stripe = useStripe();
   const elements = useElements();
