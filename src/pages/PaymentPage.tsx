@@ -8,7 +8,7 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { Button } from "@/components/ui/button";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 // Load your Stripe public key
 const stripePromise = loadStripe("stripe-public-key");
