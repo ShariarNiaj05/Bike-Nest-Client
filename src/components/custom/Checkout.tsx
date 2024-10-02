@@ -3,7 +3,11 @@ import {
   PaymentElement,
   useStripe,
   useElements,
+  Elements,
 } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_KEY);
 
 export default function CheckoutForm() {
   const [clientSecret, setClientSecret] = useState("");
@@ -27,7 +31,7 @@ export default function CheckoutForm() {
   const appearance = {
     theme: "stripe",
   };
-  const options = {
+  const options: any = {
     clientSecret,
     appearance,
   };
@@ -38,7 +42,7 @@ export default function CheckoutForm() {
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!stripe || !elements) {
@@ -63,15 +67,15 @@ export default function CheckoutForm() {
     // be redirected to an intermediate site first to authorize the payment, then
     // redirected to the `return_url`.
     if (error.type === "card_error" || error.type === "validation_error") {
-      setMessage(error.message);
+      setMessage(error.message as any);
     } else {
-      setMessage("An unexpected error occurred.");
+      setMessage("An unexpected error occurred." as any);
     }
 
     setIsLoading(false);
   };
 
-  const paymentElementOptions = {
+  const paymentElementOptions: any = {
     layout: "tabs",
   };
 
