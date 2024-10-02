@@ -1,12 +1,10 @@
 import MainLayout from "@/layout/MainLayout";
 import ProtectedRoute from "@/layout/ProtectedRoute";
 import About from "@/pages/About";
-
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
 import { routeGenerator } from "@/utils/routeGenerator";
-
 import { createBrowserRouter } from "react-router-dom";
 import { adminPaths } from "./admin.routes";
 import DashboardLayout from "@/layout/DashboardLayout";
@@ -19,7 +17,7 @@ import ContactPage from "@/pages/Contact";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import PaymentPage from "@/pages/PaymentPage";
-import CheckoutForm from "@/components/custom/Checkout";
+// import CheckoutForm from "@/components/custom/Checkout";
 import StripePaymentPage from "@/components/custom/PaymentPage";
 import CompletePage from "@/components/custom/PaymentComplete";
 
