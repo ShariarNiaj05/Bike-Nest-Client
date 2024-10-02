@@ -5,6 +5,7 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import "../../styles/stripe.style.css";
+import { Button } from "../ui/button";
 
 export default function CheckoutForm({ bookingId }: { bookingId: string }) {
   const stripe = useStripe();
@@ -49,7 +50,13 @@ export default function CheckoutForm({ bookingId }: { bookingId: string }) {
       <PaymentElement id="payment-element" options={paymentElementOptions} />
       <button disabled={isLoading || !stripe || !elements} id="submit">
         <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+          {isLoading ? (
+            <div className="spinner" id="spinner"></div>
+          ) : (
+            <Button type="submit" className="w-full" disabled={!stripe}>
+              Pay Tk 100
+            </Button>
+          )}
         </span>
       </button>
       {/* Show any error or success messages */}

@@ -55,9 +55,6 @@ const PaymentPage: React.FC = () => {
   );
 };
 
-// Payment form component
-
-// Payment form component
 interface PaymentFormProps {
   setIsProcessing: React.Dispatch<React.SetStateAction<boolean>>;
   setPaymentError: React.Dispatch<React.SetStateAction<string>>;
