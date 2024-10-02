@@ -54,7 +54,7 @@ export default function CheckoutForm({ bookingId }: { bookingId: any }) {
             <div className="spinner" id="spinner"></div>
           ) : (
             <Button type="submit" className="w-full" disabled={!stripe}>
-              Pay Tk 100
+              Pay 100
             </Button>
           )}
         </span>
