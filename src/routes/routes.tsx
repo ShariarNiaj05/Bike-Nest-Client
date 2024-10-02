@@ -60,10 +60,10 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      /* {
+      {
         path: "payment/:bookingId",
         element: <PaymentPage />,
-      }, */
+      },
     ],
   },
 
@@ -116,11 +116,11 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/pay-money",
+    path: "/pay-money/:bookingId",
     element: <StripePaymentPage />,
   },
   {
-    path: "/complete",
+    path: "/complete/:bookingId",
     element: <CompletePage />,
   },
 ]);

@@ -3,10 +3,12 @@ import CheckoutForm from "./Checkout";
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import "../../App.css";
+import { useParams } from "react-router-dom";
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_KEY);
 
 export default function StripePaymentPage() {
+  const { bookingId } = useParams();
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
@@ -22,16 +24,16 @@ export default function StripePaymentPage() {
   const appearance = {
     theme: "stripe",
   };
+
   const options: any = {
     clientSecret,
     appearance,
   };
-
   return (
     <>
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
+          <CheckoutForm bookingId={bookingId} />
         </Elements>
       )}
     </>

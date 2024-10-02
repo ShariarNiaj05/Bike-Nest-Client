@@ -63,7 +63,7 @@ const BikeDetail = () => {
     }
 
     try {
-      const result = await createBooking({
+      await createBooking({
         bikeId: bike?._id,
         startTime: new Date(startTime).toISOString(),
       }).unwrap();
@@ -77,7 +77,9 @@ const BikeDetail = () => {
 
       // Redirect to payment page
       setTimeout(() => {
-        navigate(`/payment/${result.bookingId}`);
+        // navigate(`/payment/${result.bookingId}`);
+        // navigate(`/pay-money/${result.bookingId}`);
+        navigate(`/pay-money/${id}`);
       }, 2000);
     } catch (error) {
       toast({
