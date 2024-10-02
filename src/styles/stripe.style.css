@@ -9,7 +9,7 @@
   width: 100vw;
 } */
 
-/* form {
+#payment-form {
   width: 30vw;
   min-width: 500px;
   align-self: center;
@@ -19,7 +19,7 @@
   padding: 40px;
   margin-top: auto;
   margin-bottom: auto;
-} */
+}
 
 #payment-message {
   color: rgb(105, 115, 134);
