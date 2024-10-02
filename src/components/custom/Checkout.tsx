@@ -7,7 +7,7 @@ import {
 import "../../styles/stripe.style.css";
 import { Button } from "../ui/button";
 
-export default function CheckoutForm({ bookingId }: { bookingId: string }) {
+export default function CheckoutForm({ bookingId }: { bookingId: any }) {
   const stripe = useStripe();
   const elements = useElements();
   const [message, setMessage] = useState(null);
