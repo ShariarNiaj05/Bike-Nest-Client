@@ -72,7 +72,7 @@ const BikeDetail = () => {
       toast({
         title: "Booking Successful",
         description:
-          "Your booking has been confirmed. Redirecting to payment...",
+          "Your booking Process is ongoing. Redirecting to payment page and pay 100 to confirm the booking",
       });
 
       // Redirect to payment page
