@@ -5,43 +5,11 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 
-export default function CheckoutForm({ bookingId }) {
+export default function CheckoutForm({ bookingId }: { bookingId: string }) {
   const stripe = useStripe();
   const elements = useElements();
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  //   const [clientSecret, setClientSecret] = useState("");
-  //   const [dpmCheckerLink, setDpmCheckerLink] = useState("");
-
-  //   useEffect(() => {
-  //     // Create PaymentIntent as soon as the page loads
-  //     fetch("http://localhost:5000/create-payment-intent", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ amount: 100 }),
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setClientSecret(data.clientSecret);
-  //         // [DEV] For demo purposes only
-  //         setDpmCheckerLink(data.dpmCheckerLink);
-  //       });
-  //   }, []);
-
-  /*  const appearance = {
-    theme: "stripe",
-  }; */
-  /*  const options: any = {
-    clientSecret,
-    appearance,
-  }; */
-
-  //   const stripe = useStripe();
-  //   const elements = useElements();
-
-  //   const [message, setMessage] = useState(null);
-  //   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,16 +25,11 @@ export default function CheckoutForm({ bookingId }) {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        // Make sure to change this to your payment completion page
+        //  payment completion page
         return_url: `http://localhost:5173/complete/${bookingId}`,
       },
     });
 
-    // This point will only be reached if there is an immediate error when
-    // confirming the payment. Otherwise, your customer will be redirected to
-    // your `return_url`. For some payment methods like iDEAL, your customer will
-    // be redirected to an intermediate site first to authorize the payment, then
-    // redirected to the `return_url`.
     if (error.type === "card_error" || error.type === "validation_error") {
       setMessage(error.message as any);
     } else {
