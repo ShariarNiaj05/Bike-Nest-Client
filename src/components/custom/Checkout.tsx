@@ -4,6 +4,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import "../../styles/stripe.style.css";
 
 export default function CheckoutForm({ bookingId }: { bookingId: string }) {
   const stripe = useStripe();
