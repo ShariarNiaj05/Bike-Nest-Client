@@ -19,6 +19,7 @@ import ContactPage from "@/pages/Contact";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import PaymentPage from "@/pages/PaymentPage";
+import CheckoutForm from "@/components/custom/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -114,7 +115,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/checkout",
-    element: <Register />,
+    element: <CheckoutForm />,
   },
 ]);
 
