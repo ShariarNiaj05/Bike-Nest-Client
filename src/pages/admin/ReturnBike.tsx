@@ -38,7 +38,7 @@ const ReturnBike = () => {
                 onClick={() => handleReturnBike(rental._id)}
                 className="mt-2"
               >
-                Return Bike
+                Calculate & Return Bike
               </Button>
             </div>
           </CardContent>
