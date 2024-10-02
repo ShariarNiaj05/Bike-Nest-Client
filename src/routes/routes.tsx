@@ -112,6 +112,10 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
+  {
+    path: "/checkout",
+    element: <Register />,
+  },
 ]);
 
 export default router;
