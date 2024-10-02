@@ -11,10 +11,10 @@ export default function CheckoutForm() {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("/create-payment-intent", {
+    fetch("http://localhost:5173/api/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "xl-tshirt", amount: 1000 }] }),
+      body: JSON.stringify({ amount: 100 }),
     })
       .then((res) => res.json())
       .then((data) => {
