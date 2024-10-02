@@ -19,7 +19,7 @@ export default function StripePaymentPage() {
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  }, []);
+  }, [bookingId]);
 
   const appearance = {
     theme: "stripe",

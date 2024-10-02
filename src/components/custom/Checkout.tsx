@@ -28,7 +28,7 @@ export default function CheckoutForm({ bookingId }: { bookingId: any }) {
       elements,
       confirmParams: {
         //  payment completion page
-        return_url: `http://localhost:5173/complete/${bookingId}`,
+        return_url: `https://bike-nest-client.vercel.app/complete/${bookingId}`,
       },
     });
 
