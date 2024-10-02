@@ -2,10 +2,11 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./Checkout";
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import "../../App.css";
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_KEY);
 
-export default function PaymentPage() {
+export default function StripePaymentPage() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {

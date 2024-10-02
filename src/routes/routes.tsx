@@ -20,6 +20,8 @@ import PrivacyPolicyPage from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import PaymentPage from "@/pages/PaymentPage";
 import CheckoutForm from "@/components/custom/Checkout";
+import StripePaymentPage from "@/components/custom/PaymentPage";
+import CompletePage from "@/components/custom/PaymentComplete";
 
 const router = createBrowserRouter([
   {
@@ -58,10 +60,10 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      {
+      /* {
         path: "payment/:bookingId",
         element: <PaymentPage />,
-      },
+      }, */
     ],
   },
 
@@ -114,8 +116,12 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/checkout",
-    element: <CheckoutForm />,
+    path: "/pay-money",
+    element: <StripePaymentPage />,
+  },
+  {
+    path: "/complete",
+    element: <CompletePage />,
   },
 ]);
 
