@@ -1,4 +1,4 @@
-import Contact from "@/components/custom/Contact";
+// import Contact from "@/components/custom/Contact";
 import CouponsAndDiscounts from "@/components/custom/CouponsAndDiscounts";
 import FeaturedCategory from "@/components/custom/FeaturedCategory";
 import FeaturedSections from "@/components/custom/FeaturedSections";
@@ -6,7 +6,7 @@ import HeroSection from "@/components/custom/HeroSection";
 import PromotionalBanner from "@/components/custom/PromotionalBanner";
 import Testimonials from "@/components/custom/Testimonials";
 import WhyChooseUs from "@/components/custom/WhyChooseUs";
-import ComingSoon from "@/components/shared/ComingSoon";
+// import ComingSoon from "@/components/shared/ComingSoon";
 
 const Home = () => {
   return (
@@ -19,9 +19,9 @@ const Home = () => {
       <WhyChooseUs />
       {/* <SpinTheWheel /> */}
       <CouponsAndDiscounts />
-      <Contact />
+      {/* <Contact /> */}
 
-      <ComingSoon />
+      {/* <ComingSoon /> */}
       {/*    <button>Delete</button>
       <button>Add</button>
 
