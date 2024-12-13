@@ -1,6 +1,7 @@
 import { FaSearch } from "react-icons/fa";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -23,7 +24,7 @@ const HeroSection = () => {
           Choose from a variety of bikes suited to your needs
         </p>
 
-        <div className="flex items-center w-full max-w-md bg-white rounded-md overflow-hidden p-3 gap-2 my-5">
+        {/* <div className="flex items-center w-full max-w-md bg-white rounded-md overflow-hidden p-3 gap-2 my-5">
           <Input
             type="text"
             placeholder="Search for bikes..."
@@ -32,8 +33,10 @@ const HeroSection = () => {
           <button className="bg-primary text-white px-2 py-2 rounded-full">
             <FaSearch />
           </button>
-        </div>
-        <Button>Browse All Bikes</Button>
+        </div> */}
+        <Link to={"/bikes"}>
+          <Button>Browse All Bikes</Button>
+        </Link>
       </div>
     </div>
   );
