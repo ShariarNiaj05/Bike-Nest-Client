@@ -61,9 +61,9 @@ const PromotionalBanner = () => {
                   </p>
                 </div>
 
-                <Button className="w-fit bg-white text-primary hover:bg-white/90 transition-colors">
+                {/* <Button className="w-fit bg-white text-primary hover:bg-white/90 transition-colors">
                   Book Now
-                </Button>
+                </Button> */}
               </div>
 
               {/* Image */}
