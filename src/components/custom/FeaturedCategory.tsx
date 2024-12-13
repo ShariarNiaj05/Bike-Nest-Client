@@ -4,71 +4,58 @@ import { Card } from "../ui/card";
 
 export interface Category {
   title: string;
-  items: number;
   image: string;
   backgroundColor: string;
 }
 
 const categories: Category[] = [
   {
-    title: "Cake & Milk",
-    items: 26,
-    image: "/placeholder.svg?height=80&width=80",
+    title: "Mountain Bike",
+    image:
+      "https://png.pngtree.com/png-clipart/20190904/original/pngtree-three-dimensional-bicycle-bicycle-mountain-bike-png-image_4488350.jpg",
     backgroundColor: "bg-[#f3f9f1]",
   },
   {
-    title: "Organic Kiwi",
-    items: 28,
-    image: "/placeholder.svg?height=80&width=80",
+    title: "Road Bike",
+    image:
+      "https://images.vexels.com/media/users/3/235471/isolated/preview/d0921171fc1788ebbc76069583670ecc-competition-bicycle-side-silhouette.png",
     backgroundColor: "bg-[#fff8e5]",
   },
   {
-    title: "Peach",
-    items: 14,
-    image: "/placeholder.svg?height=80&width=80",
-    backgroundColor: "bg-[#f3f9f1]",
-  },
-  {
-    title: "Red Apple",
-    items: 54,
-    image: "/placeholder.svg?height=80&width=80",
+    title: "Black Mountain Bike",
+    image:
+      "https://www.pngall.com/wp-content/uploads/5/Black-Mountain-Bike-PNG-Free-Download.png",
     backgroundColor: "bg-[#fff1f0]",
   },
   {
-    title: "Snack",
-    items: 56,
-    image: "/placeholder.svg?height=80&width=80",
-    backgroundColor: "bg-[#fff8e5]",
-  },
-  {
-    title: "Vegetables",
-    items: 72,
-    image: "/placeholder.svg?height=80&width=80",
+    title: "Hybrid Bike",
+    image:
+      "https://png.pngtree.com/png-clipart/20190904/original/pngtree-bike-png-image_4488350.jpg",
     backgroundColor: "bg-[#fdf2ff]",
   },
   {
-    title: "Strawberry",
-    items: 36,
-    image: "/placeholder.svg?height=80&width=80",
+    title: "Electric Bike",
+    image:
+      "https://png.pngtree.com/png-clipart/20190920/original/pngtree-electric-bicycle-png-image_4722372.jpg",
     backgroundColor: "bg-[#f3f9f1]",
   },
   {
-    title: "Black plum",
-    items: 123,
-    image: "/placeholder.svg?height=80&width=80",
+    title: "Fat Tire Bike",
+    image:
+      "https://www.pngall.com/wp-content/uploads/5/Fat-Tire-Bike-PNG-Clipart.png",
+    backgroundColor: "bg-[#fff8e5]",
+  },
+  {
+    title: "Folding Bike",
+    image:
+      "https://png.pngtree.com/png-clipart/20210411/original/pngtree-foldable-folding-bike-image-png-image_6275920.jpg",
     backgroundColor: "bg-[#fff1f0]",
   },
   {
-    title: "Custard apple",
-    items: 34,
-    image: "/placeholder.svg?height=80&width=80",
-    backgroundColor: "bg-[#f3f9f1]",
-  },
-  {
-    title: "Coffee & Tea",
-    items: 89,
-    image: "/placeholder.svg?height=80&width=80",
-    backgroundColor: "bg-[#fff1f0]",
+    title: "BMX Bike",
+    image:
+      "https://png.pngtree.com/png-clipart/20210411/original/pngtree-bmx-bike-image-png-image_6275903.jpg",
+    backgroundColor: "bg-[#fdf2ff]",
   },
 ];
 
