@@ -61,16 +61,6 @@ const categories: Category[] = [
 
 const FeaturedCategory = () => {
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 200;
-      scrollContainerRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
   return (
     <section className="py-12 bg-accent">
       <div className="container mx-auto px-4">
@@ -97,7 +87,6 @@ const FeaturedCategory = () => {
               <h3 className="text-lg font-semibold text-[#1B224B] mb-1">
                 {category.title}
               </h3>
-              <p className="text-sm text-gray-500">{category.items} Items</p>
             </Card>
           ))}
         </div>
