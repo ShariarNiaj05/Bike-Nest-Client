@@ -26,7 +26,7 @@ const banners = [
     description:
       "Join our membership program for exclusive benefits and special rates",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEOfhHg4-vYoVPlwVEEUyBS97B8BnFHU-lNEZislImkaVTa6xe840zEGSt_OIjepHgqLw&usqp=CAU",
+      "https://m.media-amazon.com/images/I/61toObD4k9L._AC_UF894,1000_QL80_.jpg",
     backgroundColor: "bg-gradient-to-br from-primary/80 to-secondary/80",
     // icon: CreditCard,
   },
