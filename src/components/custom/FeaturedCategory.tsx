@@ -1,4 +1,4 @@
-const FeaturedCategoryAndOthers = () => {
+const FeaturedCategory = () => {
   return (
     <section className="py-12 bg-accent">
       {" "}
@@ -7,4 +7,4 @@ const FeaturedCategoryAndOthers = () => {
   );
 };
 
-export default FeaturedCategoryAndOthers;
+export default FeaturedCategory;

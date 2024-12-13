@@ -1,6 +1,6 @@
 import Contact from "@/components/custom/Contact";
 import CouponsAndDiscounts from "@/components/custom/CouponsAndDiscounts";
-import FeaturedCategoryAndOthers from "@/components/custom/FeaturedCategoryAndOthers";
+import FeaturedCategory from "@/components/custom/FeaturedCategory";
 import FeaturedSections from "@/components/custom/FeaturedSections";
 import HeroSection from "@/components/custom/HeroSection";
 // import SpinTheWheel from "@/components/custom/SpinTheWheel";
@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
-      <FeaturedCategoryAndOthers />
+      <FeaturedCategory />
       <FeaturedSections />
       <Testimonials />
       <WhyChooseUs />
