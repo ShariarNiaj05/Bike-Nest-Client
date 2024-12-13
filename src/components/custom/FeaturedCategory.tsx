@@ -1,4 +1,4 @@
-import React from "react";
+import { Button } from "../ui/button";
 
 export interface Category {
   title: string;
@@ -70,30 +70,75 @@ const categories: Category[] = [
   },
 ];
 
-export function FeaturedCategories() {
-  const scrollContainerRef = React.useRef<HTMLDivElement>(null)
+const FeaturedCategory = () => {
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 200
+      const scrollAmount = 200;
       scrollContainerRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
-      })
+      });
     }
-
-const FeaturedCategory = () => {
+  };
   return (
     <section className="py-12 bg-accent">
       {" "}
-      <div className="container mx-auto px-4"><h2 className="text-4xl font-bold text-center mb-10 text-primary mb-8">
-          Featured Categories
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {bikes?.map((bike: TBike) => (
-            <BikeCard key={bike._id} bike={bike} />
-          ))}
-        </div></div>
+      <div className="container mx-auto px-4">
+        {" "}
+        <div className="w-full py-8">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-[#1B224B]">
+                Featured Categories
+              </h2>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => scroll("left")}
+                  className="rounded-full"
+                >
+                  {/* <ChevronLeft className="h-4 w-4" /> */}
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => scroll("right")}
+                  className="rounded-full"
+                >
+                  {/* <ChevronRight className="h-4 w-4" /> */}
+                </Button>
+              </div>
+            </div>
+            <div
+              ref={scrollContainerRef}
+              className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {categories.map((category, index) => (
+                <Card
+                  key={index}
+                  className={`flex flex-col items-center justify-center p-4 min-w-[180px] ${category.backgroundColor} border-none cursor-pointer transition-transform hover:scale-105`}
+                >
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="w-20 h-20 object-contain mb-4"
+                  />
+                  <h3 className="text-lg font-semibold text-[#1B224B] mb-1">
+                    {category.title}
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    {category.items} Items
+                  </p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
