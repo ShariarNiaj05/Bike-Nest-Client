@@ -22,7 +22,7 @@ const categories: Category[] = [
     backgroundColor: "bg-[#fff8e5]",
   },
   {
-    title: "Black Mountain Bike",
+    title: "Black Mountain",
     image:
       "https://www.pngall.com/wp-content/uploads/5/Black-Mountain-Bike-PNG-Free-Download.png",
     backgroundColor: "bg-[#fff1f0]",
@@ -30,25 +30,25 @@ const categories: Category[] = [
   {
     title: "Hybrid Bike",
     image:
-      "https://png.pngtree.com/png-clipart/20190904/original/pngtree-bike-png-image_4488350.jpg",
+      "https://png.pngtree.com/png-clipart/20190904/original/pngtree-three-dimensional-bicycle-bicycle-mountain-bike-png-image_4488350.jpg",
     backgroundColor: "bg-[#fdf2ff]",
   },
   {
     title: "Electric Bike",
     image:
-      "https://png.pngtree.com/png-clipart/20190920/original/pngtree-electric-bicycle-png-image_4722372.jpg",
+      "https://www.pngall.com/wp-content/uploads/5/Black-Mountain-Bike-PNG-Free-Download.png",
     backgroundColor: "bg-[#f3f9f1]",
   },
   {
     title: "Fat Tire Bike",
     image:
-      "https://www.pngall.com/wp-content/uploads/5/Fat-Tire-Bike-PNG-Clipart.png",
+      "https://www.pngall.com/wp-content/uploads/5/Black-Mountain-Bike-PNG-Free-Download.png",
     backgroundColor: "bg-[#fff8e5]",
   },
   {
     title: "Folding Bike",
     image:
-      "https://png.pngtree.com/png-clipart/20210411/original/pngtree-foldable-folding-bike-image-png-image_6275920.jpg",
+      "https://png.pngtree.com/png-clipart/20190904/original/pngtree-three-dimensional-bicycle-bicycle-mountain-bike-png-image_4488350.jpg",
     backgroundColor: "bg-[#fff1f0]",
   },
   {
@@ -73,30 +73,11 @@ const FeaturedCategory = () => {
   };
   return (
     <section className="py-12 bg-accent">
-      {" "}
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-4xl font-bold text-center mb-10 text-primary mb-8">
             Featured Categories
           </h2>
-          <div className="flex gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => scroll("left")}
-              className="rounded-full"
-            >
-              {/* <ChevronLeft className="h-4 w-4" /> */}
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => scroll("right")}
-              className="rounded-full"
-            >
-              {/* <ChevronRight className="h-4 w-4" /> */}
-            </Button>
-          </div>
         </div>
         <div
           ref={scrollContainerRef}
