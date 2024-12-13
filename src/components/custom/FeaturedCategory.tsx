@@ -63,11 +63,9 @@ const FeaturedCategory = () => {
   return (
     <section className="py-12 bg-accent">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-4xl font-bold text-center mb-10 text-primary mb-8">
-            Featured Categories
-          </h2>
-        </div>
+        <h2 className="text-4xl font-bold text-center mb-10 text-primary mb-8">
+          Featured Categories
+        </h2>
         <div
           ref={scrollContainerRef}
           className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide"
