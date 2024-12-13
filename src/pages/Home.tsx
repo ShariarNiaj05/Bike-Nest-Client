@@ -3,7 +3,6 @@ import CouponsAndDiscounts from "@/components/custom/CouponsAndDiscounts";
 import FeaturedCategory from "@/components/custom/FeaturedCategory";
 import FeaturedSections from "@/components/custom/FeaturedSections";
 import HeroSection from "@/components/custom/HeroSection";
-// import SpinTheWheel from "@/components/custom/SpinTheWheel";
 import Testimonials from "@/components/custom/Testimonials";
 import WhyChooseUs from "@/components/custom/WhyChooseUs";
 import ComingSoon from "@/components/shared/ComingSoon";
