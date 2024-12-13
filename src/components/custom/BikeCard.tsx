@@ -39,7 +39,7 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
 
   return (
     <Card className="w-full max-w-sm overflow-hidden transition-all duration-300 hover:shadow-lg">
-      <div className="p-6">
+      <div className="p-6 hover:border hover:border-primary">
         {/* Image Container */}
         <div className="mb-6 flex justify-center">
           <img
@@ -59,7 +59,7 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
               </h3>
               <p className="text-sm text-gray-500">{model}</p>
             </div>
-            <Badge variant="secondary" className="text-xs">
+            <Badge variant="secondary" className="text-xs text-white">
               {year}
             </Badge>
           </div>
@@ -90,7 +90,7 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
           )}
 
           {/* Availability */}
-          <p className="text-sm font-medium">
+          {/* <p className="text-sm font-medium">
             Status:{" "}
             <span
               className={
@@ -99,7 +99,7 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
             >
               {availability}
             </span>
-          </p>
+          </p> */}
 
           {/* Action Button */}
 
