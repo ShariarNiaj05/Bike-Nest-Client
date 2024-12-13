@@ -24,7 +24,7 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
     pricePerHour = 0,
     imageUrl = "/placeholder.svg?height=200&width=200",
     // colors = [],
-    availability = "Out of Stock",
+    // availability = "Out of Stock",
   } = bike || {};
 
   const handleViewDetail = (id: string) => {
@@ -102,9 +102,10 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
           </p>
 
           {/* Action Button */}
+
           <Button
             className="w-full bg-primary hover:bg-primary/90"
-            onClick={() => handleViewDetail(_id)}
+            onClick={() => handleViewDetail(bike?._id as string)}
             disabled={!_id}
           >
             View Details
