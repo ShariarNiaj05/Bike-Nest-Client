@@ -39,7 +39,7 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
 
   return (
     <Card className="w-full max-w-sm overflow-hidden transition-all duration-300 hover:shadow-lg">
-      <div className="p-6 hover:border hover:border-primary">
+      <div className="p-6 border border-transparent transition-all duration-300 hover:shadow-xl hover:border-primary transform hover:scale-105">
         {/* Image Container */}
         <div className="mb-6 flex justify-center">
           <img
