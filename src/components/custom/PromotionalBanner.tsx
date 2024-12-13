@@ -6,7 +6,8 @@ const banners = [
     subtitle: "Experience Luxury Rides",
     description:
       "Access our fleet of high-end motorcycles with up to 45% off for members",
-    image: "/placeholder.svg?height=300&width=300",
+    image:
+      "https://image.made-in-china.com/226f3j00JwULWENGCCRh/Custom-Design-Flying-Displayed-Banner-Feather-Teardrop-Blade-Polyester-Printing-Bicycle-Flag.webp",
     backgroundColor: "bg-gradient-to-br from-primary to-secondary",
     // icon: PhoneCall,
   },
@@ -14,7 +15,8 @@ const banners = [
     title: "Book Instantly",
     subtitle: "Ready When You Are",
     description: "Reserve your ride in seconds with our easy booking system",
-    image: "/placeholder.svg?height=300&width=300",
+    image:
+      "https://signtech.com.sg/printing-services/wp-content/uploads/2015/07/SY-1531.gif",
     backgroundColor: "bg-gradient-to-br from-secondary/90 to-primary/90",
     // icon: Calendar,
   },
@@ -23,7 +25,8 @@ const banners = [
     subtitle: "Ride More, Save More",
     description:
       "Join our membership program for exclusive benefits and special rates",
-    image: "/placeholder.svg?height=300&width=300",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEOfhHg4-vYoVPlwVEEUyBS97B8BnFHU-lNEZislImkaVTa6xe840zEGSt_OIjepHgqLw&usqp=CAU",
     backgroundColor: "bg-gradient-to-br from-primary/80 to-secondary/80",
     // icon: CreditCard,
   },
