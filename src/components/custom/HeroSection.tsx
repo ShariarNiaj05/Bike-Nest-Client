@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <div
-      className="relative h--[calc(100vh - 20vh)] bg-cover bg-center"
+      className="relative bg-cover bg-center"
       style={{
+        height: "calc(100vh - 45vh)",
         backgroundImage:
           "url('https://github.com/ShariarNiaj05/Bike-Nest-Client/blob/main/src/assets/nav-bike.jpg?raw=true')",
       }}
