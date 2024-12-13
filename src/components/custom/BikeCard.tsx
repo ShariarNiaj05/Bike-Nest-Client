@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import { TBike } from "@/types";
 import { Card } from "../ui/card";
+import { Badge } from "../ui/badge";
 // import { useRouter } from "next/navigation"
 
 const BikeCard = ({ bike }: { bike: TBike }) => {
