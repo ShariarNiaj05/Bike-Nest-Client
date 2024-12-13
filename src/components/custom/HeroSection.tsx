@@ -1,12 +1,12 @@
-import { FaSearch } from "react-icons/fa";
-import { Input } from "../ui/input";
+// import { FaSearch } from "react-icons/fa";
+// import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
     <div
-      className="relative h-screen bg-cover bg-center"
+      className="relative h--[calc(100vh - 20vh)] bg-cover bg-center"
       style={{
         backgroundImage:
           "url('https://github.com/ShariarNiaj05/Bike-Nest-Client/blob/main/src/assets/nav-bike.jpg?raw=true')",
