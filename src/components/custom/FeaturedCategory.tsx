@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 
 export interface Category {
