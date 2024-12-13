@@ -12,6 +12,7 @@ const Home = () => {
     <div>
       <HeroSection />
       <FeaturedCategory />
+      <PromotionalBanner />
       <FeaturedSections />
       <Testimonials />
       <WhyChooseUs />
