@@ -7,7 +7,7 @@ const banners = [
     description:
       "Access our fleet of high-end motorcycles with up to 45% off for members",
     image:
-      "https://image.made-in-china.com/226f3j00JwULWENGCCRh/Custom-Design-Flying-Displayed-Banner-Feather-Teardrop-Blade-Polyester-Printing-Bicycle-Flag.webp",
+      "https://cdn.speedsize.com/4190f681-07cb-43aa-92d2-6096b01e7b62/https://cms.ribblecycles.co.uk.cfstack.com/assets/images/page-builder/CC-Bikes/StoneCC_Grey.png",
     backgroundColor: "bg-gradient-to-br from-primary to-secondary",
     // icon: PhoneCall,
   },
@@ -16,7 +16,7 @@ const banners = [
     subtitle: "Ready When You Are",
     description: "Reserve your ride in seconds with our easy booking system",
     image:
-      "https://signtech.com.sg/printing-services/wp-content/uploads/2015/07/SY-1531.gif",
+      "https://cdn.speedsize.com/4190f681-07cb-43aa-92d2-6096b01e7b62/https://cms.ribblecycles.co.uk.cfstack.com/assets/images/page-builder/Categories/Gravel-Signpost-SQ.png",
     backgroundColor: "bg-gradient-to-br from-secondary/90 to-primary/90",
     // icon: Calendar,
   },
@@ -26,7 +26,7 @@ const banners = [
     description:
       "Join our membership program for exclusive benefits and special rates",
     image:
-      "https://m.media-amazon.com/images/I/61toObD4k9L._AC_UF894,1000_QL80_.jpg",
+      "https://cdn.speedsize.com/4190f681-07cb-43aa-92d2-6096b01e7b62/https://cms.ribblecycles.co.uk.cfstack.com/assets/images/heros/homepage-banner-sram-mobile-2.jpg",
     backgroundColor: "bg-gradient-to-br from-primary/80 to-secondary/80",
     // icon: CreditCard,
   },
