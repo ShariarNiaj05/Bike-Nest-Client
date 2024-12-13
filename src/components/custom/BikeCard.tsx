@@ -33,8 +33,8 @@ const BikeCard = ({ bike }: { bike: TBike }) => {
   };
 
   // Use the colors from the bike, or default colors if not provided
-  const bikeColors =
-    colors.length > 0 ? colors : ["#FF6B6B", "#868E96", "#63E6BE", "#74C0FC"];
+  const bikeColors = ["#FF6B6B", "#868E96", "#63E6BE", "#74C0FC"];
+  // colors.length > 0 ? colors : ["#FF6B6B", "#868E96", "#63E6BE", "#74C0FC"];
 
   return (
     <Card className="w-full max-w-sm overflow-hidden transition-all duration-300 hover:shadow-lg">
