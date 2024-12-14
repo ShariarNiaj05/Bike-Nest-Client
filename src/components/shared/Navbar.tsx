@@ -10,16 +10,16 @@ import {
   useCurrentUser,
 } from "@/redux/features/authSlice";
 import { useDispatch } from "react-redux";
-import { useContext } from "react";
-import { ThemeContext } from "@/lib/ThemeContext";
-import { Switch } from "../ui/switch";
-import { Label } from "../ui/label";
+// import { useContext } from "react";
+// import { ThemeContext } from "@/lib/ThemeContext";
+// import { Switch } from "../ui/switch";
+// import { Label } from "../ui/label";
 const Navbar = () => {
   const dispatch = useDispatch();
   // const token = useAppSelector(useCurrentToken);
 
   const user: TUser | null = useAppSelector(useCurrentUser);
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  // const { theme, toggleTheme } = useContext(ThemeContext);
   // console.log("user from navbar", user);
   return (
     <div className=" max-w-7xl mx-auto flex justify-between py-5 font-bold">
