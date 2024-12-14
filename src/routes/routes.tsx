@@ -53,9 +53,9 @@ const router = createBrowserRouter([
       {
         path: "bikes/:id",
         element: (
-          <ProtectedRoute>
-            <BikeDetails />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <BikeDetails />
+          // </ProtectedRoute>
         ),
       },
       {
