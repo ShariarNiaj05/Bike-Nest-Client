@@ -48,7 +48,7 @@ const Navbar = () => {
       </div>
 
       {/* Dark Mode Toggle */}
-      <div className="flex items-center space-x-3">
+      {/* <div className="flex items-center space-x-3">
         <Switch
           onClick={toggleTheme}
           id="theme-switcher"
@@ -72,7 +72,7 @@ const Navbar = () => {
         >
           {theme === "dark" ? "Light Mode" : "Dark Mode"}
         </Label>
-      </div>
+      </div> */}
 
       <div>
         {user ? (
