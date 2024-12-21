@@ -1,5 +1,146 @@
 # File Structure
 
+```json
+.eslintrc.cjs
+.gitignore
+LICENSE.md
+OVERVIEW.md
+README.md
+components.json
+index.html
+package-lock.json
+package.json
+postcss.config.js
+public
+   |-- fevicon.png
+src
+   |-- App.css
+   |-- App.tsx
+   |-- assets
+   |   |-- comming-soon.json
+   |   |-- cto.jpg
+   |   |-- dark-logo.png
+   |   |-- ho.jpg
+   |   |-- logo.png
+   |   |-- nav-bike.jpg
+   |   |-- shariar.png
+   |-- components
+   |   |-- custom
+   |   |   |-- BikeCard.tsx
+   |   |   |-- Checkout.tsx
+   |   |   |-- Contact.tsx
+   |   |   |-- CouponsAndDiscounts.tsx
+   |   |   |-- FeaturedCategory.tsx
+   |   |   |-- FeaturedSections.tsx
+   |   |   |-- HeroSection.tsx
+   |   |   |-- NavbarItem.tsx
+   |   |   |-- OurTeam.tsx
+   |   |   |-- PaymentComplete.tsx
+   |   |   |-- PaymentPage.tsx
+   |   |   |-- PromotionalBanner.tsx
+   |   |   |-- Testimonials.tsx
+   |   |   |-- Title.tsx
+   |   |   |-- WhyChooseUs.tsx
+   |   |-- shared
+   |   |   |-- ComingSoon.tsx
+   |   |   |-- Container.tsx
+   |   |   |-- Footer.tsx
+   |   |   |-- Loading.tsx
+   |   |   |-- Navbar.tsx
+   |   |   |-- SideBar.tsx
+   |   |-- ui
+   |   |   |-- alert-dialog.tsx
+   |   |   |-- badge.tsx
+   |   |   |-- button.tsx
+   |   |   |-- card.tsx
+   |   |   |-- carousel.tsx
+   |   |   |-- dialog.tsx
+   |   |   |-- drawer.tsx
+   |   |   |-- input.tsx
+   |   |   |-- label.tsx
+   |   |   |-- menubar.tsx
+   |   |   |-- navigation-menu.tsx
+   |   |   |-- select.tsx
+   |   |   |-- sheet.tsx
+   |   |   |-- slider.tsx
+   |   |   |-- switch.tsx
+   |   |   |-- table.tsx
+   |   |   |-- tabs.tsx
+   |   |   |-- textarea.tsx
+   |   |   |-- toast.tsx
+   |   |   |-- toaster.tsx
+   |-- hooks
+   |   |-- use-toast.ts
+   |-- index.css
+   |-- layout
+   |   |-- DashboardLayout.tsx
+   |   |-- MainLayout.tsx
+   |   |-- ProtectedRoute.tsx
+   |-- lib
+   |   |-- ThemeContext.tsx
+   |   |-- utils.ts
+   |-- main.tsx
+   |-- pages
+   |   |-- About.tsx
+   |   |-- BikeDetails.tsx
+   |   |-- Bikes.tsx
+   |   |-- Contact.tsx
+   |   |-- DashboardLanding.tsx
+   |   |-- Home.tsx
+   |   |-- Login.tsx
+   |   |-- PaymentPage.tsx
+   |   |-- PrivacyPolicy.tsx
+   |   |-- Register.tsx
+   |   |-- TermsOfService.tsx
+   |   |-- UpdateProfile.tsx
+   |   |-- admin
+   |   |   |-- ManageUser.tsx
+   |   |   |-- ReturnBike.tsx
+   |   |   |-- adminBikeManagement
+   |   |   |   |-- AddBulkBike.tsx
+   |   |   |   |-- AddSingleBike.tsx
+   |   |   |   |-- AdminBikeManagement.tsx
+   |   |-- user
+   |   |   |-- MyRentals.tsx
+   |-- redux
+   |   |-- api
+   |   |   |-- baseApi.ts
+   |   |-- features
+   |   |   |-- adminBike.ts
+   |   |   |-- authApi.ts
+   |   |   |-- authSlice.ts
+   |   |   |-- bikes.ts
+   |   |   |-- manageUser.ts
+   |   |   |-- rentals.ts
+   |   |   |-- user.ts
+   |   |-- hooks.ts
+   |   |-- store.ts
+   |-- routes
+   |   |-- admin.routes.tsx
+   |   |-- routes.tsx
+   |   |-- user.routes.tsx
+   |-- styles
+   |   |-- stripe.style.css
+   |-- types
+   |   |-- bike.type.ts
+   |   |-- index.ts
+   |   |-- myRental.type.ts
+   |   |-- rental.ts
+   |   |-- routes.type.ts
+   |   |-- user.type.ts
+   |-- utils
+   |   |-- demoBikes.ts
+   |   |-- formatDate.ts
+   |   |-- routeGenerator.ts
+   |-- vite-env.d.ts
+tailwind.config.js
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vercel.json
+vite.config.ts
+```
+
 README.md
 SERVICE.md
 LICENSE.md
