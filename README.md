@@ -1,6 +1,9 @@
 # File Structure
 
-```json
+<details>
+<summary>View</summary>
+
+```
 .eslintrc.cjs
 .gitignore
 LICENSE.md
@@ -140,6 +143,8 @@ tsconfig.node.json
 vercel.json
 vite.config.ts
 ```
+
+</details>
 
 README.md
 SERVICE.md
