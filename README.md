@@ -275,9 +275,53 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 | 200 |               |
 | 400 |               |
 
-## Code Examples
+## API Endpoints
 
-### Installation
+> SignUp User
+
+### Request Body
+
+| Type | Body |
+| ---- | ---- |
+| text | {    |
+
+"name": "admin 3",
+"email": "[admin3@example.com](mailto:admin3@example.com)",
+"password": "password123",
+"phone": "1234567890",
+"address": "123 Main St, Anytown",
+"role" : "admin"
+} |
+
+## Response - 200
+
+```
+import axios from 'axios';
+
+const options = {
+  method: 'POST',
+  url: 'https://api.notion.com/v1/oauth/token',
+  headers: {accept: 'application/json', 'content-type': 'application/json'},
+  data: {grant_type: '"authorization_code"'}
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
+
+<details>
+
+```
+
+```
+
+</details>
 
 ### Request
 
