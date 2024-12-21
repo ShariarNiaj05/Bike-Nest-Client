@@ -89,6 +89,8 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 
 ### Body Params
 
+> Search by title
+
 | Name | Type | Required? | Description |
 | ---- | ---- | --------- | ----------- |
 |      |      |           |             |
@@ -106,8 +108,24 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 
 ### Installation
 
-```jsx
-npm install axios --save
-```
-
 ### Request
+
+```js
+import axios from "axios";
+
+const options = {
+  method: "POST",
+  url: "https://api.notion.com/v1/oauth/token",
+  headers: { accept: "application/json", "content-type": "application/json" },
+  data: { grant_type: '"authorization_code"' },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+```
