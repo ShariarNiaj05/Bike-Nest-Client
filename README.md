@@ -84,3 +84,30 @@ Or simply navigate to the folder and open VS Code in that directory.
 ```
 
 The server will start running on http://localhost:5173 or http://localhost:5174
+
+## API References
+
+### Body Params
+
+| Name | Type | Required? | Description |
+| ---- | ---- | --------- | ----------- |
+|      |      |           |             |
+|      |      |           |             |
+|      |      |           |             |
+
+### Responses
+
+|     | Response Body |
+| --- | ------------- |
+| 200 |               |
+| 400 |               |
+
+## Code Examples
+
+### Installation
+
+```jsx
+npm install axios --save
+```
+
+### Request
