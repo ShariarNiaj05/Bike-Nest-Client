@@ -1,3 +1,17 @@
+# Bike Nest
+
+## Introduction
+
+`Bike Nest - Your Ultimate Destination for All Things Sporting!`
+
+## Project Description
+
+### Purpose
+
+### Goals
+
+## Features
+
 # File Structure
 
 <details>
@@ -145,26 +159,6 @@ vite.config.ts
 ```
 
 </details>
-
-README.md
-SERVICE.md
-LICENSE.md
-
-# README.md
-
-# Bike Nest
-
-## Introduction
-
-`Bike Nest - Your Ultimate Destination for All Things Sporting!`
-
-## Project Description
-
-### Purpose
-
-### Goals
-
-## Features
 
 ### Homepage
 
