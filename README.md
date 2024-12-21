@@ -56,10 +56,7 @@ The Bike Nest web application is purposed for the development of an effective, u
 
 # File Structure
 
-<details>
-<summary>View</summary>
-
-```
+```js
 .eslintrc.cjs
 .gitignore
 LICENSE.md
@@ -199,8 +196,6 @@ tsconfig.node.json
 vercel.json
 vite.config.ts
 ```
-
-</details>
 
 ### Homepage
 
