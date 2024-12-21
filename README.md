@@ -211,18 +211,12 @@ vite.config.ts
 
 ## Technology Stack
 
-### Frontend
-
-- React ⚛️
-- Redux + RTK Query🌀
-- Shadcn UI
-
-### Backend
-
-- Node.js 🟢
-- Express.js 🌐
-- Mongoose 🍃
-- TypeScript 📘
+| Frontend          | Backend    | DevOps/ Deployment |
+| ----------------- | ---------- | ------------------ |
+| TypeScript        | TypeScript | Frontend: Vercel   |
+| React             | Node.js    | Backend: Vercel    |
+| Redux + RTK Query | Express.js |                    |
+| Shadcn UI         | Mongoose   |                    |
 
 ## Installation Guideline
 
