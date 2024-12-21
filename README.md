@@ -4,19 +4,19 @@
 
 `Bike Nest - Your Ultimate Destination for All Things Sporting!`
 
-## Project Description
+## **_Project Description_**
 
-### Purpose
+### **_Purpose:_**
 
 The Bike Nest web application is purposed for the development of an effective, user-friendly platform where users can view, book, and manage bike rentals with ease. This system integrates both frontend and backend functionalities to provide a modern web application that caters to customers, ensures easy administration, and enables secure transactions.
 
-### Objectives:
+### **_Objectives:_**
 
 1. **User Convenience**: Simplify the process of renting bikes with an intuitive interface.
 2. **Efficient Management**: Provide administrators to manage inventory, users, and rentals effectively.
 3. **Responsiveness**: Ensure the platform is accessible across devices, offering a seamless experience on desktops, tablets, and mobiles.
 
-### **Goals**
+### **_Goals:_**
 
 1. **Enable a hassle-free bike rental experience** for users, from browsing to booking and payment.
 2. **Streamline operations** for administrators, allowing quick updates to bike inventory and rental statuses.
@@ -25,7 +25,34 @@ The Bike Nest web application is purposed for the development of an effective, u
 5. Provide error handling and friendly messages for seamless navigation, even in case of issues.
 6. Offer scalability to integrate future features like geolocation, notifications, or multilingual support.
 
-## Features
+### **Features**
+
+### **1. Public Pages**
+
+- **Home Page**: Hero section, featured bikes, testimonials.
+- **About Us**: Mission, team profiles, milestones, and contact details.
+- **Bike Listing and Details**: Filterable bike catalog with detailed bike profiles.
+- **Authentication**: User-friendly sign-up/login interfaces.
+
+### **2. Private/User Features**
+
+- **Dashboard**: Personalized interface displaying rentals, payments, and quick access to profile.
+- **Profile Management**: Update personal details easily.
+- **Rental History**: Tabs for paid and unpaid rentals with payment features.
+
+### **3. Admin Features**
+
+- **Bike Management**: Add, edit, or remove bikes, and filter them by attributes like model or availability.
+- **User Management**: Promote users to admin roles or deactivate inactive accounts.
+- **Rental Handling**: Process bike returns and calculate costs automatically.
+- **Coupon Management**: Create and track coupon usage.
+
+### **4. Extra Features**
+
+- Responsive design with a dark mode toggle.
+- Side-by-side bike comparison tool for customers.
+- Micro-animations for smooth interactions.
+- Comprehensive error handling and custom 404 pages.
 
 # File Structure
 
