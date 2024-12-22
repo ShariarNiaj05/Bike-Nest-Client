@@ -315,3 +315,5 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 ### Update Bike
 
 ### Delete Bike
+
+## Bookings/ Rentals
