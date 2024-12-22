@@ -281,38 +281,36 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 
 ### Request Body
 
-| Type | Body |
-| ---- | ---- |
-| text | {    |
-
-"name": "admin 3",
-"email": "[admin3@example.com](mailto:admin3@example.com)",
-"password": "password123",
-"phone": "1234567890",
-"address": "123 Main St, Anytown",
-"role" : "admin"
-} |
+```json
+{
+  "name": "admin 3",
+  "email": "admin55@example.com",
+  "password": "password123",
+  "phone": "1234567890",
+  "address": "123 Main St, Anytown",
+  "role": "admin"
+}
+```
 
 ## Response - 200
 
-```
-import axios from 'axios';
-
-const options = {
-  method: 'POST',
-  url: 'https://api.notion.com/v1/oauth/token',
-  headers: {accept: 'application/json', 'content-type': 'application/json'},
-  data: {grant_type: '"authorization_code"'}
-};
-
-axios
-  .request(options)
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "User registered successfully",
+  "data": {
+    "name": "admin 3",
+    "email": "admin55@example.com",
+    "phone": "1234567890",
+    "address": "123 Main St, Anytown",
+    "role": "admin",
+    "_id": "6768117611ef05e2107d1b4e",
+    "createdAt": "2024-12-22T13:17:42.356Z",
+    "updatedAt": "2024-12-22T13:17:42.356Z",
+    "__v": 0
+  }
+}
 ```
 
 <details>
