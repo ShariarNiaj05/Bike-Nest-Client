@@ -258,22 +258,9 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 
 ## API References
 
-### Body Params
+### Sign Up User
 
-> Search by title
-
-| Name | Type | Required? | Description |
-| ---- | ---- | --------- | ----------- |
-|      |      |           |             |
-|      |      |           |             |
-|      |      |           |             |
-
-### Responses
-
-|     | Response Body |
-| --- | ------------- |
-| 200 |               |
-| 400 |               |
+             |
 
 ## API Endpoints
 
