@@ -310,4 +310,4 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 
 ### Create Bike
 
-### Login User
+### Get All Bike
