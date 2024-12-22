@@ -311,3 +311,7 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 ### Create Bike
 
 ### Get All Bike
+
+### Update Bike
+
+### Delete Bike
