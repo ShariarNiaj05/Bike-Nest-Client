@@ -264,9 +264,9 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 
 ## API Endpoints
 
-> SignUp User
+### SignUp User
 
-### Request Body
+> Request Body
 
 ```json
 {
@@ -279,7 +279,7 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 }
 ```
 
-## Response - 200
+> Response - 200
 
 ```json
 {
