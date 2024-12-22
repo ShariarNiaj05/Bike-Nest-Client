@@ -299,3 +299,15 @@ The server will start running on http://localhost:5173 or http://localhost:5174
   }
 }
 ```
+
+### Login User
+
+### Get Profile
+
+### Update Profile
+
+## Bikes
+
+### Create Bike
+
+### Login User
