@@ -261,7 +261,7 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 ### User/ Authentication
 
 <details>
-<summary>SignUp User </summary>
+<summary>SignUp User</summary>
 
 > Request Body
 
@@ -306,7 +306,7 @@ Access: `public`
 </details>
 
 <details>
-<summary>### Login User </summary>
+<summary>Login User </summary>
 
 Endpoint: `{{bike-rental-url}}/auth/login`
 
@@ -348,7 +348,7 @@ Access: `public`
 </details>
 
 <details>
-<summary>### Get Profile </summary>
+<summary>Get Profile </summary>
 
 Endpoint: `{{bike-rental-url}}/auth/users/me`
 
@@ -380,7 +380,7 @@ Access: `Private (Headers Authorization)`
 </details>
 
 <details>
-<summary> ### Update Profile</summary>
+<summary> Update Profile</summary>
 
 Endpoint: `{{bike-rental-url}}/auth/users/me`
 
