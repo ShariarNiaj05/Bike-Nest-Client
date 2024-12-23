@@ -345,7 +345,7 @@ Endpoint: `{{bike-rental-url}}/auth/users/me`
 
 Method: `GET`
 
-Access: Private (Headers Authorization)
+Access: `Private (Headers Authorization)`
 
 > Response:
 
@@ -369,6 +369,22 @@ Access: Private (Headers Authorization)
 ```
 
 ### Update Profile
+
+Endpoint: `{{bike-rental-url}}/auth/users/me`
+
+Method: `PUT`
+
+Access: `Private (Headers Authorization)`
+
+> Request Body:
+
+```json
+{
+  "name": "admin now 06",
+  "phone": "0987654321"
+  // Desired field that is supposed to update
+}
+```
 
 ## Bikes
 
