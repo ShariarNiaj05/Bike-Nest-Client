@@ -258,10 +258,11 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 
 ## API Endpoints
 
+### User/ Authentication
+
 <details>
-
 <summary>SignUp User </summary>
-
+</details>
 > Request Body
 
 Endpoint: `{{bike-rental-url}}/auth/signup`
@@ -305,6 +306,9 @@ Access: `public`
 </details>
 
 ### Login User
+
+<details>
+<summary>SignUp User </summary>
 
 Endpoint: `{{bike-rental-url}}/auth/login`
 
