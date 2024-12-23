@@ -256,12 +256,6 @@ Or simply navigate to the folder and open VS Code in that directory.
 
 The server will start running on http://localhost:5173 or http://localhost:5174
 
-## API References
-
-### Sign Up User
-
-             |
-
 ## API Endpoints
 
 ### SignUp User
