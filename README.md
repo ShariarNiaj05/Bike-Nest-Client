@@ -346,11 +346,9 @@ Access: `public`
 ```
 
 </details>
-### Get Profile
 
 <details>
-<summary>------------- </summary>
-</details>
+<summary>### Get Profile </summary>
 
 Endpoint: `{{bike-rental-url}}/auth/users/me`
 
@@ -378,6 +376,8 @@ Access: `Private (Headers Authorization)`
   }
 }
 ```
+
+</details>
 
 <details>
 <summary> ### Update Profile</summary>
