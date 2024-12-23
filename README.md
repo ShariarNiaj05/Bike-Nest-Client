@@ -258,7 +258,9 @@ The server will start running on http://localhost:5173 or http://localhost:5174
 
 ## API Endpoints
 
-### SignUp User
+<details>
+
+<summary>SignUp User </summary>
 
 > Request Body
 
@@ -299,6 +301,8 @@ Access: `public`
   }
 }
 ```
+
+</details>
 
 ### Login User
 
