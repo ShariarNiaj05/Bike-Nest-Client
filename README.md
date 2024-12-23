@@ -305,11 +305,8 @@ Access: `public`
 
 </details>
 
-### Login User
-
 <details>
-<summary>------------- </summary>
-</details>
+<summary>### Login User </summary>
 
 Endpoint: `{{bike-rental-url}}/auth/login`
 
@@ -348,6 +345,7 @@ Access: `public`
 }
 ```
 
+</details>
 ### Get Profile
 
 <details>
