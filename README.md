@@ -637,7 +637,7 @@ Request Body:
 
 Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
 
-Method: `Del`
+Method: `DELETE`
 
 Access: Private (Headers Authorization)
 
@@ -869,31 +869,6 @@ Request Body:
     "__v": 0
   }
 }
-```
-
-</details>
-
-<details>
-<summary> Delete Bike</summary>
-
-Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
-
-Method: `Del`
-
-Access: Private (Headers Authorization)
-
-Request Body:
-
-> Request Body:
-
-```json
-
-```
-
-> Response - 200
-
-```json
-
 ```
 
 </details>
