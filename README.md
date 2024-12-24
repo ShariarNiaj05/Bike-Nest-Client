@@ -197,7 +197,7 @@ vercel.json
 vite.config.ts
 ```
 
-### Homepage
+<!-- ### Homepage
 
 ### Product Listing (All Products Page)
 
@@ -207,7 +207,7 @@ vite.config.ts
 
 ### Checkout Page
 
-### Manage Products
+### Manage Products -->
 
 ## Technology Stack
 
