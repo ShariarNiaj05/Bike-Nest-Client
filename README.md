@@ -633,11 +633,11 @@ Request Body:
 </details>
 
 <details>
-<summary> Create Bike/ Insert Bike</summary>
+<summary> Delete Bike</summary>
 
-Endpoint: `{{bike-rental-url}}/bikes`
+Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
 
-Method: `POST`
+Method: `Del`
 
 Access: Private (Headers Authorization)
 
@@ -646,21 +646,25 @@ Request Body:
 > Request Body:
 
 ```json
-{
-  "name": "Mountain Bike 41",
-  "description": "4 is A durable mountain bike for rough terrains.",
-  "pricePerHour": 15,
-  "cc": 250,
-  "year": 2022,
-  "model": "X3",
-  "brand": "Yamaha"
-}
+
 ```
 
 > Response - 200
 
 ```json
-
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "Bike deleted successfully",
+  "data": {
+    "_id": "666cbc0639ae46edcd0b23f5",
+    "__v": 0,
+    "createdAt": "2024-12-23T16:50:28.755Z",
+    "isAvailable": true,
+    "pricePerHour": 30,
+    "updatedAt": "2024-12-23T16:50:28.755Z"
+  }
+}
 ```
 
 </details>
