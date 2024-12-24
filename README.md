@@ -671,10 +671,102 @@ Request Body:
 
 ## Bookings/ Rentals
 
-### Create New Booking
+<details>
+<summary> Delete Bike</summary>
 
-### Get All Bookings for Users
+Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
 
-### Return Bike
+Method: `Del`
 
-### Make Payment
+Access: Private (Headers Authorization)
+
+Request Body:
+
+> Request Body:
+
+```json
+
+```
+
+> Response - 200
+
+```json
+
+```
+
+</details>
+
+<details>
+<summary> Delete Bike</summary>
+
+Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
+
+Method: `Del`
+
+Access: Private (Headers Authorization)
+
+Request Body:
+
+> Request Body:
+
+```json
+
+```
+
+> Response - 200
+
+```json
+
+```
+
+</details>
+
+<details>
+<summary> Delete Bike</summary>
+
+Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
+
+Method: `Del`
+
+Access: Private (Headers Authorization)
+
+Request Body:
+
+> Request Body:
+
+```json
+
+```
+
+> Response - 200
+
+```json
+
+```
+
+</details>
+
+<details>
+<summary> Delete Bike</summary>
+
+Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
+
+Method: `Del`
+
+Access: Private (Headers Authorization)
+
+Request Body:
+
+> Request Body:
+
+```json
+
+```
+
+> Response - 200
+
+```json
+
+```
+
+</details>
