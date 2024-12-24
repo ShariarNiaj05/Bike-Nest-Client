@@ -245,7 +245,7 @@ Or simply navigate to the folder and open VS Code in that directory.
 ### Step:4 **.env file setup**
 
 ```bash
-   WIll update later
+   Check example .env file
 ```
 
 ### Step:5 **Run the project**
