@@ -672,11 +672,11 @@ Request Body:
 ## Bookings/ Rentals
 
 <details>
-<summary> Delete Bike</summary>
+<summary> Create New Booking</summary>
 
-Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
+Endpoint: `{{bike-rental-url}}/rentals`
 
-Method: `Del`
+Method: `POST`
 
 Access: Private (Headers Authorization)
 
@@ -685,13 +685,32 @@ Request Body:
 > Request Body:
 
 ```json
-
+{
+  "bikeId": "666cbbec39ae46edcd0b23f2",
+  "startTime": "2024-06-14T09:00:00Z"
+}
 ```
 
 > Response - 200
 
 ```json
-
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "Rental created successfully",
+  "data": {
+    "userId": "66e70bddea2a86de6d61a2f3",
+    "bikeId": "666cbbec39ae46edcd0b23f2",
+    "startTime": "2024-06-14T09:00:00.000Z",
+    "returnTime": null,
+    "totalCost": 100,
+    "isReturned": false,
+    "_id": "67699a53316ec9adb0c1fc12",
+    "createdAt": "2024-12-23T17:13:55.139Z",
+    "updatedAt": "2024-12-23T17:13:55.139Z",
+    "__v": 0
+  }
+}
 ```
 
 </details>
