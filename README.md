@@ -4,7 +4,7 @@
 
 `Bike Nest - Your Ultimate Destination for All Things Sporting!`
 
-## **_Project Description_**
+## **Project Description**
 
 ### **_Purpose:_**
 
