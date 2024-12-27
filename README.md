@@ -2,7 +2,7 @@
 
 ## Introduction
 
-`Bike Nest - Your Ultimate Destination for All Things Sporting!`
+`Bike Nest - Your Ultimate Destination for All Things Biking!`
 
 ## **Project Description**
 
